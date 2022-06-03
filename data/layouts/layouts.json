@@ -4410,6 +4410,26 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUMIOUR_ISLAND",
+      "name": "LumiourIsland_Layout",
+      "width": 80,
+      "height": 80,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/LumiourIsland/border.bin",
+      "blockdata_filepath": "data/layouts/LumiourIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUMIOUR_ISLAND_MAIN_HOUSE",
+      "name": "LumiourIslandMainHouse_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/LumiourIslandMainHouse/border.bin",
+      "blockdata_filepath": "data/layouts/LumiourIslandMainHouse/map.bin"
     }
   ]
 }
