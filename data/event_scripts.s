@@ -1058,5 +1058,3 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/LumiourIsland/scripts.inc"
-
-	.include "data/maps/LumiourIslandMainHouse/scripts.inc"
