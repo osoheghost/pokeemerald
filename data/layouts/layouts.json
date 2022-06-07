@@ -4420,6 +4420,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/LumiourIsland/border.bin",
       "blockdata_filepath": "data/layouts/LumiourIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUMIOUR_LAB",
+      "name": "LumiourLab_Layout",
+      "width": 15,
+      "height": 11,
+      "primary_tileset": "gTileset_Indoors",
+      "secondary_tileset": "gTileset_Lab",
+      "border_filepath": "data/layouts/LumiourLab/border.bin",
+      "blockdata_filepath": "data/layouts/LumiourLab/map.bin"
     }
   ]
 }

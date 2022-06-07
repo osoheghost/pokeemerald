@@ -30,7 +30,7 @@ contest_types := cool beauty cute smart tough
 ### Tilesets ###
 
 $(TILESETGFXDIR)/secondary/petalburg/tiles.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 159
+	$(GFX) $< $@ -num_tiles 288
 
 $(TILESETGFXDIR)/secondary/rustboro/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 288
@@ -181,7 +181,7 @@ $(TILESETGFXDIR)/secondary/lilycove_museum/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 431
 
 $(TILESETGFXDIR)/secondary/lab/tiles.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 500
+	$(GFX) $< $@ -num_tiles 112
 
 $(TILESETGFXDIR)/secondary/underwater/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 500
