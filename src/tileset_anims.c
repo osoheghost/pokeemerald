@@ -40,6 +40,7 @@ static void TilesetAnim_BikeShop(u16);
 static void TilesetAnim_BattlePyramid(u16);
 
 static void TilesetAnim_HiddenGrottoSecretTemple(u16);
+static void QueueAnimTiles_Petalburg_Fountain(u16);
 static void QueueAnimTiles_General_Flower(u16);
 static void QueueAnimTiles_General_Water(u16);
 static void QueueAnimTiles_General_SandWaterEdge(u16);
@@ -67,6 +68,20 @@ static void QueueAnimTiles_SootopolisGym_Waterfalls(u16);
 static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
 static void QueueAnimTiles_HiddenGrottoSecretTemple_Torch(u16);
+
+const u16 gTilesetAnims_Petalburg_Fountain_Frame0[] = INCBIN_U16("data/tilesets/secondary/petalburg/anim/fountain/0.4bpp");
+const u16 gTilesetAnims_Petalburg_Fountain_Frame1[] = INCBIN_U16("data/tilesets/secondary/petalburg/anim/fountain/1.4bpp");
+const u16 gTilesetAnims_Petalburg_Fountain_Frame2[] = INCBIN_U16("data/tilesets/secondary/petalburg/anim/fountain/2.4bpp");
+const u16 gTilesetAnims_Petalburg_Fountain_Frame3[] = INCBIN_U16("data/tilesets/secondary/petalburg/anim/fountain/3.4bpp");
+const u16 gTilesetAnims_Petalburg_Fountain_Frame4[] = INCBIN_U16("data/tilesets/secondary/petalburg/anim/fountain/4.4bpp");
+
+static const u16 *const gTilesetAnims_Petalburg_Fountain[] = {
+    gTilesetAnims_Petalburg_Fountain_Frame0,
+    gTilesetAnims_Petalburg_Fountain_Frame1,
+    gTilesetAnims_Petalburg_Fountain_Frame2,
+    gTilesetAnims_Petalburg_Fountain_Frame3,
+    gTilesetAnims_Petalburg_Fountain_Frame4
+};
 
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/1.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/0.4bpp");
@@ -577,10 +592,22 @@ static void TilesetAnim_Building(u16 timer)
         QueueAnimTiles_Building_TVTurnedOn(timer >> 3);
 }
 
+static void TilesetAnim_Petalburg(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_Petalburg_Fountain(timer >> 4);
+}
+
 static void QueueAnimTiles_General_Flower(u16 timer)
 {
     u16 i = timer % 4;
     AppendTilesetAnimToBuffer(gTilesetAnims_General_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(508)), 0x80);
+}
+
+static void QueueAnimTiles_Petalburg_Fountain(u16 timer)
+{
+    u16 i = timer % 5;
+    AppendTilesetAnimToBuffer(gTilesetAnims_Petalburg_Fountain[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(824)), 0x200);
 }
 
 static void QueueAnimTiles_General_Water(u16 timer)
@@ -641,7 +668,7 @@ void InitTilesetAnim_Petalburg(void)
 {
     sSecondaryTilesetAnimCounter = 0;
     sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
-    sSecondaryTilesetAnimCallback = NULL;
+    sSecondaryTilesetAnimCallback = TilesetAnim_Petalburg;
 }
 
 void InitTilesetAnim_Rustboro(void)
