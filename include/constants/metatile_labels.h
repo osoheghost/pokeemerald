@@ -113,8 +113,8 @@
 #define METATILE_BrendansMaysHouse_MovingBox_Open    0x270
 
 // gTileset_Building
-#define METATILE_Building_PC_Off  0x004
-#define METATILE_Building_PC_On   0x005
+#define METATILE_Building_PC_Off  0x062
+#define METATILE_Building_PC_On   0x063
 #define METATILE_Building_TV_Off  0x002
 #define METATILE_Building_TV_On   0x003
 
@@ -333,6 +333,9 @@
 #define METATILE_GenericBuilding_TableEdge               0x2F1
 #define METATILE_GenericBuilding_TrickHouse_Door_Closed  0x21B
 #define METATILE_GenericBuilding_TrickHouse_Stairs_Down  0x219
+
+// gTileset_Indoors
+#define METATILE_Indoors_PC_Off  0x062
 
 // gTileset_InsideOfTruck
 #define METATILE_InsideOfTruck_DoorClosedFloor_Bottom  0x21D

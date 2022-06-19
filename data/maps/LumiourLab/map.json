@@ -16,10 +16,10 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
-      "x": 10,
-      "y": 8,
+      "x": 7,
+      "y": 9,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -38,7 +38,33 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_INTRO_STATE",
+      "var_value": "0",
+      "script": "LumiourLab_Trigger_ProfCygnus2"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_INTRO_STATE",
+      "var_value": "0",
+      "script": "LumiourLab_Trigger_ProfCygnus1"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_INTRO_STATE",
+      "var_value": "0",
+      "script": "LumiourLab_Trigger_ProfCygnus3"
+    }
   ],
   "bg_events": [
     {
@@ -83,16 +109,16 @@
     },
     {
       "type": "sign",
-      "x": 3,
-      "y": 1,
+      "x": 7,
+      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LumiourLab_EventScript_PalkiaWebpage"
     },
     {
       "type": "sign",
-      "x": 7,
-      "y": 5,
+      "x": 3,
+      "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LumiourLab_EventScript_InternetForum"
@@ -112,6 +138,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LumiourLab_EventScript_InstantRevitalizingDevice"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LumiourLab_EventScript_FossilMachine"
     }
   ]
 }

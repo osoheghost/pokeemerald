@@ -3,9 +3,19 @@ EventScript_PC::
 	setvar VAR_0x8004, PC_LOCATION_OTHER
 	special DoPCTurnOnEffect
 	playse SE_PC_ON
+	goto_if_unset FLAG_SYS_POKEMON_GET, EventScript_PCDontUse
 	msgbox Text_BootUpPC, MSGBOX_DEFAULT
 	goto EventScript_PCMainMenu
 	end
+
+EventScript_PCDontUse::
+	msgbox PC_DontUse, MSGBOX_DEFAULT
+	goto EventScript_TurnOffPC
+	end
+
+PC_DontUse:
+	.string "Its a PC.\p"
+	.string "Better leave it alone for now…$"
 
 EventScript_PCMainMenu::
 	message gText_WhichPCShouldBeAccessed

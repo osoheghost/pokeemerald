@@ -11496,7 +11496,7 @@
           "map": "MAP_LUMIOUR_ISLAND",
           "base_label": "gLumiourIsland0",
           "land_mons": {
-            "encounter_rate": 0,
+            "encounter_rate": 20,
             "mons": [
               {
                 "min_level": 20,
@@ -11521,7 +11521,7 @@
               {
                 "min_level": 22,
                 "max_level": 24,
-                "species": "SPECIES_CUBONE"
+                "species": "SPECIES_PIKACHU"
               },
               {
                 "min_level": 22,
@@ -11531,7 +11531,7 @@
               {
                 "min_level": 23,
                 "max_level": 25,
-                "species": "SPECIES_KIRLIA"
+                "species": "SPECIES_CUBONE"
               },
               {
                 "min_level": 23,
@@ -11551,7 +11551,7 @@
               {
                 "min_level": 26,
                 "max_level": 28,
-                "species": "SPECIES_CHIMECHO"
+                "species": "SPECIES_KIRLIA"
               },
               {
                 "min_level": 26,
