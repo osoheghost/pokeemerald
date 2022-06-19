@@ -354,8 +354,10 @@ extern const u8 gText_BirchBoy[];
 extern const u8 gText_BirchGirl[];
 extern const u8 gText_DefaultNameEvan[];
 extern const u8 gText_DefaultNameNathan[];
+extern const u8 gText_DefaultNameOmar[];
 extern const u8 gText_DefaultNameHolly[];
 extern const u8 gText_DefaultNameStella[];
+extern const u8 gText_DefaultNameTrinity[];
 
 
 extern const u8 gText_BirchInTrouble[];

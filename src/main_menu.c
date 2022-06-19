@@ -459,12 +459,14 @@ static const struct MenuAction sMenuActions_Gender[] = {
 
 static const u8 *const gMalePresetNames[] = {
     gText_DefaultNameEvan,
-    gText_DefaultNameNathan
+    gText_DefaultNameNathan,
+    gText_DefaultNameOmar
 };
 
 static const u8 *const gFemalePresetNames[] = {
     gText_DefaultNameHolly,
-    gText_DefaultNameStella
+    gText_DefaultNameStella,
+    gText_DefaultNameTrinity
 };
 
 // .text
@@ -1561,7 +1563,7 @@ static void Task_NewGameBirchSpeech_StartNamingScreen(u8 taskId)
     {
         FreeAllWindowBuffers();
         FreeAndDestroyMonPicSprite(gTasks[taskId].tLotadSpriteId);
-        NewGameBirchSpeech_SetDefaultPlayerName(Random() % 2);
+        NewGameBirchSpeech_SetDefaultPlayerName(Random() % 3);
         DestroyTask(taskId);
         DoNamingScreen(NAMING_SCREEN_PLAYER, gSaveBlock2Ptr->playerName, gSaveBlock2Ptr->playerGender, 0, 0, CB2_NewGameBirchSpeech_ReturnFromNamingScreen);
     }

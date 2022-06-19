@@ -1,5 +1,14 @@
 LumiourLab_MapScripts::
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LumiourLab_OnWarp
 	.byte 0
+
+LumiourLab_OnWarp:
+	map_script_2 VAR_TEMP_1, 0, LumiourLab_EventScript_StartCutscene
+	.2byte 0
+
+LumiourLab_EventScript_StartCutscene::
+	setflag FLAG_SYS_B_DASH
+	end
 
 LumiourLab_EventScript_InstantRevitalizingDevice::
 	msgbox LumiourIslandLab_Text_InstantRevitalizingDevice, MSGBOX_YESNO

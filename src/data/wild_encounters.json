@@ -11509,52 +11509,52 @@
                 "species": "SPECIES_STUFFUL"
               },
               {
-                "min_level": 20,
+                "min_level": 22,
                 "max_level": 24,
                 "species": "SPECIES_VENIPEDE"
               },
               {
-                "min_level": 20,
-                "max_level": 20,
+                "min_level": 22,
+                "max_level": 24,
                 "species": "SPECIES_BUIZEL"
               },
               {
-                "min_level": 20,
+                "min_level": 22,
                 "max_level": 24,
                 "species": "SPECIES_CUBONE"
               },
               {
-                "min_level": 20,
+                "min_level": 22,
                 "max_level": 24,
                 "species": "SPECIES_HOUNDOUR"
               },
               {
-                "min_level": 20,
+                "min_level": 23,
                 "max_level": 25,
                 "species": "SPECIES_KIRLIA"
               },
               {
-                "min_level": 20,
+                "min_level": 23,
                 "max_level": 25,
                 "species": "SPECIES_PHANTUMP"
               },
               {
-                "min_level": 20,
+                "min_level": 24,
                 "max_level": 26,
                 "species": "SPECIES_SCYTHER"
               },
               {
-                "min_level": 20,
+                "min_level": 24,
                 "max_level": 26,
                 "species": "SPECIES_PINSIR"
               },
               {
-                "min_level": 20,
+                "min_level": 26,
                 "max_level": 28,
                 "species": "SPECIES_CHIMECHO"
               },
               {
-                "min_level": 20,
+                "min_level": 26,
                 "max_level": 28,
                 "species": "SPECIES_ABSOL"
               }
