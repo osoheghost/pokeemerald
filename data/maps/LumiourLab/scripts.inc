@@ -2,16 +2,30 @@
 
 LumiourLab_MapScripts::
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LumiourLab_OnWarp
+	map_script MAP_SCRIPT_ON_TRANSITION, LumiourLab_OnTransition
 	.byte 0
+
+LumiourLab_OnTransition:
+	call LumiourLab_EventScript_SetCygnusMoveType
+	end
 
 LumiourLab_OnWarp:
 	map_script_2 VAR_INTRO_STATE, 0, LumiourLab_EventScript_SetRun
+	map_script_2 VAR_INTRO_STATE, 1, LumiourLab_EventScript_SetCygnusLocation 
 	.2byte 0
+
+LumiourLab_EventScript_SetCygnusLocation:
+	setobjectxy LOCALID_PROF_CYGNUS, 6, 5
+
+LumiourLab_EventScript_SetCygnusMoveType::
+	setobjectmovementtype LOCALID_PROF_CYGNUS, MOVEMENT_TYPE_FACE_RIGHT
+	return
+
 
 LumiourLab_EventScript_SetRun::
 	setflag FLAG_SYS_B_DASH
 	hideobjectat LOCALID_PROF_CYGNUS, MAP_LUMIOUR_LAB
-	end
+	return
 
 LumiourLab_Trigger_ProfCygnus1::
 	setvar VAR_TEMP_1, 1
@@ -185,7 +199,7 @@ LumiourLab_EventScript_ExplainFossil:
 	applymovement LOCALID_PROF_CYGNUS, Common_Movement_FaceRight
 	msgbox LumiourLab_Text_GetStarter, MSGBOX_DEFAULT
 	setflag FLAG_SYS_POKEMON_GET
-	givemon SPECIES_AERODACTYL, 20, ITEM_NONE
+	givemon SPECIES_AERODACTYL, 25, ITEM_NONE
 	playfanfare MUS_OBTAIN_ITEM
 	bufferleadmonspeciesname 0
 	msgbox LumiourLab_Text_RecievedAerodactyl, MSGBOX_DEFAULT
