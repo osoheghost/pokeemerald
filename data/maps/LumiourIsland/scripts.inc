@@ -418,7 +418,6 @@ LumiourIsland_EventScript_SetMemorialPillar::
 	setmetatile 65, 40, METATILE_General_WaterRockTR, TRUE
 	setmetatile 64, 41, METATILE_General_WaterRockBL, TRUE
 	setmetatile 65, 41, METATILE_General_WaterRockBR, TRUE
-
 	setmetatile 47, 32, METATILE_General_BridgeLeft, FALSE
 	setmetatile 47, 33, METATILE_General_BridgeLeft, FALSE
 	setmetatile 47, 34, METATILE_General_BridgeLeft, FALSE
@@ -432,7 +431,6 @@ LumiourIsland_EventScript_SetMemorialPillar::
 	setmetatile 47, 42, METATILE_General_BridgeLeft, FALSE
 	setmetatile 47, 43, METATILE_General_BridgeLeft, FALSE
 	setmetatile 47, 44, METATILE_General_BridgeLeft, FALSE
-
 	setmetatile 48, 32, METATILE_General_BridgeHorizontalMiddle, FALSE
 	setmetatile 48, 33, METATILE_General_BridgeHorizontalMiddle, FALSE
 	setmetatile 48, 34, METATILE_General_BridgeHorizontalMiddle, FALSE
@@ -446,7 +444,6 @@ LumiourIsland_EventScript_SetMemorialPillar::
 	setmetatile 48, 42, METATILE_General_BridgeHorizontalMiddle, FALSE
 	setmetatile 48, 43, METATILE_General_BridgeHorizontalMiddle, FALSE
 	setmetatile 48, 44, METATILE_General_BridgeHorizontalMiddle, FALSE
-
 	setmetatile 49, 32, METATILE_General_BridgeRight, FALSE
 	setmetatile 49, 33, METATILE_General_BridgeRight, FALSE
 	setmetatile 49, 34, METATILE_General_BridgeRight, FALSE
@@ -463,6 +460,459 @@ LumiourIsland_EventScript_SetMemorialPillar::
 	end
 
 LumiourIsland_EventScript_SetWhirlIsland::
+	setmetatile 32, 40, METATILE_General_WaterRockTL, TRUE
+	setmetatile 33, 40, METATILE_General_WaterRockTR, TRUE
+	setmetatile 32, 41, METATILE_General_WaterRockBL, TRUE
+	setmetatile 33, 41, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 34, 41, METATILE_General_WaterRockTL, TRUE
+	setmetatile 35, 41, METATILE_General_WaterRockTR, TRUE
+	setmetatile 34, 42, METATILE_General_WaterRockBL, TRUE
+	setmetatile 35, 42, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 36, 42, METATILE_General_WaterRockTL, TRUE
+	setmetatile 37, 42, METATILE_General_WaterRockTR, TRUE
+	setmetatile 36, 43, METATILE_General_WaterRockBL, TRUE
+	setmetatile 37, 43, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 38, 44, METATILE_General_WaterRockTL, TRUE
+	setmetatile 39, 44, METATILE_General_WaterRockTR, TRUE
+	setmetatile 38, 45, METATILE_General_WaterRockBL, TRUE
+	setmetatile 39, 45, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 37, 46, METATILE_General_WaterRockTL, TRUE
+	setmetatile 38, 46, METATILE_General_WaterRockTR, TRUE
+	setmetatile 37, 47, METATILE_General_WaterRockBL, TRUE
+	setmetatile 38, 47, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 39, 47, METATILE_General_WaterRockTL, TRUE
+	setmetatile 40, 47, METATILE_General_WaterRockTR, TRUE
+	setmetatile 39, 48, METATILE_General_WaterRockBL, TRUE
+	setmetatile 40, 48, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 40, 49, METATILE_General_WaterRockTL, TRUE
+	setmetatile 41, 49, METATILE_General_WaterRockTR, TRUE
+	setmetatile 40, 50, METATILE_General_WaterRockBL, TRUE
+	setmetatile 41, 50, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 38, 51, METATILE_General_WaterRockTL, TRUE
+	setmetatile 39, 51, METATILE_General_WaterRockTR, TRUE
+	setmetatile 38, 52, METATILE_General_WaterRockBL, TRUE
+	setmetatile 39, 52, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 40, 53, METATILE_General_WaterRockTL, TRUE
+	setmetatile 41, 53, METATILE_General_WaterRockTR, TRUE
+	setmetatile 40, 54, METATILE_General_WaterRockBL, TRUE
+	setmetatile 41, 54, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 39, 55, METATILE_General_WaterRockTL, TRUE
+	setmetatile 40, 55, METATILE_General_WaterRockTR, TRUE
+	setmetatile 39, 56, METATILE_General_WaterRockBL, TRUE
+	setmetatile 40, 56, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 40, 57, METATILE_General_WaterRockTL, TRUE
+	setmetatile 41, 57, METATILE_General_WaterRockTR, TRUE
+	setmetatile 40, 58, METATILE_General_WaterRockBL, TRUE
+	setmetatile 41, 58, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 41, 59, METATILE_General_WaterRockTL, TRUE
+	setmetatile 42, 59, METATILE_General_WaterRockTR, TRUE
+	setmetatile 41, 60, METATILE_General_WaterRockBL, TRUE
+	setmetatile 42, 60, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 43, 58, METATILE_General_WaterRockTL, TRUE
+	setmetatile 44, 58, METATILE_General_WaterRockTR, TRUE
+	setmetatile 43, 59, METATILE_General_WaterRockBL, TRUE
+	setmetatile 44, 59, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 45, 57, METATILE_General_WaterRockTL, TRUE
+	setmetatile 46, 57, METATILE_General_WaterRockTR, TRUE
+	setmetatile 45, 58, METATILE_General_WaterRockBL, TRUE
+	setmetatile 46, 58, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 46, 59, METATILE_General_WaterRockTL, TRUE
+	setmetatile 47, 59, METATILE_General_WaterRockTR, TRUE
+	setmetatile 46, 60, METATILE_General_WaterRockBL, TRUE
+	setmetatile 47, 60, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 48, 60, METATILE_General_WaterRockTL, TRUE
+	setmetatile 49, 60, METATILE_General_WaterRockTR, TRUE
+	setmetatile 48, 61, METATILE_General_WaterRockBL, TRUE
+	setmetatile 49, 61, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 50, 59, METATILE_General_WaterRockTL, TRUE
+	setmetatile 51, 59, METATILE_General_WaterRockTR, TRUE
+	setmetatile 50, 60, METATILE_General_WaterRockBL, TRUE
+	setmetatile 51, 60, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 52, 60, METATILE_General_WaterRockTL, TRUE
+	setmetatile 53, 60, METATILE_General_WaterRockTR, TRUE
+	setmetatile 52, 61, METATILE_General_WaterRockBL, TRUE
+	setmetatile 53, 61, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 43, 58, METATILE_General_WaterRockTL, TRUE
+	setmetatile 44, 58, METATILE_General_WaterRockTR, TRUE
+	setmetatile 43, 59, METATILE_General_WaterRockBL, TRUE
+	setmetatile 44, 59, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 53, 62, METATILE_General_WaterRockTL, TRUE
+	setmetatile 54, 62, METATILE_General_WaterRockTR, TRUE
+	setmetatile 53, 63, METATILE_General_WaterRockBL, TRUE
+	setmetatile 54, 63, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 55, 61, METATILE_General_WaterRockTL, TRUE
+	setmetatile 56, 61, METATILE_General_WaterRockTR, TRUE
+	setmetatile 55, 62, METATILE_General_WaterRockBL, TRUE
+	setmetatile 56, 62, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 46, 59, METATILE_General_WaterRockTL, TRUE
+	setmetatile 47, 59, METATILE_General_WaterRockTR, TRUE
+	setmetatile 46, 60, METATILE_General_WaterRockBL, TRUE
+	setmetatile 47, 60, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 58, 58, METATILE_General_WaterRockTL, TRUE
+	setmetatile 59, 58, METATILE_General_WaterRockTR, TRUE
+	setmetatile 58, 59, METATILE_General_WaterRockBL, TRUE
+	setmetatile 59, 59, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 59, 56, METATILE_General_WaterRockTL, TRUE
+	setmetatile 60, 56, METATILE_General_WaterRockTR, TRUE
+	setmetatile 59, 57, METATILE_General_WaterRockBL, TRUE
+	setmetatile 60, 57, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 61, 57, METATILE_General_WaterRockTL, TRUE
+	setmetatile 62, 57, METATILE_General_WaterRockTR, TRUE
+	setmetatile 61, 58, METATILE_General_WaterRockBL, TRUE
+	setmetatile 62, 58, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 62, 55, METATILE_General_WaterRockTL, TRUE
+	setmetatile 63, 55, METATILE_General_WaterRockTR, TRUE
+	setmetatile 62, 56, METATILE_General_WaterRockBL, TRUE
+	setmetatile 63, 56, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 63, 53, METATILE_General_WaterRockTL, TRUE
+	setmetatile 64, 53, METATILE_General_WaterRockTR, TRUE
+	setmetatile 63, 54, METATILE_General_WaterRockBL, TRUE
+	setmetatile 64, 54, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 62, 51, METATILE_General_WaterRockTL, TRUE
+	setmetatile 63, 51, METATILE_General_WaterRockTR, TRUE
+	setmetatile 62, 52, METATILE_General_WaterRockBL, TRUE
+	setmetatile 63, 52, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 63, 49, METATILE_General_WaterRockTL, TRUE
+	setmetatile 64, 49, METATILE_General_WaterRockTR, TRUE
+	setmetatile 63, 50, METATILE_General_WaterRockBL, TRUE
+	setmetatile 64, 50, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 61, 48, METATILE_General_WaterRockTL, TRUE
+	setmetatile 62, 48, METATILE_General_WaterRockTR, TRUE
+	setmetatile 61, 49, METATILE_General_WaterRockBL, TRUE
+	setmetatile 62, 49, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 62, 46, METATILE_General_WaterRockTL, TRUE
+	setmetatile 63, 46, METATILE_General_WaterRockTR, TRUE
+	setmetatile 62, 47, METATILE_General_WaterRockBL, TRUE
+	setmetatile 63, 47, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 61, 44, METATILE_General_WaterRockTL, TRUE
+	setmetatile 62, 44, METATILE_General_WaterRockTR, TRUE
+	setmetatile 61, 45, METATILE_General_WaterRockBL, TRUE
+	setmetatile 62, 45, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 60, 42, METATILE_General_WaterRockTL, TRUE
+	setmetatile 61, 42, METATILE_General_WaterRockTR, TRUE
+	setmetatile 60, 43, METATILE_General_WaterRockBL, TRUE
+	setmetatile 61, 43, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 58, 43, METATILE_General_WaterRockTL, TRUE
+	setmetatile 59, 43, METATILE_General_WaterRockTR, TRUE
+	setmetatile 58, 44, METATILE_General_WaterRockBL, TRUE
+	setmetatile 59, 44, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 57, 41, METATILE_General_WaterRockTL, TRUE
+	setmetatile 58, 41, METATILE_General_WaterRockTR, TRUE
+	setmetatile 57, 42, METATILE_General_WaterRockBL, TRUE
+	setmetatile 58, 42, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 58, 39, METATILE_General_WaterRockTL, TRUE
+	setmetatile 59, 39, METATILE_General_WaterRockTR, TRUE
+	setmetatile 58, 40, METATILE_General_WaterRockBL, TRUE
+	setmetatile 59, 40, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 57, 37, METATILE_General_WaterRockTL, TRUE
+	setmetatile 58, 37, METATILE_General_WaterRockTR, TRUE
+	setmetatile 57, 38, METATILE_General_WaterRockBL, TRUE
+	setmetatile 58, 38, METATILE_General_WaterRockBR, TRUE
+	
+	setmetatile 55, 36, METATILE_General_WaterRockTL, TRUE
+	setmetatile 56, 36, METATILE_General_WaterRockTR, TRUE
+	setmetatile 55, 37, METATILE_General_WaterRockBL, TRUE
+	setmetatile 56, 37, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 57, 60, METATILE_General_WaterRockTL, TRUE
+	setmetatile 58, 60, METATILE_General_WaterRockTR, TRUE
+	setmetatile 57, 61, METATILE_General_WaterRockBL, TRUE
+	setmetatile 58, 61, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 46, 56, METATILE_General_WaterRockBL, TRUE
+	setmetatile 47, 56, METATILE_General_WaterRockBR, TRUE
+
+	setmetatile 45, 34, METATILE_General_OceanSandBL, FALSE
+	setmetatile 46, 34, METATILE_General_OceanSandVertexBL, TRUE
+	setmetatile 47, 34, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 34, METATILE_General_OceanSand, FALSE
+	setmetatile 49, 34, METATILE_General_OceanSand, FALSE
+	setmetatile 50, 34, METATILE_General_OceanSand, FALSE
+	setmetatile 51, 34, METATILE_General_OceanSandVertexBR, TRUE
+	setmetatile 52, 34, METATILE_Petalburg_LedgeLOnOceanSandB, TRUE
+
+	setmetatile 46, 35, METATILE_General_OceanSandL, TRUE
+	setmetatile 47, 35, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 35, METATILE_General_OceanSand, FALSE
+	setmetatile 49, 35, METATILE_General_OceanSand, FALSE
+	setmetatile 50, 35, METATILE_General_OceanSandVertexBR, TRUE
+	setmetatile 51, 35, METATILE_General_OceanSandBR, TRUE
+
+	setmetatile 46, 36, METATILE_General_OceanSandL, TRUE
+	setmetatile 47, 36, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 36, METATILE_General_OceanSand, FALSE
+	setmetatile 49, 36, METATILE_General_OceanSand, FALSE
+	setmetatile 50, 36, METATILE_General_OceanSandR, TRUE
+
+	setmetatile 46, 37, METATILE_General_OceanSandL, TRUE
+	setmetatile 47, 37, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 37, METATILE_General_OceanSand, FALSE
+	setmetatile 49, 37, METATILE_General_OceanSand, FALSE
+	setmetatile 50, 37, METATILE_General_OceanSandR, TRUE
+
+	setmetatile 46, 38, METATILE_General_OceanSandL, TRUE
+	setmetatile 47, 38, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 38, METATILE_General_OceanSand, FALSE
+	setmetatile 49, 38, METATILE_General_OceanSand, FALSE
+	setmetatile 50, 38, METATILE_General_OceanSandR, TRUE
+
+	setmetatile 46, 39, METATILE_General_OceanSandL, TRUE
+	setmetatile 47, 39, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 39, METATILE_General_OceanSand, FALSE
+	setmetatile 49, 39, METATILE_General_OceanSand, FALSE
+	setmetatile 50, 39, METATILE_General_OceanSandR, TRUE
+
+	setmetatile 46, 40, METATILE_General_OceanSandL, TRUE
+	setmetatile 47, 40, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 40, METATILE_General_OceanSand, FALSE
+	setmetatile 49, 40, METATILE_General_OceanSand, FALSE
+	setmetatile 50, 40, METATILE_General_OceanSandR, TRUE
+
+	setmetatile 46, 41, METATILE_General_OceanSandL, TRUE
+	setmetatile 47, 41, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 41, METATILE_General_OceanSand, FALSE
+	setmetatile 49, 41, METATILE_General_OceanSand, FALSE
+	setmetatile 50, 41, METATILE_General_OceanSandR, TRUE
+
+	setmetatile 46, 42, METATILE_General_OceanSandL, TRUE
+	setmetatile 47, 42, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 42, METATILE_General_OceanSand, FALSE
+	setmetatile 49, 42, METATILE_General_OceanSand, FALSE
+	setmetatile 50, 42, METATILE_General_OceanSandR, TRUE
+
+	setmetatile 46, 43, METATILE_General_OceanSandL, TRUE
+	setmetatile 47, 43, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 43, METATILE_General_OceanSand, FALSE
+	setmetatile 49, 43, METATILE_General_OceanSand, FALSE
+	setmetatile 50, 43, METATILE_General_OceanSandR, TRUE
+
+	setmetatile 46, 44, METATILE_General_OceanSandL, TRUE
+	setmetatile 47, 44, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 44, METATILE_General_OceanSand, FALSE
+	setmetatile 49, 44, METATILE_General_OceanSand, FALSE
+	setmetatile 50, 44, METATILE_General_OceanSandR, TRUE
+
+	setmetatile 46, 45, METATILE_General_OceanSandL, TRUE
+	setmetatile 47, 45, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 45, METATILE_General_OceanSand, FALSE
+	setmetatile 49, 45, METATILE_General_OceanSand, FALSE
+	setmetatile 50, 45, METATILE_General_OceanSandR, TRUE
+
+	setmetatile 46, 46, METATILE_General_OceanSandL, TRUE
+	setmetatile 47, 46, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 46, METATILE_General_OceanSand, FALSE
+	setmetatile 49, 46, METATILE_General_OceanSand, FALSE
+	setmetatile 50, 46, METATILE_Petalburg_WCliffTRSandVertexTR, TRUE
+	setmetatile 51, 46, METATILE_Petalburg_WWCliffT, TRUE
+	setmetatile 52, 46, METATILE_Petalburg_WWCliffTR, TRUE
+
+	setmetatile 45, 47, METATILE_General_OceanSandTL, TRUE
+	setmetatile 46, 47, METATILE_General_OceanSandVertexTL, FALSE
+	setmetatile 47, 47, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 47, METATILE_General_OceanSand, FALSE
+	setmetatile 49, 47, METATILE_General_OceanSand, FALSE
+	setmetatile 50, 47, METATILE_Petalburg_WRSandL, TRUE
+	setmetatile 51, 47, METATILE_Petalburg_WR, TRUE
+	setmetatile 52, 47, METATILE_Petalburg_WCliffVertexTL, TRUE
+	setmetatile 53, 47, METATILE_Petalburg_WWCliffTR, TRUE
+
+	setmetatile 45, 48, METATILE_General_OceanSandL, TRUE
+	setmetatile 46, 48, METATILE_General_OceanSand, FALSE
+	setmetatile 47, 48, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 48, METATILE_General_OceanSand, FALSE
+	setmetatile 49, 48, METATILE_General_OceanSand, FALSE
+	setmetatile 50, 48, METATILE_Petalburg_WRSandBL, TRUE
+	setmetatile 51, 48, METATILE_Petalburg_WRSandB, TRUE
+	setmetatile 52, 48, METATILE_Petalburg_WRSandB, TRUE
+	setmetatile 53, 48, METATILE_Petalburg_WRSandBR, TRUE
+	setmetatile 54, 48, METATILE_General_OceanSandT, TRUE
+	setmetatile 55, 48, METATILE_General_OceanSandTR, TRUE
+
+	setmetatile 45, 49, METATILE_General_OceanSandL, TRUE
+	setmetatile 46, 49, METATILE_General_OceanSand, FALSE
+	setmetatile 47, 49, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 49, METATILE_General_OceanSand, FALSE
+	setmetatile 49, 49, METATILE_Petalburg_WRSandTL, TRUE
+	setmetatile 50, 49, METATILE_Petalburg_WRSandT, FALSE
+	setmetatile 51, 49, METATILE_Petalburg_WRSandT, FALSE
+	setmetatile 52, 49, METATILE_Petalburg_WRSandT, FALSE
+	setmetatile 53, 49, METATILE_Petalburg_WRSandTR, TRUE
+	setmetatile 54, 49, METATILE_General_OceanSand, FALSE
+	setmetatile 55, 49, METATILE_General_OceanSandVertexTR, FALSE
+	setmetatile 56, 49, METATILE_General_OceanSandT, FALSE
+	setmetatile 57, 49, METATILE_General_OceanSandT, FALSE
+	setmetatile 58, 49, METATILE_General_OceanSandT, FALSE
+	setmetatile 59, 49, METATILE_General_OceanSandTR, TRUE
+
+	setmetatile 44, 50, METATILE_General_OceanSandTL, TRUE
+	setmetatile 45, 50, METATILE_Petalburg_WCliffTRSandVertexTL, TRUE
+	setmetatile 46, 50, METATILE_Petalburg_WRSandTR, TRUE
+	setmetatile 47, 50, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 50, METATILE_Petalburg_WRSandTL, TRUE
+	setmetatile 49, 50, METATILE_Petalburg_WRRCliffL, TRUE
+	setmetatile 50, 50, METATILE_Petalburg_WR, FALSE
+	setmetatile 51, 50, METATILE_Petalburg_WR, FALSE
+	setmetatile 52, 50, METATILE_Petalburg_WR, FALSE
+	setmetatile 53, 50, METATILE_Petalburg_WRRCliffR, TRUE
+	setmetatile 54, 50, METATILE_Petalburg_WRSandTR, TRUE
+	setmetatile 55, 50, METATILE_General_OceanSand, FALSE
+	setmetatile 56, 50, METATILE_General_OceanSand, FALSE
+	setmetatile 57, 50, METATILE_General_OceanSand, FALSE
+	setmetatile 58, 50, METATILE_General_OceanSand, FALSE
+	setmetatile 59, 50, METATILE_General_OceanSandR, TRUE
+
+	setmetatile 44, 51, METATILE_General_OceanSandL, TRUE
+	setmetatile 45, 51, METATILE_Petalburg_WRSandL, TRUE
+	setmetatile 46, 51, METATILE_Petalburg_WRSandR, TRUE
+	setmetatile 47, 51, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 51, METATILE_Petalburg_WRSandL, TRUE
+	setmetatile 49, 51, METATILE_Petalburg_WRCRockL, TRUE
+	setmetatile 50, 51, METATILE_Petalburg_WR, FALSE
+	setmetatile 51, 51, METATILE_Petalburg_WR, FALSE
+	setmetatile 52, 51, METATILE_Petalburg_WR, FALSE
+	setmetatile 53, 51, METATILE_Petalburg_WRRCliffR, TRUE
+	setmetatile 54, 51, METATILE_Petalburg_WRSandR, TRUE
+	setmetatile 55, 51, METATILE_General_RSandTL, TRUE
+	setmetatile 56, 51, METATILE_General_RSandTR, TRUE
+	setmetatile 57, 51, METATILE_General_OceanSand, FALSE
+	setmetatile 58, 51, METATILE_General_OceanSand, FALSE
+	setmetatile 59, 51, METATILE_General_OceanSandVertexTR, FALSE
+	setmetatile 60, 51, METATILE_General_OceanSandT, FALSE
+	setmetatile 61, 51, METATILE_General_OceanSandTR, TRUE
+
+	setmetatile 44, 52, METATILE_General_OceanSandL, TRUE
+	setmetatile 45, 52, METATILE_Petalburg_WRSandL, TRUE
+	setmetatile 46, 52, METATILE_Petalburg_WRSandR, TRUE
+	setmetatile 47, 52, METATILE_General_OceanSand, FALSE
+	setmetatile 48, 52, METATILE_Petalburg_WRCSandL, TRUE
+	setmetatile 49, 52, METATILE_Petalburg_WRRCliffL, TRUE
+	setmetatile 50, 52, METATILE_Petalburg_WR, FALSE
+	setmetatile 51, 52, METATILE_Petalburg_WR, FALSE
+	setmetatile 52, 52, METATILE_Petalburg_WR, FALSE
+	setmetatile 53, 52, METATILE_Petalburg_WRCRockR, TRUE
+	setmetatile 54, 52, METATILE_Petalburg_WRSandR, TRUE
+	setmetatile 55, 52, METATILE_General_RSandBL, TRUE
+	setmetatile 56, 52, METATILE_General_RSandBR, TRUE
+	setmetatile 57, 52, METATILE_General_OceanSand, FALSE
+	setmetatile 58, 52, METATILE_General_OceanSand, FALSE
+	setmetatile 59, 52, METATILE_Petalburg_WRSandTL, FALSE
+	setmetatile 60, 52, METATILE_Petalburg_WRSandTR, FALSE
+	setmetatile 61, 52, METATILE_General_OceanSandR, TRUE
+
+	setmetatile 44, 53, METATILE_General_OceanSandL, TRUE
+	setmetatile 45, 53, METATILE_Petalburg_WRSandBL, TRUE
+	setmetatile 46, 53, METATILE_Petalburg_RockLedgeWRSandBR, TRUE
+	setmetatile 47, 53, METATILE_General_RSandTR, TRUE
+	setmetatile 48, 53, METATILE_Petalburg_WRSandL, TRUE
+	setmetatile 49, 53, METATILE_Petalburg_WRRCliffBL, TRUE
+	setmetatile 50, 53, METATILE_Petalburg_WRRCliffB, TRUE
+	setmetatile 51, 53, METATILE_Petalburg_WRRCliffB, TRUE
+	setmetatile 52, 53, METATILE_Petalburg_WRRCliffB, TRUE
+	setmetatile 53, 53, METATILE_Petalburg_WRRCliffBR, TRUE
+	setmetatile 54, 53, METATILE_Petalburg_WRCSandR, TRUE
+	setmetatile 55, 53, METATILE_General_OceanSand, FALSE
+	setmetatile 56, 53, METATILE_General_OceanSand, FALSE
+	setmetatile 57, 53, METATILE_General_OceanSand, FALSE
+	setmetatile 58, 53, METATILE_General_OceanSand, FALSE
+	setmetatile 59, 53, METATILE_Petalburg_WRSandBL, FALSE
+	setmetatile 60, 53, METATILE_Petalburg_WRSandBR, FALSE
+	setmetatile 61, 53, METATILE_General_OceanSandR, TRUE
+
+	setmetatile 44, 54, METATILE_General_OceanSandBL, TRUE
+	setmetatile 45, 54, METATILE_General_OceanSandVertexBL, TRUE
+	setmetatile 46, 54, METATILE_General_RSandBL, TRUE
+	setmetatile 47, 54, METATILE_General_RSandBR, TRUE
+	setmetatile 48, 54, METATILE_Petalburg_WRSandBL, TRUE
+	setmetatile 49, 54, METATILE_Petalburg_WRSandB, TRUE
+	setmetatile 50, 54, METATILE_Petalburg_WRSandB, TRUE
+	setmetatile 51, 54, METATILE_Petalburg_WRCave, FALSE
+	setmetatile 52, 54, METATILE_Petalburg_WRSandB, TRUE
+	setmetatile 53, 54, METATILE_Petalburg_WRSandB, TRUE
+	setmetatile 54, 54, METATILE_Petalburg_WRSandBR, TRUE
+	setmetatile 55, 54, METATILE_General_OceanSand, FALSE
+	setmetatile 56, 54, METATILE_General_OceanSand, FALSE
+	setmetatile 57, 54, METATILE_General_OceanSandVertexBR, TRUE
+	setmetatile 58, 54, METATILE_General_OceanSandB, TRUE
+	setmetatile 59, 54, METATILE_General_OceanSandB, TRUE
+	setmetatile 60, 54, METATILE_General_OceanSandB, TRUE
+	setmetatile 61, 54, METATILE_General_OceanSandBR, TRUE
+
+	setmetatile 45, 55, METATILE_General_OceanSandBL, TRUE
+	setmetatile 46, 55, METATILE_General_WaterRockTLSand, TRUE
+	setmetatile 47, 55, METATILE_General_WaterRockTRSand, TRUE
+	setmetatile 48, 55, METATILE_General_OceanSandB, TRUE
+	setmetatile 49, 55, METATILE_General_OceanSandVertexBL, TRUE
+	setmetatile 50, 55, METATILE_General_OceanSand, FALSE
+	setmetatile 51, 55, METATILE_General_OceanSand, FALSE
+	setmetatile 52, 55, METATILE_General_OceanSand, FALSE
+	setmetatile 53, 55, METATILE_General_OceanSand, FALSE
+	setmetatile 54, 55, METATILE_General_OceanSand, FALSE
+	setmetatile 55, 55, METATILE_General_OceanSand, FALSE
+	setmetatile 56, 55, METATILE_General_OceanSand, FALSE
+	setmetatile 57, 55, METATILE_General_OceanSandR, TRUE
+
+	setmetatile 49, 56, METATILE_General_OceanSandL, TRUE
+	setmetatile 50, 56, METATILE_General_OceanSand, FALSE
+	setmetatile 51, 56, METATILE_General_OceanSand, FALSE
+	setmetatile 52, 56, METATILE_General_OceanSand, FALSE
+	setmetatile 53, 56, METATILE_General_OceanSand, FALSE
+	setmetatile 54, 56, METATILE_General_OceanSand, FALSE
+	setmetatile 55, 56, METATILE_General_OceanSand, FALSE
+	setmetatile 56, 56, METATILE_General_OceanSandVertexBR, TRUE
+	setmetatile 57, 56, METATILE_General_OceanSandBR, TRUE
+
+	setmetatile 49, 57, METATILE_General_OceanSandBL, TRUE
+	setmetatile 50, 57, METATILE_General_OceanSandB, TRUE
+	setmetatile 51, 57, METATILE_General_OceanSandB, TRUE
+	setmetatile 52, 57, METATILE_General_OceanSandB, TRUE
+	setmetatile 53, 57, METATILE_General_OceanSandB, TRUE
+	setmetatile 54, 57, METATILE_General_OceanSandB, TRUE
+	setmetatile 55, 57, METATILE_General_OceanSandB, TRUE
+	setmetatile 56, 57, METATILE_General_OceanSandBR, TRUE
+
+	setmetatile 47, 32, METATILE_General_StairsShade, FALSE
+	setmetatile 48, 32, METATILE_General_Stairs, FALSE
+	setmetatile 49, 32, METATILE_General_Stairs, FALSE
+
+	setmetatile 47, 33, METATILE_General_StairsShade, FALSE
+	setmetatile 48, 33, METATILE_General_Stairs, FALSE
+	setmetatile 49, 33, METATILE_General_Stairs, FALSE
 	end
 
 LumiourIsland_EventScript_SetMirageIsland::

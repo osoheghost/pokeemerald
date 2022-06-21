@@ -4440,6 +4440,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/VisceraCave/border.bin",
       "blockdata_filepath": "data/layouts/VisceraCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_HIDDEN_GROTTO",
+      "name": "HiddenGrotto_Layout",
+      "width": 11,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_HiddenGrottoSecretTemple",
+      "border_filepath": "data/layouts/HiddenGrotto/border.bin",
+      "blockdata_filepath": "data/layouts/HiddenGrotto/map.bin"
     }
   ]
 }

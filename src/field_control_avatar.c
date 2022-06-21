@@ -1037,3 +1037,15 @@ int SetCableClubWarp(void)
     SetupWarp(&gMapHeader, GetWarpEventAtMapPosition(&gMapHeader, &position), &position);
     return 0;
 }
+
+int DoWarpAtPlayerPos(void)
+{
+    struct MapPosition position;
+
+    GetPlayerMovementDirection();  //unnecessary
+    GetPlayerPosition(&position);
+    MapGridGetMetatileBehaviorAt(position.x, position.y);  //unnecessary
+    SetupWarp(&gMapHeader, GetWarpEventAtMapPosition(&gMapHeader, &position), &position);
+    DoWarp();
+    return 0;
+}

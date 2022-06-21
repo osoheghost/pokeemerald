@@ -1060,3 +1060,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/LumiourLab/scripts.inc"
 
 	.include "data/maps/VisceraCave/scripts.inc"
+
+	.include "data/maps/HiddenGrotto/scripts.inc"
+
+	.include "data/scripts/hidden_grotto.inc"
