@@ -4444,7 +4444,7 @@
     {
       "id": "LAYOUT_HIDDEN_GROTTO",
       "name": "HiddenGrotto_Layout",
-      "width": 11,
+      "width": 20,
       "height": 14,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_HiddenGrottoSecretTemple",

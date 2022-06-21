@@ -657,12 +657,12 @@
 #define FLAG_GOT_DAY_4_ITEMS  0x267 // Day 4 item box
 #define FLAG_GOT_DAY_5_ITEMS  0x268 // Day 5 item box
 #define FLAG_GOT_DAY_0_ITEMS  0x269 // Day 0 item box
-#define FLAG_UNUSED_0x26A  0x26A // Unused Flag
-#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
-#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
-#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
+#define FLAG_HIDDEN_GROTTO_1  0x26A // Hidden grotto object day 1
+#define FLAG_HIDDEN_GROTTO_2  0x26B // Hidden grotto object day 2
+#define FLAG_HIDDEN_GROTTO_3  0x26C // Hidden grotto object day 3
+#define FLAG_HIDDEN_GROTTO_4  0x26D // Hidden grotto object day 4
+#define FLAG_HIDDEN_GROTTO_5  0x26E // Hidden grotto object day 5
+#define FLAG_HIDDEN_GROTTO_0  0x26F // Hidden grotto object day 0
 #define FLAG_UNUSED_0x270  0x270 // Unused Flag
 #define FLAG_UNUSED_0x271  0x271 // Unused Flag
 #define FLAG_UNUSED_0x272  0x272 // Unused Flag

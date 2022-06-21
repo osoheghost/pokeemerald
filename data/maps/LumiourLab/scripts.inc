@@ -16,16 +16,19 @@ LumiourLab_OnWarp:
 
 LumiourLab_EventScript_SetCygnusLocation:
 	setobjectxy LOCALID_PROF_CYGNUS, 6, 5
+	end
 
 LumiourLab_EventScript_SetCygnusMoveType::
 	setobjectmovementtype LOCALID_PROF_CYGNUS, MOVEMENT_TYPE_FACE_RIGHT
 	return
+	end
 
 
 LumiourLab_EventScript_SetRun::
 	setflag FLAG_SYS_B_DASH
 	hideobjectat LOCALID_PROF_CYGNUS, MAP_LUMIOUR_LAB
 	return
+	end
 
 LumiourLab_Trigger_ProfCygnus1::
 	setvar VAR_TEMP_1, 1
@@ -296,40 +299,42 @@ LumiourIsland_EventScript_GiveDay0Items::
 
 LumiourIsland_EventScript_GiveDay1Items::
 	goto_if_set FLAG_GOT_DAY_1_ITEMS, LumiourIsland_EventScript_GotItems
-	giveitem ITEM_GREAT_BALL, 20
-	giveitem ITEM_SUPER_POTION, 10
+	giveitem ITEM_GREAT_BALL, 10
+	giveitem ITEM_FULL_HEAL, 5
 	setflag FLAG_GOT_DAY_1_ITEMS
 	release
 	end
 
 LumiourIsland_EventScript_GiveDay2Items::
 	goto_if_set FLAG_GOT_DAY_2_ITEMS, LumiourIsland_EventScript_GotItems
-	giveitem ITEM_GREAT_BALL, 20
-	giveitem ITEM_SUPER_POTION, 10
+	giveitem ITEM_GREAT_BALL, 10
+	giveitem ITEM_LEMONADE, 10
 	setflag FLAG_GOT_DAY_2_ITEMS
 	release
 	end
 
 LumiourIsland_EventScript_GiveDay3Items::
 	goto_if_set FLAG_GOT_DAY_3_ITEMS, LumiourIsland_EventScript_GotItems
-	giveitem ITEM_GREAT_BALL, 20
-	giveitem ITEM_SUPER_POTION, 10
+	giveitem ITEM_ULTRA_BALL, 10
+	giveitem ITEM_HP_UP, 3
+	giveitem ITEM_PP_MAX, 1
 	setflag FLAG_GOT_DAY_3_ITEMS
 	release
 	end
 
 LumiourIsland_EventScript_GiveDay4Items::
 	goto_if_set FLAG_GOT_DAY_4_ITEMS, LumiourIsland_EventScript_GotItems
-	giveitem ITEM_GREAT_BALL, 20
-	giveitem ITEM_SUPER_POTION, 10
+	giveitem ITEM_ELIXIR, 5
+	giveitem ITEM_REVIVE, 10
 	setflag FLAG_GOT_DAY_4_ITEMS
 	release
 	end
 
 LumiourIsland_EventScript_GiveDay5Items::
 	goto_if_set FLAG_GOT_DAY_5_ITEMS, LumiourIsland_EventScript_GotItems
-	giveitem ITEM_GREAT_BALL, 20
-	giveitem ITEM_SUPER_POTION, 10
+	giveitem ITEM_ULTRA_BALL, 10
+	giveitem ITEM_FULL_RESTORE, 5
+	giveitem ITEM_REVIVE, 5
 	setflag FLAG_GOT_DAY_5_ITEMS
 	release
 	end
