@@ -275,6 +275,84 @@ LumiourLab_Text_DumbJoke:
 	.string "Or I guess you could say its a brand 'old'\n"
 	.string "Pokémon!$"
 
+LumiourLab_EventScript_Boxes::
+	goto_if_unset FLAG_SYS_POKEMON_GET, LumiourLab_EventScript_DontTouchBoxes
+	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 0, LumiourIsland_EventScript_GiveDay0Items
+	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 1, LumiourIsland_EventScript_GiveDay1Items
+	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 2, LumiourIsland_EventScript_GiveDay2Items
+	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 3, LumiourIsland_EventScript_GiveDay3Items
+	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 4, LumiourIsland_EventScript_GiveDay4Items
+	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 5, LumiourIsland_EventScript_GiveDay5Items
+	goto LumiourLab_EventScript_DontTouchBoxes
+	end
+
+LumiourIsland_EventScript_GiveDay0Items::
+	goto_if_set FLAG_GOT_DAY_0_ITEMS, LumiourIsland_EventScript_GotItems
+	giveitem ITEM_GREAT_BALL, 20
+	giveitem ITEM_SUPER_POTION, 10
+	setflag FLAG_GOT_DAY_0_ITEMS
+	release
+	end
+
+LumiourIsland_EventScript_GiveDay1Items::
+	goto_if_set FLAG_GOT_DAY_1_ITEMS, LumiourIsland_EventScript_GotItems
+	giveitem ITEM_GREAT_BALL, 20
+	giveitem ITEM_SUPER_POTION, 10
+	setflag FLAG_GOT_DAY_1_ITEMS
+	release
+	end
+
+LumiourIsland_EventScript_GiveDay2Items::
+	goto_if_set FLAG_GOT_DAY_2_ITEMS, LumiourIsland_EventScript_GotItems
+	giveitem ITEM_GREAT_BALL, 20
+	giveitem ITEM_SUPER_POTION, 10
+	setflag FLAG_GOT_DAY_2_ITEMS
+	release
+	end
+
+LumiourIsland_EventScript_GiveDay3Items::
+	goto_if_set FLAG_GOT_DAY_3_ITEMS, LumiourIsland_EventScript_GotItems
+	giveitem ITEM_GREAT_BALL, 20
+	giveitem ITEM_SUPER_POTION, 10
+	setflag FLAG_GOT_DAY_3_ITEMS
+	release
+	end
+
+LumiourIsland_EventScript_GiveDay4Items::
+	goto_if_set FLAG_GOT_DAY_4_ITEMS, LumiourIsland_EventScript_GotItems
+	giveitem ITEM_GREAT_BALL, 20
+	giveitem ITEM_SUPER_POTION, 10
+	setflag FLAG_GOT_DAY_4_ITEMS
+	release
+	end
+
+LumiourIsland_EventScript_GiveDay5Items::
+	goto_if_set FLAG_GOT_DAY_5_ITEMS, LumiourIsland_EventScript_GotItems
+	giveitem ITEM_GREAT_BALL, 20
+	giveitem ITEM_SUPER_POTION, 10
+	setflag FLAG_GOT_DAY_5_ITEMS
+	release
+	end
+
+LumiourIsland_EventScript_GotItems::
+	msgbox LumiourLab_Text_EmptyBoxes, MSGBOX_DEFAULT
+	release
+	end
+
+LumiourLab_Text_EmptyBoxes:
+	.string "The boxes are empty.$"
+
+LumiourLab_EventScript_DontTouchBoxes::
+	lock
+	faceplayer
+	msgbox LumiourLab_Text_DontTouchBoxes, MSGBOX_DEFAULT
+	release
+	end
+
+LumiourLab_Text_DontTouchBoxes:
+	.string "It's a box full of supplies for trainers.\p"
+	.string "Better leave it alone for now…$"
+
 LumiourLab_EventScript_InstantRevitalizingDevice::
 	goto_if_unset FLAG_SYS_POKEMON_GET, LumiourLab_EventScript_DontTouch
 	msgbox LumiourIslandLab_Text_InstantRevitalizingDevice, MSGBOX_YESNO

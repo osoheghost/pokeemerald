@@ -651,12 +651,12 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_UNUSED_0x264  0x264 // Unused Flag
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
+#define FLAG_GOT_DAY_1_ITEMS  0x264 // Day 1 item box
+#define FLAG_GOT_DAY_2_ITEMS  0x265 // Day 2 item box
+#define FLAG_GOT_DAY_3_ITEMS  0x266 // Day 3 item box
+#define FLAG_GOT_DAY_4_ITEMS  0x267 // Day 4 item box
+#define FLAG_GOT_DAY_5_ITEMS  0x268 // Day 5 item box
+#define FLAG_GOT_DAY_0_ITEMS  0x269 // Day 0 item box
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
 #define FLAG_UNUSED_0x26B  0x26B // Unused Flag
 #define FLAG_UNUSED_0x26C  0x26C // Unused Flag
