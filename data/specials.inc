@@ -537,3 +537,5 @@ gSpecials::
 	def_special TrySetBattleTowerLinkType
 	def_special SetTotemBoost
 	def_special DoWarpAtPlayerPos
+	def_special TeleportCamera
+	def_special ReturnCameraToPlayer
