@@ -55,7 +55,10 @@ EventScript_ObtainedItem::
 	goto_if_eq EventScript_ObtainedItemMessage
 	buffernumberstring 0, VAR_0x8001
 	message gText_ObtainedTheItems
+	delay 10
+	showitemdesc
 	goto EventScript_ContinueObtainedItem
+
 EventScript_ObtainedItemMessage:
 	message gText_ObtainedTheItem
 	delay 10
