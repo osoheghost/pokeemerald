@@ -301,6 +301,15 @@
 #define METATILE_General_RoughDeepWater          0x14F
 #define METATILE_General_RoughWater              0x14E
 #define METATILE_General_RoundBush               0x007
+#define METATILE_General_SQBerrySoil             0x1B3
+#define METATILE_General_SQBerrySoilB            0x1BB
+#define METATILE_General_SQBerrySoilBL           0x1BA
+#define METATILE_General_SQBerrySoilBR           0x1BC
+#define METATILE_General_SQBerrySoilL            0x1B2
+#define METATILE_General_SQBerrySoilR            0x1B4
+#define METATILE_General_SQBerrySoilT            0x1AB
+#define METATILE_General_SQBerrySoilTL           0x1AA
+#define METATILE_General_SQBerrySoilTR           0x1AC
 #define METATILE_General_SWCliffBL               0x16E
 #define METATILE_General_SWCliffBR               0x16F
 #define METATILE_General_SWCliffL                0x166
@@ -335,6 +344,7 @@
 #define METATILE_General_TallGrass_TreeLeft      0x1C6
 #define METATILE_General_TallGrass_TreeRight     0x1C7
 #define METATILE_General_TallGrass_TreeUp        0x025
+#define METATILE_General_WaterCliffBL            0x182
 #define METATILE_General_WaterCliffBR            0x184
 #define METATILE_General_WaterCliffL             0x17A
 #define METATILE_General_WaterCliffR             0x17C
