@@ -3221,9 +3221,9 @@ static const u8 sTM42Desc[] = _(
     "or paralyzed.");
 
 static const u8 sTM43Desc[] = _(
-    "Adds an effect to\n"
-    "attack depending\n"
-    "on the location.");
+    "Attacks the foe\n"
+    "with enough power\n"
+    "to climb rocks.");
 
 static const u8 sTM44Desc[] = _(
     "The user sleeps for\n"

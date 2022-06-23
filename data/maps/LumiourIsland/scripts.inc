@@ -1,6 +1,17 @@
+.set LOCALID_BOULDER, 1
+
 LumiourIsland_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, LumiourIsland_OnLoad
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LumiourIsland_OnWarp
 	.byte 0
+
+LumiourIsland_OnWarp:
+	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 1, LumiourIsland_EventScript_SetBoulderLocation
+	.2byte 0
+
+LumiourIsland_EventScript_SetBoulderLocation::
+	setobjectxyperm LOCALID_BOULDER, 53, 55
+	end
 
 LumiourIsland_OnLoad:
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 1, LumiourIsland_EventScript_SetMemorialPillar
@@ -761,8 +772,14 @@ LumiourIsland_EventScript_SetWhirlIsland::
 	setmetatile 51, 48, METATILE_Petalburg_WRSandB, TRUE
 	setmetatile 52, 48, METATILE_Petalburg_WRSandB, TRUE
 	setmetatile 53, 48, METATILE_Petalburg_WRSandBR, TRUE
-	setmetatile 54, 48, METATILE_General_OceanSandT, TRUE
+	setmetatile 54, 48, METATILE_General_OceanSandT, FALSE
 	setmetatile 55, 48, METATILE_General_OceanSandTR, TRUE
+
+	setmetatile 56, 48, METATILE_General_CalmWater, TRUE
+	setmetatile 57, 48, METATILE_General_CalmWater, TRUE
+	setmetatile 58, 48, METATILE_General_CalmWater, TRUE
+	setmetatile 54, 47, METATILE_General_CalmWater, TRUE
+	setmetatile 60, 50, METATILE_General_CalmWater, TRUE
 
 	setmetatile 45, 49, METATILE_General_OceanSandL, TRUE
 	setmetatile 46, 49, METATILE_General_OceanSand, FALSE
@@ -831,8 +848,8 @@ LumiourIsland_EventScript_SetWhirlIsland::
 	setmetatile 56, 52, METATILE_General_RSandBR, TRUE
 	setmetatile 57, 52, METATILE_General_OceanSand, FALSE
 	setmetatile 58, 52, METATILE_General_OceanSand, FALSE
-	setmetatile 59, 52, METATILE_Petalburg_WRSandTL, FALSE
-	setmetatile 60, 52, METATILE_Petalburg_WRSandTR, FALSE
+	setmetatile 59, 52, METATILE_Petalburg_WRSandTL, TRUE
+	setmetatile 60, 52, METATILE_Petalburg_WRSandTR, TRUE
 	setmetatile 61, 52, METATILE_General_OceanSandR, TRUE
 
 	setmetatile 44, 53, METATILE_General_OceanSandL, TRUE
@@ -850,8 +867,8 @@ LumiourIsland_EventScript_SetWhirlIsland::
 	setmetatile 56, 53, METATILE_General_OceanSand, FALSE
 	setmetatile 57, 53, METATILE_General_OceanSand, FALSE
 	setmetatile 58, 53, METATILE_General_OceanSand, FALSE
-	setmetatile 59, 53, METATILE_Petalburg_WRSandBL, FALSE
-	setmetatile 60, 53, METATILE_Petalburg_WRSandBR, FALSE
+	setmetatile 59, 53, METATILE_Petalburg_WRSandBL, TRUE
+	setmetatile 60, 53, METATILE_Petalburg_WRSandBR, TRUE
 	setmetatile 61, 53, METATILE_General_OceanSandR, TRUE
 
 	setmetatile 44, 54, METATILE_General_OceanSandBL, TRUE

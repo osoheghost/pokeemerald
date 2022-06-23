@@ -659,5 +659,9 @@ MagmaHideout_3F_3R_EventScript_ItemEscapeRope::
 	end
 
 VisceraCave_EventScript_ItemHM04::
-	finditem ITEM_HM04_STRENGTH
+	finditem ITEM_TM42_STRENGTH
+	end
+
+VisceraCave_EventScript_ItemTM43::
+	finditem ITEM_TM43_ROCK_CLIMB
 	end
