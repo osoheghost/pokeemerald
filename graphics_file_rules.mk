@@ -48,7 +48,7 @@ $(TILESETGFXDIR)/secondary/lavaridge/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 256
 
 $(TILESETGFXDIR)/secondary/fortree/tiles.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 493
+	$(GFX) $< $@ -num_tiles 368
 
 $(TILESETGFXDIR)/secondary/pacifidlog/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 504

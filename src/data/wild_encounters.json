@@ -11560,6 +11560,75 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_VISCERA_CAVE",
+          "base_label": "gVisceraCave0",
+          "land_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_WOOBAT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 26,
+                "species": "SPECIES_DRILBUR"
+              },
+              {
+                "min_level": 24,
+                "max_level": 26,
+                "species": "SPECIES_HONEDGE"
+              },
+              {
+                "min_level": 24,
+                "max_level": 26,
+                "species": "SPECIES_PAWNIARD"
+              },
+              {
+                "min_level": 24,
+                "max_level": 27,
+                "species": "SPECIES_SABLEYE"
+              },
+              {
+                "min_level": 24,
+                "max_level": 27,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_NOIBAT"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_AXEW"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_GIBLE"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_LARVITAR"
+              }
+            ]
+          }
         }
       ]
     },

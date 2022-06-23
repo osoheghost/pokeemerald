@@ -369,7 +369,244 @@ LumiourLab_EventScript_InstantRevitalizingDevice::
 
 LumiourLab_EventScript_FossilMachine::
 	goto_if_unset FLAG_SYS_POKEMON_GET, LumiourLab_EventScript_DontTouchFossilMachine
+	lock
+	msgbox LumiourIslandLab_Text_UseFossilMachine, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, LumiourLab_EventScript_Cancel
+	case YES, LumiourLab_EventScript_ReviveFossil
+	case MULTI_B_PRESSED, LumiourLab_EventScript_Cancel
 	end
+
+LumiourLab_EventScript_ReviveFossil::
+	checkitem ITEM_HELIX_FOSSIL, 1
+	compare VAR_RESULT, 1
+	goto_if_ge LumiourLab_EventScript_GiveOmanyte
+	checkitem ITEM_DOME_FOSSIL, 1
+	compare VAR_RESULT, 1
+	goto_if_ge LumiourLab_EventScript_GiveKabuto
+	checkitem ITEM_ROOT_FOSSIL, 1
+	compare VAR_RESULT, 1
+	goto_if_ge LumiourLab_EventScript_GiveLileep
+	checkitem ITEM_CLAW_FOSSIL, 1
+	compare VAR_RESULT, 1
+	goto_if_ge LumiourLab_EventScript_GiveAnorith
+	checkitem ITEM_ARMOR_FOSSIL, 1
+	compare VAR_RESULT, 1
+	goto_if_ge LumiourLab_EventScript_GiveShieldon
+	checkitem ITEM_SKULL_FOSSIL, 1
+	compare VAR_RESULT, 1
+	goto_if_ge LumiourLab_EventScript_GiveCranidos
+	checkitem ITEM_PLUME_FOSSIL, 1
+	compare VAR_RESULT, 1
+	goto_if_ge LumiourLab_EventScript_GiveArchen
+	checkitem ITEM_COVER_FOSSIL, 1
+	compare VAR_RESULT, 1
+	goto_if_ge LumiourLab_EventScript_GiveTirtouga
+	goto LumiourLab_EventScript_NoFossil
+	end
+
+LumiourLab_EventScript_GiveOmanyte::
+	msgbox LumiourLab_Text_PutInHelix, MSGBOX_DEFAULT
+	removeitem ITEM_HELIX_FOSSIL, 1
+	closemessage
+	playse SE_ELEVATOR
+	waitse
+	playse SE_DING_DONG
+	waitse
+	setvar VAR_TEMP_1, SPECIES_OMANYTE
+	givemon SPECIES_OMANYTE, 25, ITEM_NONE
+	bufferspeciesname STR_VAR_1, SPECIES_OMANYTE
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LumiourLab_EventScript_ReceiveFossilParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LumiourLab_EventScript_ReceiveFossilPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+LumiourLab_EventScript_GiveKabuto::
+	msgbox LumiourLab_Text_PutInDome, MSGBOX_DEFAULT
+	removeitem ITEM_DOME_FOSSIL, 1
+	closemessage
+	playse SE_ELEVATOR
+	waitse
+	playse SE_DING_DONG
+	waitse
+	setvar VAR_TEMP_1, SPECIES_KABUTO
+	givemon SPECIES_KABUTO, 25, ITEM_NONE
+	bufferspeciesname STR_VAR_1, SPECIES_KABUTO
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LumiourLab_EventScript_ReceiveFossilParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LumiourLab_EventScript_ReceiveFossilPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+LumiourLab_EventScript_GiveLileep::
+	msgbox LumiourLab_Text_PutInRoot, MSGBOX_DEFAULT
+	removeitem ITEM_ROOT_FOSSIL, 1
+	closemessage
+	playse SE_ELEVATOR
+	waitse
+	playse SE_DING_DONG
+	waitse
+	setvar VAR_TEMP_1, SPECIES_LILEEP
+	givemon SPECIES_LILEEP, 25, ITEM_NONE
+	bufferspeciesname STR_VAR_1, SPECIES_LILEEP
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LumiourLab_EventScript_ReceiveFossilParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LumiourLab_EventScript_ReceiveFossilPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+LumiourLab_EventScript_GiveAnorith::
+	msgbox LumiourLab_Text_PutInClaw, MSGBOX_DEFAULT
+	removeitem ITEM_CLAW_FOSSIL, 1
+	closemessage
+	playse SE_ELEVATOR
+	waitse
+	playse SE_DING_DONG
+	waitse
+	setvar VAR_TEMP_1, SPECIES_ANORITH
+	givemon SPECIES_ANORITH, 25, ITEM_NONE
+	bufferspeciesname STR_VAR_1, SPECIES_ANORITH
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LumiourLab_EventScript_ReceiveFossilParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LumiourLab_EventScript_ReceiveFossilPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+LumiourLab_EventScript_GiveShieldon::
+	msgbox LumiourLab_Text_PutInArmor, MSGBOX_DEFAULT
+	removeitem ITEM_ARMOR_FOSSIL, 1
+	closemessage
+	playse SE_ELEVATOR
+	waitse
+	playse SE_DING_DONG
+	waitse
+	setvar VAR_TEMP_1, SPECIES_SHIELDON
+	givemon SPECIES_SHIELDON, 25, ITEM_NONE
+	bufferspeciesname STR_VAR_1, SPECIES_SHIELDON
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LumiourLab_EventScript_ReceiveFossilParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LumiourLab_EventScript_ReceiveFossilPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+LumiourLab_EventScript_GiveCranidos::
+	msgbox LumiourLab_Text_PutInSkull, MSGBOX_DEFAULT
+	removeitem ITEM_SKULL_FOSSIL, 1
+	closemessage
+	playse SE_ELEVATOR
+	waitse
+	playse SE_DING_DONG
+	waitse
+	setvar VAR_TEMP_1, SPECIES_CRANIDOS
+	givemon SPECIES_CRANIDOS, 25, ITEM_NONE
+	bufferspeciesname STR_VAR_1, SPECIES_CRANIDOS
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LumiourLab_EventScript_ReceiveFossilParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LumiourLab_EventScript_ReceiveFossilPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+LumiourLab_EventScript_GiveArchen::
+	msgbox LumiourLab_Text_PutInPlume, MSGBOX_DEFAULT
+	removeitem ITEM_PLUME_FOSSIL, 1
+	closemessage
+	playse SE_ELEVATOR
+	waitse
+	playse SE_DING_DONG
+	waitse
+	setvar VAR_TEMP_1, SPECIES_ARCHEN
+	givemon SPECIES_ARCHEN, 25, ITEM_NONE
+	bufferspeciesname STR_VAR_1, SPECIES_ARCHEN
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LumiourLab_EventScript_ReceiveFossilParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LumiourLab_EventScript_ReceiveFossilPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+LumiourLab_EventScript_GiveTirtouga::
+	msgbox LumiourLab_Text_PutInCover, MSGBOX_DEFAULT
+	removeitem ITEM_COVER_FOSSIL, 1
+	closemessage
+	playse SE_ELEVATOR
+	waitse
+	playse SE_DING_DONG
+	waitse
+	setvar VAR_TEMP_1, SPECIES_TIRTOUGA
+	givemon SPECIES_TIRTOUGA, 25, ITEM_NONE
+	bufferspeciesname STR_VAR_1, SPECIES_TIRTOUGA
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LumiourLab_EventScript_ReceiveFossilParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LumiourLab_EventScript_ReceiveFossilPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+LumiourLab_EventScript_ReceiveFossilParty::
+	call LumiourLab_EventScript_ReceivedFossilFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LumiourLab_EventScript_Cancel
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	release
+	end
+
+LumiourLab_EventScript_ReceiveFossilPC::
+	call LumiourLab_EventScript_ReceivedFossilFanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LumiourLab_EventScript_SendFossilToPC
+	call Common_EventScript_NameReceivedBoxMon
+	goto LumiourLab_EventScript_SendFossilToPC
+	end
+
+LumiourLab_EventScript_SendFossilToPC::
+	call Common_EventScript_TransferredToPC
+	closemessage
+	end
+
+LumiourLab_EventScript_ReceivedFossilFanfare:
+	playfanfare MUS_OBTAIN_ITEM
+	message LumiourLab_Text_PlayerReceivedFossil
+	waitmessage
+	waitfanfare
+	return
+
+LumiourLab_Text_PlayerReceivedFossil:
+	.string "{PLAYER} received {STR_VAR_1}$"
+
+LumiourLab_EventScript_NoFossil::
+	msgbox LumiourLab_Text_NoFossil, MSGBOX_DEFAULT
+	release
+	end
+
+LumiourLab_Text_PutInHelix:
+	.string "You put the Helix fossil in the machine.$"
+
+LumiourLab_Text_PutInDome:
+	.string "You put the Dome fossil in the machine.$"
+
+LumiourLab_Text_PutInRoot:
+	.string "You put the Root fossil in the machine.$"
+
+LumiourLab_Text_PutInClaw:
+	.string "You put the Claw fossil in the machine.$"
+
+LumiourLab_Text_PutInArmor:
+	.string "You put the Armor fossil in the machine.$"
+
+LumiourLab_Text_PutInSkull:
+	.string "You put the Skull fossil in the machine.$"
+
+LumiourLab_Text_PutInPlume:
+	.string "You put the Plume fossil in the machine.$"
+
+LumiourLab_Text_PutInCover:
+	.string "You put the Cover fossil in the machine.$"
+
+LumiourLab_Text_NoFossil:
+	.string "You don't have a fossil.$"
+
+LumiourIslandLab_Text_UseFossilMachine:
+	.string "Would you like to revive a fossil?$"
 
 LumiourLab_EventScript_DontTouchFossilMachine::
 	lock

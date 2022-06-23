@@ -41,13 +41,13 @@
 #define FLAG_TEMP_1F     (TEMP_FLAGS_START + 0x1F)
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
+#define FLAG_VISCERA_CAVE_FOSSIL_1    0x20 // Viscera Cave Fossil 1
+#define FLAG_VISCERA_CAVE_FOSSIL_2    0x21 // Viscera Cave Fossil 2
+#define FLAG_VISCERA_CAVE_FOSSIL_3    0x22 // Viscera Cave Fossil 3
+#define FLAG_VISCERA_CAVE_FOSSIL_4    0x23 // Viscera Cave Fossil 4
+#define FLAG_VISCERA_CAVE_FOSSIL_5    0x24 // Viscera Cave Fossil 5
+#define FLAG_VISCERA_CAVE_STRENGTH    0x25 // Viscera Cave Strenght HM
+#define FLAG_VISCERA_CAVE_ROCK_CLIMB    0x26 // Viscera Cave Rock Climb TM
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
