@@ -4,6 +4,7 @@
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "field_camera.h"
+#include "field_control_avatar.h"
 #include "field_effect.h"
 #include "field_effect_helpers.h"
 #include "field_player_avatar.h"
@@ -1548,6 +1549,9 @@ static bool8 PushBoulder_End(struct Task *task, struct ObjectEvent *playerObject
     {
         ObjectEventClearHeldMovementIfFinished(playerObject);
         ObjectEventClearHeldMovementIfFinished(strengthObject);
+        VarSet(VAR_STRENGTH_TRIGGER, 99);
+        HandleBoulderActivateVictoryRoadSwitch(strengthObject->currentCoords.x, strengthObject->currentCoords.y);
+        VarSet(VAR_STRENGTH_TRIGGER, 0);
         gPlayerAvatar.preventStep = FALSE;
         ScriptContext2_Disable();
         DestroyTask(FindTaskIdByFunc(Task_PushBoulder));

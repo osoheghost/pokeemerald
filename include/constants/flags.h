@@ -48,10 +48,10 @@
 #define FLAG_VISCERA_CAVE_FOSSIL_5    0x24 // Viscera Cave Fossil 5
 #define FLAG_VISCERA_CAVE_STRENGTH    0x25 // Viscera Cave Strenght HM
 #define FLAG_VISCERA_CAVE_ROCK_CLIMB    0x26 // Viscera Cave Rock Climb TM
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
+#define FLAG_LUMIOUR_ISLAND_METAL_COAT    0x27 // Lumiour Island Metal Coat
+#define FLAG_FALSE_MARKING    0x28 // Used in day 1 puzzle sequence
+#define FLAG_DAY_1_COMPLETE    0x29 // Used in day 1 puzzle sequence. used to not set metatiles
+#define FLAG_HIDE_CYGNUS_OUTDOOR_LUMIOUR    0x2A // Used to hide cygnus in lumiour island exterior
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag

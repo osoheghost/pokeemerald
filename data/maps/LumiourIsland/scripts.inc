@@ -1,4 +1,9 @@
-.set LOCALID_BOULDER, 1
+.set LOCALID_BOULDER1, 1
+.set LOCALID_BOULDER2, 2
+.set LOCALID_BOULDER3, 3
+.set LOCALID_BOULDER4, 4
+.set LOCALID_METAL_COAT, 5
+.set LOCALID_PROF_CYGNUS, 6
 
 LumiourIsland_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, LumiourIsland_OnLoad
@@ -6,11 +11,12 @@ LumiourIsland_MapScripts::
 	.byte 0
 
 LumiourIsland_OnWarp:
-	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 1, LumiourIsland_EventScript_SetBoulderLocation
+	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 1, LumiourIsland_EventScript_SetMetalCoatLocation
 	.2byte 0
 
-LumiourIsland_EventScript_SetBoulderLocation::
-	setobjectxyperm LOCALID_BOULDER, 53, 55
+LumiourIsland_EventScript_SetMetalCoatLocation::
+	setobjectxyperm LOCALID_BOULDER1, 53, 55
+	setobjectxyperm LOCALID_METAL_COAT, 50, 58
 	end
 
 LumiourIsland_OnLoad:
@@ -21,7 +27,198 @@ LumiourIsland_OnLoad:
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 5, LumiourIsland_EventScript_SetLibertyIsland
 	end
 
+LumiourIsland_Trigger_Strength_Button1::
+	lockall
+	setvar VAR_STRENGTH_TRIGGER, 100
+	setobjectxyperm LOCALID_BOULDER1, 15, 28
+	hideobjectat LOCALID_BOULDER2, MAP_LUMIOUR_ISLAND
+	setobjectxyperm LOCALID_BOULDER2, 61, 27
+	setmetatile 61, 31, METATILE_General_GrassMarking, FALSE
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
+	waitmovement 0
+	setvar VAR_0x8004, 61  @ x
+	setvar VAR_0x8005, 27  @ y
+	fadescreenswapbuffers FADE_TO_BLACK
+	special TeleportCamera
+	applymovement LOCALID_BOULDER2, Common_Movement_SetInvisible
+	fadescreenswapbuffers FADE_FROM_BLACK
+	delay 48
+	applymovement LOCALID_BOULDER2, Movement_KecleonAppears
+	delay 48
+	delay 48
+	delay 48
+	fadescreenswapbuffers FADE_TO_BLACK
+	special ReturnCameraToPlayer
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+LumiourIsland_Trigger_Strength_Button2::
+	lockall
+	setvar VAR_STRENGTH_TRIGGER, 100
+	setobjectxyperm LOCALID_BOULDER2, 61, 31
+	hideobjectat LOCALID_BOULDER3, MAP_LUMIOUR_ISLAND
+	setobjectxyperm LOCALID_BOULDER3, 33, 10
+	setmetatile 37, 7, METATILE_General_GrassMarking, FALSE
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
+	waitmovement 0
+	setvar VAR_0x8004, 33  @ x
+	setvar VAR_0x8005, 10  @ y
+	fadescreenswapbuffers FADE_TO_BLACK
+	special TeleportCamera
+	applymovement LOCALID_BOULDER3, Common_Movement_SetInvisible
+	fadescreenswapbuffers FADE_FROM_BLACK
+	delay 48
+	applymovement LOCALID_BOULDER3, Movement_KecleonAppears
+	delay 48
+	delay 48
+	delay 48
+	fadescreenswapbuffers FADE_TO_BLACK
+	special ReturnCameraToPlayer
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+LumiourIsland_Trigger_Strength_Button3::
+	lockall
+	setmetatile 53, 55, METATILE_General_GrassMarking, FALSE
+	setvar VAR_STRENGTH_TRIGGER, 100
+	setobjectxyperm LOCALID_BOULDER3, 37, 7
+	hideobjectat LOCALID_BOULDER4, MAP_LUMIOUR_ISLAND
+	setobjectxyperm LOCALID_BOULDER4, 48, 35
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
+	waitmovement 0
+	setvar VAR_0x8004, 48  @ x
+	setvar VAR_0x8005, 35  @ y
+	fadescreenswapbuffers FADE_TO_BLACK
+	special TeleportCamera
+	applymovement LOCALID_BOULDER4, Common_Movement_SetInvisible
+	fadescreenswapbuffers FADE_FROM_BLACK
+	delay 48
+	applymovement LOCALID_BOULDER4, Movement_KecleonAppears
+	delay 48
+	delay 48
+	delay 48
+	fadescreenswapbuffers FADE_TO_BLACK
+	special ReturnCameraToPlayer
+	fadescreenswapbuffers FADE_FROM_BLACK
+	setflag FLAG_FALSE_MARKING
+	release
+	end
+
+LumiourIsland_Trigger_Strength_Button4::
+	lockall
+	setobjectxyperm LOCALID_BOULDER4, 37, 7
+	setvar VAR_0x8004, 2  @ vertical pan
+	setvar VAR_0x8005, 1  @ horizontal pan
+	setvar VAR_0x8006, 8  @ num shakes
+	setvar VAR_0x8007, 5  @ shake delay
+	special ShakeCamera
+	waitse
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitse
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_KecleonAppears
+	waitmovement 0
+	playse SE_WARP_OUT
+	fadescreenswapbuffers FADE_TO_BLACK
+	setobjectxy OBJ_EVENT_ID_PLAYER, 47, 28
+	setvar VAR_0x8004, 47  @ x
+	setvar VAR_0x8005, 28  @ y
+	special TeleportCamera
+	setflag FLAG_DAY_1_COMPLETE
+	fadescreenswapbuffers FADE_FROM_BLACK
+	setmetatile 47, 32, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 48, 32, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 49, 32, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 47, 33, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 48, 33, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 49, 33, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 47, 34, METATILE_General_CalmWater, TRUE
+	setmetatile 48, 34, METATILE_General_CalmWater, TRUE
+	setmetatile 49, 34, METATILE_General_CalmWater, TRUE
+	setmetatile 47, 35, METATILE_General_CalmWater, TRUE
+	setmetatile 48, 35, METATILE_General_CalmWater, TRUE
+	setmetatile 49, 35, METATILE_General_CalmWater, TRUE
+	setmetatile 47, 36, METATILE_General_CalmWater, TRUE
+	setmetatile 48, 36, METATILE_General_CalmWater, TRUE
+	setmetatile 49, 36, METATILE_General_CalmWater, TRUE
+	special DrawWholeMapView
+	setobjectxyperm LOCALID_PROF_CYGNUS, 39, 28
+	addobject LOCALID_PROF_CYGNUS
+	goto LumiourIsland_EventScript_Day1PuzzleEnd
+	end
+
+LumiourIsland_Text_Strength:
+	.string "Strength$"
+
+LumiourIsland_EventScript_Day1PuzzleEnd:
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_KecleonAppears
+	waitmovement 0
+	applymovement LOCALID_PROF_CYGNUS, LumiourIsland_Movement_WalkOnScreen
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
+	msgbox LumiourIsland_Text_CygnusHeardTremor, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PROF_CYGNUS, Common_Movement_FaceDown
+	waitmovement 0
+	delay 48
+	applymovement LOCALID_PROF_CYGNUS, Common_Movement_FaceRight
+	waitmovement 0
+	msgbox LumiourIsland_Text_CygnusComeBackToLab, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PROF_CYGNUS, LumiourIsland_Movement_WalkOffScreen
+	waitmovement 0
+	removeobject LOCALID_PROF_CYGNUS
+	setflag FLAG_HIDE_CYGNUS_OUTDOOR_LUMIOUR
+	release
+	end
+
+LumiourIsland_Text_CygnusHeardTremor:
+	.string "{COLOR BLUE}{PLAYER}, I'm glad you're safe!\p"
+	.string "I felt a tremor just now and came running\n"
+	.string "to check on you.$"
+
+LumiourIsland_Text_CygnusComeBackToLab:
+	.string "{COLOR BLUE}And the island… It's dissapeared…\p"
+	.string "Come back to the lab and we can\n"
+	.string "discuss this more.$"
+
+LumiourIsland_EventScript_End:
+	end
+
+LumiourIsland_Movement_WalkOnScreen:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+LumiourIsland_Movement_WalkOffScreen:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
 LumiourIsland_EventScript_SetMemorialPillar::
+	goto_if_set FLAG_DAY_1_COMPLETE, LumiourIsland_EventScript_End
 	setmetatile 44, 44, METATILE_General_WaterCliffTL, TRUE
 	setmetatile 45, 44, METATILE_General_WaterCliffT, TRUE
 	setmetatile 46, 44, METATILE_General_WaterCliffT, TRUE
@@ -221,7 +418,7 @@ LumiourIsland_EventScript_SetMemorialPillar::
 	setmetatile 50, 55, METATILE_General_TallGrass, FALSE
 	setmetatile 51, 55, METATILE_General_TallGrass, FALSE
 	setmetatile 52, 55, METATILE_General_TallGrass, FALSE
-	setmetatile 53, 55, METATILE_General_GrassMarking, FALSE
+	setmetatile 53, 55, METATILE_General_FalseGrassMarking, FALSE
 	setmetatile 54, 55, METATILE_General_Grass1, FALSE
 	setmetatile 55, 55, METATILE_General_Grass2, FALSE
 	setmetatile 56, 55, METATILE_General_Grass1, FALSE
@@ -468,6 +665,11 @@ LumiourIsland_EventScript_SetMemorialPillar::
 	setmetatile 49, 42, METATILE_General_BridgeRight, FALSE
 	setmetatile 49, 43, METATILE_General_BridgeRight, FALSE
 	setmetatile 49, 44, METATILE_General_BridgeRight, FALSE
+	goto_if_set FLAG_FALSE_MARKING, LumiourIsland_EventScript_SetRealMarking
+	end
+
+LumiourIsland_EventScript_SetRealMarking::
+	setmetatile 53, 55, METATILE_General_GrassMarking, FALSE
 	end
 
 LumiourIsland_EventScript_SetWhirlIsland::

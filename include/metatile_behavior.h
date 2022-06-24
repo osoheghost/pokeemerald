@@ -26,6 +26,7 @@ bool8 MetatileBehavior_IsEscalator(u8);
 bool8 MetatileBehavior_IsLadder(u8);
 bool8 MetatileBehavior_IsNonAnimDoor(u8);
 bool8 MetatileBehavior_IsDeepSouthWarp(u8);
+bool8 MetatileBehavior_IsStrengthButton(u8);
 bool8 MetatileBehavior_IsSurfableWaterOrUnderwater(u8);
 bool8 MetatileBehavior_IsEastArrowWarp(u8);
 bool8 MetatileBehavior_IsWestArrowWarp(u8);
@@ -149,6 +150,7 @@ bool8 MetatileBehavior_IsLongGrass_Duplicate(u8);
 bool8 MetatileBehavior_IsLongGrassSouthEdge(u8);
 bool8 MetatileBehavior_IsTrainerHillTimer(u8);
 bool8 MetatileBehavior_IsRockStairs(u8);
+bool8 MetatileBehavior_IsStrengthButton(u8 metatileBehavior);
 //sideways stairs
 bool8 MetatileBehavior_IsSidewaysStairsRightSide(u8);
 bool8 MetatileBehavior_IsSidewaysStairsLeftSide(u8);

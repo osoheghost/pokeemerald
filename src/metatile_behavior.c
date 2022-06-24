@@ -92,7 +92,7 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_WATER_DOOR]                      = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
     [MB_WATER_SOUTH_ARROW_WARP]          = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
     [MB_DEEP_SOUTH_WARP]                 = TILE_FLAG_UNUSED,
-    [MB_UNUSED_6F]                       = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
+    [MB_STRENGTH_BUTTON]                 = TILE_FLAG_UNUSED,
     [MB_BRIDGE_OVER_POND_LOW]            = TILE_FLAG_UNUSED,
     [MB_BRIDGE_OVER_POND_MED]            = TILE_FLAG_UNUSED,
     [MB_BRIDGE_OVER_POND_HIGH]           = TILE_FLAG_UNUSED,
@@ -278,6 +278,14 @@ bool8 MetatileBehavior_IsNonAnimDoor(u8 metatileBehavior)
 bool8 MetatileBehavior_IsDeepSouthWarp(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_DEEP_SOUTH_WARP)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsStrengthButton(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_STRENGTH_BUTTON)
         return TRUE;
     else
         return FALSE;

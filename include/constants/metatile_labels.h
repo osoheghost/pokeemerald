@@ -237,6 +237,7 @@
 #define METATILE_General_Door_Gym                0x1CD
 #define METATILE_General_Door_PokeCenter         0x061
 #define METATILE_General_Door_PokeMart           0x049
+#define METATILE_General_FalseGrassMarking       0x1B8
 #define METATILE_General_FlowerBlue              0x004
 #define METATILE_General_Grass                   0x001
 #define METATILE_General_Grass1                  0x01E

@@ -16,7 +16,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
-      "x": 70,
+      "x": 75,
       "y": 40,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -24,8 +24,73 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "EventScript_StrengthBoulder",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 76,
+      "y": 40,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 77,
+      "y": 40,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 78,
+      "y": 40,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 79,
+      "y": 40,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LumiourIsland_EventScript_ItemMetalCoat",
+      "flag": "FLAG_LUMIOUR_ISLAND_METAL_COAT"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
+      "x": 75,
+      "y": 42,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_CYGNUS_OUTDOOR_LUMIOUR"
     }
   ],
   "warp_events": [
@@ -52,7 +117,60 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_STRENGTH_TRIGGER",
+      "var_value": "99",
+      "script": "LumiourIsland_Trigger_Strength_Button1"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 52,
+      "elevation": 0,
+      "var": "VAR_LUMIOUR_ISLAND_STATE",
+      "var_value": "1",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 53,
+      "y": 52,
+      "elevation": 0,
+      "var": "VAR_LUMIOUR_ISLAND_STATE",
+      "var_value": "1",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 61,
+      "y": 31,
+      "elevation": 0,
+      "var": "VAR_STRENGTH_TRIGGER",
+      "var_value": "99",
+      "script": "LumiourIsland_Trigger_Strength_Button2"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_STRENGTH_TRIGGER",
+      "var_value": "99",
+      "script": "LumiourIsland_Trigger_Strength_Button3"
+    },
+    {
+      "type": "trigger",
+      "x": 53,
+      "y": 55,
+      "elevation": 0,
+      "var": "VAR_STRENGTH_TRIGGER",
+      "var_value": "99",
+      "script": "LumiourIsland_Trigger_Strength_Button4"
+    }
   ],
   "bg_events": [
     {
@@ -61,7 +179,7 @@
       "y": 22,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LumiourIsland_EventScript_LabSign"
+      "script": "EventScript_StrengthBoulder"
     },
     {
       "type": "sign",

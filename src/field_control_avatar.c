@@ -669,6 +669,25 @@ void ClearPoisonStepCounter(void)
     VarSet(VAR_POISON_STEP_COUNTER, 0);
 }
 
+void HandleBoulderActivateVictoryRoadSwitch(u16 x, u16 y)
+{
+    int i;
+    const struct CoordEvent * events = gMapHeader.events->coordEvents;
+    int n = gMapHeader.events->coordEventCount;
+
+    if (MetatileBehavior_IsStrengthButton(MapGridGetMetatileBehaviorAt(x, y)))
+    {
+        for (i = 0; i < n; i++)
+        {
+            if (events[i].x + MAP_OFFSET == x && events[i].y + MAP_OFFSET == y)
+            {
+                ScriptContext1_SetupScript(events[i].script);
+                ScriptContext2_Enable();
+            }
+        }
+    }
+}
+
 static bool8 UpdatePoisonStepCounter(void)
 {
     u16 *ptr;

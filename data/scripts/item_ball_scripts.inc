@@ -665,3 +665,7 @@ VisceraCave_EventScript_ItemHM04::
 VisceraCave_EventScript_ItemTM43::
 	finditem ITEM_TM43_ROCK_CLIMB
 	end
+
+LumiourIsland_EventScript_ItemMetalCoat::
+	finditem ITEM_METAL_COAT
+	end
