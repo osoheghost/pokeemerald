@@ -64,6 +64,7 @@
 #define MAP_UNDERWATER_ROUTE129 (55 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE105 (56 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE125 (57 | (0 << 8))
+#define MAP_NEW_MAP1            (58 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
@@ -72,6 +73,7 @@
 #define MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F        (3 | (1 << 8))
 #define MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB (4 | (1 << 8))
 #define MAP_LUMIOUR_LAB                          (5 | (1 << 8))
+#define MAP_LUMIOUR_LAB_B1                       (6 | (1 << 8))
 
 // gMapGroup_IndoorOldale
 #define MAP_OLDALE_TOWN_HOUSE1            (0 | (2 << 8))
@@ -404,6 +406,8 @@
 #define MAP_ALTERING_CAVE                            (106 | (24 << 8))
 #define MAP_METEOR_FALLS_STEVENS_CAVE                (107 | (24 << 8))
 #define MAP_VISCERA_CAVE                             (108 | (24 << 8))
+#define MAP_WHIRL_ISLAND                             (109 | (24 << 8))
+#define MAP_WHIRL_ISLAND_B1                          (110 | (24 << 8))
 
 // gMapGroup_IndoorDynamic
 #define MAP_SECRET_BASE_RED_CAVE1    (0 | (25 << 8))

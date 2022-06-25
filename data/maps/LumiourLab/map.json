@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LumiourLab_EventScript_SetVar",
+      "script": "LumiourLab_EventScript_ProfCygnus",
       "flag": "0"
     }
   ],
@@ -34,6 +34,13 @@
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_LUMIOUR_ISLAND",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_LUMIOUR_LAB_B1",
       "dest_warp_id": 0
     }
   ],
@@ -117,8 +124,8 @@
     },
     {
       "type": "sign",
-      "x": 3,
-      "y": 1,
+      "x": 2,
+      "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LumiourLab_EventScript_InternetForum"
@@ -158,10 +165,18 @@
     {
       "type": "sign",
       "x": 0,
-      "y": 3,
+      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LumiourLab_EventScript_Boxes"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LumiourLab_EventScript_InternetForum"
     }
   ]
 }

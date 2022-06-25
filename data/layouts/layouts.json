@@ -4450,6 +4450,46 @@
       "secondary_tileset": "gTileset_HiddenGrottoSecretTemple",
       "border_filepath": "data/layouts/HiddenGrotto/border.bin",
       "blockdata_filepath": "data/layouts/HiddenGrotto/map.bin"
+    },
+    {
+      "id": "LAYOUT_WHIRL_ISLAND",
+      "name": "WhirlIsland_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_RusturfTunnel",
+      "border_filepath": "data/layouts/WhirlIsland/border.bin",
+      "blockdata_filepath": "data/layouts/WhirlIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_WHIRL_ISLAND_B1",
+      "name": "WhirlIsland_B1_Layout",
+      "width": 24,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_RusturfTunnel",
+      "border_filepath": "data/layouts/WhirlIsland_B1/border.bin",
+      "blockdata_filepath": "data/layouts/WhirlIsland_B1/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEW_MAP1",
+      "name": "NewMap1_Layout",
+      "width": 9,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_RusturfTunnel",
+      "border_filepath": "data/layouts/NewMap1/border.bin",
+      "blockdata_filepath": "data/layouts/NewMap1/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUMIOUR_LAB_B1",
+      "name": "LumiourLab_B1_Layout",
+      "width": 12,
+      "height": 8,
+      "primary_tileset": "gTileset_Indoors",
+      "secondary_tileset": "gTileset_Lab",
+      "border_filepath": "data/layouts/LumiourLab_B1/border.bin",
+      "blockdata_filepath": "data/layouts/LumiourLab_B1/map.bin"
     }
   ]
 }

@@ -2935,9 +2935,9 @@ static const u8 sRoseliBerryDesc[] = _(
     "move if weak to it.");
 
 static const u8 sLiechiBerryDesc[] = _(
-    "A hold item that\n"
-    "raises Attack in\n"
-    "a pinch.");
+    "The effects\n"
+    "of this berry are\n"
+    "currently unknown.");
 
 static const u8 sGanlonBerryDesc[] = _(
     "A hold item that\n"

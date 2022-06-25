@@ -94,7 +94,8 @@
     "Underwater_Route128",
     "Underwater_Route129",
     "Underwater_Route105",
-    "Underwater_Route125"
+    "Underwater_Route125",
+    "NewMap1"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -102,7 +103,8 @@
     "LittlerootTown_MaysHouse_1F",
     "LittlerootTown_MaysHouse_2F",
     "LittlerootTown_ProfessorBirchsLab",
-    "LumiourLab"
+    "LumiourLab",
+    "LumiourLab_B1"
   ],
   "gMapGroup_IndoorOldale": [
     "OldaleTown_House1",
@@ -434,7 +436,9 @@
     "TerraCave_End",
     "AlteringCave",
     "MeteorFalls_StevensCave",
-    "VisceraCave"
+    "VisceraCave",
+    "WhirlIsland",
+    "WhirlIsland_B1"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

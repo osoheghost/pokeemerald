@@ -52,13 +52,13 @@
 #define FLAG_FALSE_MARKING    0x28 // Used in day 1 puzzle sequence
 #define FLAG_DAY_1_COMPLETE    0x29 // Used in day 1 puzzle sequence. used to not set metatiles
 #define FLAG_HIDE_CYGNUS_OUTDOOR_LUMIOUR    0x2A // Used to hide cygnus in lumiour island exterior
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
+#define FLAG_CAN_SLEEP    0x2B // set to let you sleep
+#define FLAG_DAY_2_COMPLETE    0x2C // Day complete
+#define FLAG_DAY_3_COMPLETE    0x2D // Day complete
+#define FLAG_DAY_4_COMPLETE    0x2E // Day complete
+#define FLAG_DAY_5_COMPLETE    0x2F // Day complete
+#define FLAG_VISCERA_CAVE_THUNDERSTONE    0x30 // Viscera cave thunderstone item
+#define FLAG_VISCERA_CAVE_MEGA_RING    0x31 // Viscera cave mega ring
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag

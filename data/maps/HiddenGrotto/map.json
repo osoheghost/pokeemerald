@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "HiddenGrotto_EventScript_Item1",
+      "script": "HiddenGrotto_EventScript_Thunder",
       "flag": "FLAG_HIDDEN_GROTTO_1"
     },
     {
@@ -37,7 +37,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "HiddenGrotto_EventScript_Item2",
+      "script": "HiddenGrotto_EventScript_RockSlide",
       "flag": "FLAG_HIDDEN_GROTTO_2"
     },
     {
@@ -50,7 +50,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "HiddenGrotto_EventScript_Item3",
+      "script": "HiddenGrotto_EventScript_Aerodactylite",
       "flag": "FLAG_HIDDEN_GROTTO_3"
     },
     {
@@ -89,7 +89,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "HiddenGrotto_EventScript_Item0",
+      "script": "HiddenGrotto_EventScript_Eviolite",
       "flag": "FLAG_HIDDEN_GROTTO_0"
     }
   ],

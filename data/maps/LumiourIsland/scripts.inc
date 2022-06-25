@@ -4,6 +4,7 @@
 .set LOCALID_BOULDER4, 4
 .set LOCALID_METAL_COAT, 5
 .set LOCALID_PROF_CYGNUS, 6
+.set LOCALID_LIECHI_BERRY, 7
 
 LumiourIsland_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, LumiourIsland_OnLoad
@@ -12,7 +13,12 @@ LumiourIsland_MapScripts::
 
 LumiourIsland_OnWarp:
 	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 1, LumiourIsland_EventScript_SetMetalCoatLocation
+	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 3, LumiourIsland_EventScript_SetLiechiLocation
 	.2byte 0
+
+LumiourIsland_EventScript_SetLiechiLocation::
+	setobjectxyperm LOCALID_LIECHI_BERRY, 62, 51
+	end
 
 LumiourIsland_EventScript_SetMetalCoatLocation::
 	setobjectxyperm LOCALID_BOULDER1, 53, 55
@@ -181,6 +187,7 @@ LumiourIsland_EventScript_Day1PuzzleEnd:
 	waitmovement 0
 	removeobject LOCALID_PROF_CYGNUS
 	setflag FLAG_HIDE_CYGNUS_OUTDOOR_LUMIOUR
+	setflag FLAG_CAN_SLEEP
 	release
 	end
 
@@ -673,6 +680,7 @@ LumiourIsland_EventScript_SetRealMarking::
 	end
 
 LumiourIsland_EventScript_SetWhirlIsland::
+	goto_if_set FLAG_DAY_2_COMPLETE LumiourIsland_EventScript_End
 	setmetatile 32, 40, METATILE_General_WaterRockTL, TRUE
 	setmetatile 33, 40, METATILE_General_WaterRockTR, TRUE
 	setmetatile 32, 41, METATILE_General_WaterRockBL, TRUE

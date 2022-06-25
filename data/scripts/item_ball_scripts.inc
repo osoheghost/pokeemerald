@@ -669,3 +669,29 @@ VisceraCave_EventScript_ItemTM43::
 LumiourIsland_EventScript_ItemMetalCoat::
 	finditem ITEM_METAL_COAT
 	end
+
+HiddenGrotto_EventScript_RockSlide::
+	finditem ITEM_TM39_ROCK_TOMB
+	end
+
+HiddenGrotto_EventScript_Eviolite::
+	finditem ITEM_EVIOLITE
+	end
+
+VisceraCave_EventScript_ThunderStone::
+	finditem ITEM_THUNDER_STONE
+	end
+
+HiddenGrotto_EventScript_Thunder::
+	finditem ITEM_TM25_THUNDER
+	end
+
+HiddenGrotto_EventScript_Aerodactylite::
+	finditem ITEM_AERODACTYLITE
+	end
+
+VisceraCave_EventScript_MegaRing::
+	finditem ITEM_MEGA_RING
+	end
+
+

@@ -123,6 +123,14 @@ BerryTree_EventScript_PickBerry::
 	waitmessage
 	waitbuttonpress
 	hideitemdesc
+	checkitem ITEM_LIECHI_BERRY, 1
+	compare VAR_RESULT, 1
+	goto_if_eq BerryTree_EventScript_SetDay3Complete
+	release
+	end
+
+BerryTree_EventScript_SetDay3Complete::
+	setflag FLAG_DAY_3_COMPLETE
 	release
 	end
 

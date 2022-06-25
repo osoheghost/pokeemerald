@@ -43,36 +43,6 @@ HiddenGrotto_EventScript_HideItems5::
 	setobjectxyperm LOCALID_GROTTO_OBJECT5, 5, 5
 	end
 
-HiddenGrotto_EventScript_Item0::
-	lock
-	faceplayer
-	msgbox HiddenGrotto_Text_Item0, MSGBOX_DEFAULT
-	release
-	end
-
-HiddenGrotto_Text_Item0:
-	.string "Item 0.$"
-
-HiddenGrotto_EventScript_Item1::
-	lock
-	faceplayer
-	msgbox HiddenGrotto_Text_Item1, MSGBOX_DEFAULT
-	release
-	end
-
-HiddenGrotto_Text_Item1:
-	.string "Item 1.$"
-
-HiddenGrotto_EventScript_Item2::
-	lock
-	faceplayer
-	msgbox HiddenGrotto_Text_Item2, MSGBOX_DEFAULT
-	release
-	end
-
-HiddenGrotto_Text_Item2:
-	.string "Item 2.$"
-
 HiddenGrotto_EventScript_Item3::
 	lock
 	faceplayer
