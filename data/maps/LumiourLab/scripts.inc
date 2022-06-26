@@ -314,7 +314,7 @@ LumiourLab_Text_ExplainFossilMachine:
 	.string "Use the bed downstairs.\p"
 	.string "One last thing!\p"
 	.string "If you ever need Pokéballs or potions\n"
-	.string "check the boxes in the corner.\p"
+	.string "check the cardboard boxes in the corner.\p"
 	.string "Be sure to stock up on items every day.$"
 
 
