@@ -48,18 +48,20 @@ const struct SpriteFrameImage gBattlerPicTable_OpponentRight[] =
 
 const struct SpriteFrameImage gTrainerBackPicTable_Brendan[] =
 {
-    gTrainerBackPic_Brendan, 0x0800,
-    gTrainerBackPic_Brendan + 0x0800, 0x0800,
-    gTrainerBackPic_Brendan + 0x1000, 0x0800,
-    gTrainerBackPic_Brendan + 0x1800, 0x0800,
+    gTrainerBackPic_Red, 0x0800,
+    gTrainerBackPic_Red + 0x0800, 0x0800,
+    gTrainerBackPic_Red + 0x1000, 0x0800,
+    gTrainerBackPic_Red + 0x1800, 0x0800,
+    gTrainerBackPic_Red + 0x2000, 0x0800,
 };
 
 const struct SpriteFrameImage gTrainerBackPicTable_May[] =
 {
-    gTrainerBackPic_May, 0x0800,
-    gTrainerBackPic_May + 0x0800, 0x0800,
-    gTrainerBackPic_May + 0x1000, 0x0800,
-    gTrainerBackPic_May + 0x1800, 0x0800,
+    gTrainerBackPic_Leaf, 0x0800,
+    gTrainerBackPic_Leaf + 0x0800, 0x0800,
+    gTrainerBackPic_Leaf + 0x1000, 0x0800,
+    gTrainerBackPic_Leaf + 0x1800, 0x0800,
+    gTrainerBackPic_Leaf + 0x2000, 0x0800,
 };
 
 const struct SpriteFrameImage gTrainerBackPicTable_Red[] =

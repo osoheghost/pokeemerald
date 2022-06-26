@@ -51,6 +51,12 @@ LumiourLab_B1_EventScript_GotoMorning::
 	fadescreen 0
 	fadeinbgm 1
 	clearflag FLAG_CAN_SLEEP
+	clearflag FLAG_BERRY_1
+	clearflag FLAG_BERRY_2
+	clearflag FLAG_BERRY_3
+	clearflag FLAG_BERRY_4
+	clearflag FLAG_BERRY_5
+	clearflag FLAG_BERRY_6
 	release
 	end
 

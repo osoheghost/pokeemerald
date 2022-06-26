@@ -219,7 +219,7 @@ BerryTree_EventScript_CheckBerryFullyGrown7::
 	lock
 	faceplayer
 	special ObjectEventInteractionGetBerryCountString
-	msgbox BerryTree_Text_WantToPick, MSGBOX_YESNO
+	msgbox BerryTree_Text_WantToPick1, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, BerryTree_EventScript_PickBerry7
 	goto_if_eq VAR_RESULT, NO, BerryTree_EventScript_CancelPickingBerry
 
@@ -229,14 +229,14 @@ BerryTree_EventScript_PickBerry7::
 	goto_if_eq VAR_0x8004, 0, BerryTree_EventScript_BerryPocketFull
 	special IncrementDailyPickedBerries
 	special ObjectEventInteractionRemoveBerryTree
-	message BerryTree_Text_PickedTheBerry
+	message BerryTree_Text_PickedTheBerry1
 	delay 10
 	showberrydesc
 	playfanfare MUS_OBTAIN_BERRY
 	waitmessage
 	waitfanfare
 	waitbuttonpress
-	message BerryTree_Text_PutAwayBerry
+	message BerryTree_Text_PutAwayBerry1
 	waitmessage
 	waitbuttonpress
 	hideitemdesc
@@ -279,11 +279,21 @@ BerryTree_Text_WantToPick:
 BerryTree_Text_PickedTheBerry:
 	.string "{PLAYER} picked the 2 {STR_VAR_1}.$"
 
+BerryTree_Text_WantToPick1:
+	.string "You found a {STR_VAR_1}!\p"
+	.string "Do you want to pick the\n"
+	.string "{STR_VAR_1}?$"
+
+BerryTree_Text_PickedTheBerry1:
+	.string "{PLAYER} picked the {STR_VAR_1}.$"
+
 BerryTree_Text_PutAwayBerry:
 	.string "{PLAYER} put away the {STR_VAR_1}\n"
-	.string "in the BAG's BERRIES POCKET.\p"
-	.string "The soil returned to its soft and\n"
-	.string "loamy state.$"
+	.string "in the BAG's BERRIES POCKET.$"
+
+BerryTree_Text_PutAwayBerry1:
+	.string "{PLAYER} put away the {STR_VAR_1}\n"
+	.string "in the BAG's BERRIES POCKET.$"
 
 BerryTree_Text_BerryPocketFull:
 	.string "The BAG's BERRIES POCKET is full.\p"

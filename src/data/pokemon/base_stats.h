@@ -4033,9 +4033,9 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_FLYING,
         .eggGroup2 = EGG_GROUP_FLYING,
         #ifdef BATTLE_ENGINE
-            .abilities = {ABILITY_ROCK_HEAD, ABILITY_PRESSURE, ABILITY_UNNERVE},
+            .abilities = {ABILITY_ROCK_HEAD, ABILITY_ROCK_HEAD, ABILITY_UNNERVE},
         #else
-            .abilities = {ABILITY_ROCK_HEAD, ABILITY_PRESSURE},
+            .abilities = {ABILITY_ROCK_HEAD, ABILITY_ROCK_HEAD},
         #endif
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
