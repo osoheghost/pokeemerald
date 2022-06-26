@@ -77,13 +77,13 @@
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
-#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
+#define FLAG_BERRY_1    0x44 // Unused Flag
+#define FLAG_BERRY_2    0x45 // Unused Flag
+#define FLAG_BERRY_3    0x46 // Unused Flag
+#define FLAG_BERRY_4    0x47 // Unused Flag
+#define FLAG_BERRY_5    0x48 // Unused Flag
+#define FLAG_BERRY_6    0x49 // Unused Flag
+#define FLAG_BERRY_7    0x4A // Unused Flag
 #define FLAG_DAY_1_CLEAR    0x4B // cleared day 1 puzzle
 #define FLAG_DAY_2_CLEAR    0x4C // cleared day 2 puzzle
 #define FLAG_DAY_3_CLEAR    0x4D // cleared day 3 puzzle

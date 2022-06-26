@@ -694,4 +694,3 @@ VisceraCave_EventScript_MegaRing::
 	finditem ITEM_MEGA_RING
 	end
 
-

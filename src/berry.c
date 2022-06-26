@@ -1814,7 +1814,6 @@ void ObjectEventInteractionPickBerryTree(void)
 
 void ObjectEventInteractionRemoveBerryTree(void)
 {
-    RemoveBerryTree(GetObjectEventBerryTreeId(gSelectedObjectEvent));
     SetBerryTreeJustPicked(gSpecialVar_LastTalked, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
 }
 
