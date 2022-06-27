@@ -271,10 +271,10 @@ LumiourIsland_EventScript_SetMemorialPillar::
 	setmetatile 44, 47, METATILE_General_TallGrass, FALSE
 	setmetatile 45, 47, METATILE_General_RockGrass, TRUE
 	setmetatile 46, 47, METATILE_General_Grass1, FALSE
-	setmetatile 47, 47, METATILE_Petalburg_FlowerRed, FALSE
+	setmetatile 47, 47, METATILE_General_FlowerBlue, FALSE
 	setmetatile 48, 47, METATILE_Petalburg_MP1, FALSE
 	setmetatile 49, 47, METATILE_Petalburg_MP2, FALSE
-	setmetatile 50, 47, METATILE_Petalburg_FlowerRed, FALSE
+	setmetatile 50, 47, METATILE_General_FlowerBlue, FALSE
 	setmetatile 51, 47, METATILE_General_Grass2, FALSE
 	setmetatile 52, 47, METATILE_General_Grass1, FALSE
 	setmetatile 53, 47, METATILE_General_TallGrass, FALSE
@@ -286,12 +286,12 @@ LumiourIsland_EventScript_SetMemorialPillar::
 	setmetatile 43, 48, METATILE_General_RockRockCliffL, TRUE
 	setmetatile 44, 48, METATILE_General_TallGrass, FALSE
 	setmetatile 45, 48, METATILE_General_TallGrass, FALSE
-	setmetatile 46, 48, METATILE_Petalburg_FlowerRed, FALSE
+	setmetatile 46, 48, METATILE_General_FlowerBlue, FALSE
 	setmetatile 47, 48, METATILE_General_DirtPathTL, FALSE
 	setmetatile 48, 48, METATILE_Petalburg_MP3, FALSE
 	setmetatile 49, 48, METATILE_Petalburg_MP4, FALSE
 	setmetatile 50, 48, METATILE_General_DirtPathTR, FALSE
-	setmetatile 51, 48, METATILE_Petalburg_FlowerRed, FALSE
+	setmetatile 51, 48, METATILE_General_FlowerBlue, FALSE
 	setmetatile 52, 48, METATILE_General_TallGrass, FALSE
 	setmetatile 53, 48, METATILE_General_TallGrass, FALSE
 	setmetatile 54, 48, METATILE_General_RockRockCliffR TRUE
@@ -1223,13 +1223,13 @@ LumiourIsland_EventScript_SetMirageIsland::
 	setmetatile 57, 59, METATILE_General_RockRockCliffBR, TRUE
 	setmetatile 54, 60, METATILE_General_RockRockCliffBR, TRUE
 
-	setmetatile 44, 55, METATILE_Petalburg_FlowerRed, FALSE
-	setmetatile 43, 56, METATILE_Petalburg_FlowerRed, FALSE
-	setmetatile 44, 57, METATILE_Petalburg_FlowerRed, FALSE
-	setmetatile 45, 56, METATILE_Petalburg_FlowerRed, FALSE
-	setmetatile 46, 57, METATILE_Petalburg_FlowerRed, FALSE
-	setmetatile 48, 57, METATILE_Petalburg_FlowerRed, FALSE
-	setmetatile 47, 58, METATILE_Petalburg_FlowerRed, FALSE
+	setmetatile 44, 55, METATILE_General_FlowerBlue, FALSE
+	setmetatile 43, 56, METATILE_General_FlowerBlue, FALSE
+	setmetatile 44, 57, METATILE_General_FlowerBlue, FALSE
+	setmetatile 45, 56, METATILE_General_FlowerBlue, FALSE
+	setmetatile 46, 57, METATILE_General_FlowerBlue, FALSE
+	setmetatile 48, 57, METATILE_General_FlowerBlue, FALSE
+	setmetatile 47, 58, METATILE_General_FlowerBlue, FALSE
 
 	setmetatile 37, 51, METATILE_General_WaterCliffL, TRUE
 	setmetatile 37, 52, METATILE_General_WaterCliffL, TRUE
@@ -1704,6 +1704,311 @@ LumiourIsland_EventScript_SetIronIsland::
 	end
 
 LumiourIsland_EventScript_SetLibertyIsland::
+	setmetatile 47, 32, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 33, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 34, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 35, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 36, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 37, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 38, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 39, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 40, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 41, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 42, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 43, METATILE_General_BridgeLeft, FALSE
+
+	setmetatile 48, 32, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 33, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 34, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 35, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 36, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 37, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 38, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 39, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 40, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 41, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 42, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 43, METATILE_General_BridgeHorizontalMiddle, FALSE
+
+	setmetatile 49, 32, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 33, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 34, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 35, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 36, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 37, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 38, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 39, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 40, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 41, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 42, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 43, METATILE_General_BridgeRight, FALSE
+
+	setmetatile 50, 54, METATILE_General_FlowerBlue, FALSE
+	setmetatile 51, 54, METATILE_General_FlowerBlue, FALSE
+	setmetatile 57, 54, METATILE_General_FlowerBlue, FALSE
+	setmetatile 58, 54, METATILE_General_FlowerBlue, FALSE
+
+	setmetatile 53, 54, METATILE_General_StairsShade, FALSE
+	setmetatile 54, 54, METATILE_General_Stairs, FALSE
+	setmetatile 55, 54, METATILE_General_Stairs, FALSE
+
+	setmetatile 52, 44, METATILE_Petalburg_LH1, TRUE
+	setmetatile 53, 44, METATILE_Petalburg_LH2, TRUE
+	setmetatile 54, 44, METATILE_Petalburg_LH3, TRUE
+
+	setmetatile 52, 45, METATILE_Petalburg_LH4, TRUE
+	setmetatile 53, 45, METATILE_Petalburg_LH5, TRUE
+	setmetatile 54, 45, METATILE_Petalburg_LH6, TRUE
+
+	setmetatile 52, 46, METATILE_Petalburg_LH7, TRUE
+	setmetatile 53, 46, METATILE_Petalburg_LH8, TRUE
+	setmetatile 54, 46, METATILE_Petalburg_LH9, TRUE
+
+	setmetatile 52, 47, METATILE_Petalburg_LH10, TRUE
+	setmetatile 53, 47, METATILE_Petalburg_LH11, TRUE
+	setmetatile 54, 47, METATILE_Petalburg_LH12, TRUE
+
+	setmetatile 52, 48, METATILE_Petalburg_LH13, TRUE
+	setmetatile 53, 48, METATILE_Petalburg_LH14, TRUE
+	setmetatile 54, 48, METATILE_Petalburg_LH15, TRUE
+
+	setmetatile 52, 49, METATILE_Petalburg_LH16, TRUE
+	setmetatile 53, 49, METATILE_Petalburg_LH17, TRUE
+	setmetatile 54, 49, METATILE_Petalburg_LH18, TRUE
+
+	setmetatile 52, 50, METATILE_Petalburg_LH19, TRUE
+	setmetatile 53, 50, METATILE_Petalburg_LH20, TRUE
+	setmetatile 54, 50, METATILE_Petalburg_LH21, TRUE
+
+	setmetatile 52, 51, METATILE_Petalburg_LH22, TRUE
+	setmetatile 53, 51, METATILE_Petalburg_LH23, FALSE
+	setmetatile 54, 51, METATILE_Petalburg_LH24, TRUE
+
+	setmetatile 39, 49, METATILE_Petalburg_Fountain1, TRUE
+	setmetatile 40, 49, METATILE_Petalburg_Fountain2, TRUE
+	setmetatile 41, 49, METATILE_Petalburg_Fountain3, TRUE
+	setmetatile 39, 50, METATILE_Petalburg_Fountain4, TRUE
+	setmetatile 40, 50, METATILE_Petalburg_Fountain5, TRUE
+	setmetatile 41, 50, METATILE_Petalburg_Fountain6, TRUE
+	setmetatile 39, 51, METATILE_Petalburg_Fountain7, TRUE
+	setmetatile 40, 51, METATILE_Petalburg_Fountain8, TRUE
+	setmetatile 41, 51, METATILE_Petalburg_Fountain9, TRUE
+	setmetatile 40, 52, METATILE_Petalburg_Fountain10, FALSE
+
+
+	setmetatile 39, 56, METATILE_Petalburg_Fountain1, TRUE
+	setmetatile 40, 56, METATILE_Petalburg_Fountain2, TRUE
+	setmetatile 41, 56, METATILE_Petalburg_Fountain3, TRUE
+	setmetatile 39, 57, METATILE_Petalburg_Fountain4, TRUE
+	setmetatile 40, 57, METATILE_Petalburg_Fountain5, TRUE
+	setmetatile 41, 57, METATILE_Petalburg_Fountain6, TRUE
+	setmetatile 39, 58, METATILE_Petalburg_Fountain7, TRUE
+	setmetatile 40, 58, METATILE_Petalburg_Fountain8, TRUE
+	setmetatile 41, 58, METATILE_Petalburg_Fountain9, TRUE
+	setmetatile 40, 59, METATILE_Petalburg_Fountain10, FALSE
+
+	setmetatile 46, 44, METATILE_General_GrassThinRock, FALSE
+	setmetatile 47, 44, METATILE_General_GrassThinRock, FALSE
+	setmetatile 48, 44, METATILE_General_GrassThinRock, FALSE
+	setmetatile 49, 44, METATILE_General_GrassThinRock, FALSE
+	setmetatile 50, 44, METATILE_General_GrassThinRock, FALSE
+
+	setmetatile 38, 43, METATILE_General_Water_TreeLeft, TRUE
+	setmetatile 39, 43, METATILE_General_Water_TreeRight, TRUE
+	setmetatile 40, 43, METATILE_General_Water_TreeLeft, TRUE
+	setmetatile 41, 43, METATILE_General_Water_TreeRight, TRUE
+	setmetatile 42, 43, METATILE_General_Water_TreeLeft, TRUE
+	setmetatile 43, 43, METATILE_General_Water_TreeRight, TRUE
+	setmetatile 44, 43, METATILE_General_Water_TreeLeft, TRUE
+	setmetatile 45, 43, METATILE_General_Water_TreeRight, TRUE
+
+	setmetatile 38, 44, METATILE_General_TreeLThinRock, TRUE
+	setmetatile 39, 44, METATILE_General_TreeRThinRock, TRUE
+	setmetatile 40, 44, METATILE_General_TreeLThinRock, TRUE
+	setmetatile 41, 44, METATILE_General_TreeRThinRock, TRUE
+	setmetatile 42, 44, METATILE_General_TreeLThinRock, TRUE
+	setmetatile 43, 44, METATILE_General_TreeRThinRock, TRUE
+	setmetatile 44, 44, METATILE_General_TreeLThinRock, TRUE
+	setmetatile 45, 44, METATILE_General_TreeRThinRock, TRUE
+
+	setmetatile 38, 45, METATILE_General_TreeBL, TRUE
+	setmetatile 39, 45, METATILE_General_TreeBR, TRUE
+	setmetatile 40, 45, METATILE_General_TreeBL, TRUE
+	setmetatile 41, 45, METATILE_General_TreeBR, TRUE
+	setmetatile 42, 45, METATILE_General_TreeBL, TRUE
+	setmetatile 43, 45, METATILE_General_TreeBR, TRUE
+	setmetatile 44, 45, METATILE_General_TreeBL, TRUE
+	setmetatile 45, 45, METATILE_General_TreeBR, TRUE
+
+	setmetatile 38, 46, METATILE_Petalburg_TileTL, FALSE
+	setmetatile 39, 46, METATILE_Petalburg_TileT, FALSE
+	setmetatile 40, 46, METATILE_Petalburg_TileT, FALSE
+	setmetatile 41, 46, METATILE_Petalburg_TileT, FALSE
+	setmetatile 42, 46, METATILE_Petalburg_TileT, FALSE
+	setmetatile 43, 46, METATILE_Petalburg_TileT, FALSE
+	setmetatile 44, 46, METATILE_Petalburg_TileT, FALSE
+	setmetatile 45, 46, METATILE_Petalburg_TileT, FALSE
+	setmetatile 46, 46, METATILE_Petalburg_TileT, FALSE
+	setmetatile 47, 46, METATILE_Petalburg_TileTR, FALSE
+
+	setmetatile 38, 47, METATILE_Petalburg_TileL, FALSE
+	setmetatile 39, 47, METATILE_Petalburg_Tile, FALSE
+	setmetatile 40, 47, METATILE_Petalburg_Tile, FALSE
+	setmetatile 41, 47, METATILE_Petalburg_Tile, FALSE
+	setmetatile 42, 47, METATILE_Petalburg_Tile, FALSE
+	setmetatile 43, 47, METATILE_Petalburg_Tile, FALSE
+	setmetatile 44, 47, METATILE_Petalburg_Tile, FALSE
+	setmetatile 45, 47, METATILE_Petalburg_Tile, FALSE
+	setmetatile 46, 47, METATILE_Petalburg_Tile, FALSE
+	setmetatile 47, 47, METATILE_Petalburg_TileR, FALSE
+
+	setmetatile 38, 48, METATILE_Petalburg_TileBL, FALSE
+	setmetatile 39, 48, METATILE_Petalburg_TileB, FALSE
+	setmetatile 40, 48, METATILE_Petalburg_TileB, FALSE
+	setmetatile 41, 48, METATILE_Petalburg_TileB, FALSE
+	setmetatile 42, 48, METATILE_Petalburg_TileB, FALSE
+	setmetatile 43, 48, METATILE_Petalburg_TileVertexTR, FALSE
+	setmetatile 44, 48, METATILE_Petalburg_Tile, FALSE
+	setmetatile 45, 48, METATILE_Petalburg_TileVertexTL, FALSE
+	setmetatile 46, 48, METATILE_Petalburg_TileB, FALSE
+	setmetatile 47, 48, METATILE_Petalburg_TileBR, FALSE
+
+	setmetatile 46, 45, METATILE_General_Grass4, FALSE
+	setmetatile 47, 45, METATILE_General_Grass3, FALSE
+	setmetatile 48, 45, METATILE_General_Grass4, FALSE
+	setmetatile 49, 45, METATILE_General_Grass3, FALSE
+	setmetatile 50, 45, METATILE_General_Grass4, FALSE
+
+	setmetatile 48, 46, METATILE_General_Grass4, FALSE
+	setmetatile 49, 46, METATILE_General_Grass3, FALSE
+	setmetatile 50, 46, METATILE_General_Grass4, FALSE
+
+	setmetatile 48, 47, METATILE_General_Grass2, FALSE
+	setmetatile 49, 47, METATILE_General_Grass1, FALSE
+
+	setmetatile 48, 48, METATILE_General_Grass4, FALSE
+	setmetatile 49, 48, METATILE_General_Grass3, FALSE
+
+	setmetatile 46, 49, METATILE_General_Grass2, FALSE
+
+	setmetatile 47, 49, METATILE_General_Grass_TreeUp, FALSE
+	setmetatile 48, 49, METATILE_General_Grass_TreeUp, FALSE
+	setmetatile 49, 49, METATILE_General_Grass_TreeUp, FALSE
+
+	setmetatile 47, 50, METATILE_General_Grass_TreeOverlap, TRUE
+	setmetatile 48, 50, METATILE_General_Grass_TreeOverlap, TRUE
+	setmetatile 49, 50, METATILE_General_Grass_TreeOverlap, TRUE
+
+	setmetatile 47, 51, METATILE_General_Grass_TreeOverlap, TRUE
+	setmetatile 48, 51, METATILE_General_Grass_TreeOverlap, TRUE
+	setmetatile 49, 51, METATILE_General_Grass_TreeOverlap, TRUE
+
+	setmetatile 47, 52, METATILE_General_Grass_TreeOverlap, TRUE
+	setmetatile 48, 52, METATILE_General_Grass_TreeOverlap, TRUE
+	setmetatile 49, 52, METATILE_General_Grass_TreeOverlap, TRUE
+
+	setmetatile 47, 53, METATILE_General_Grass_TreeDown, TRUE
+	setmetatile 48, 53, METATILE_General_Grass_TreeDown, TRUE
+	setmetatile 49, 53, METATILE_General_Grass_TreeDown, TRUE
+
+	setmetatile 43, 49, METATILE_Petalburg_TileL, FALSE
+	setmetatile 44, 49, METATILE_Petalburg_Tile, FALSE
+	setmetatile 45, 49, METATILE_Petalburg_TileR, FALSE
+
+	setmetatile 43, 50, METATILE_Petalburg_TileL, FALSE
+	setmetatile 44, 50, METATILE_Petalburg_Tile, FALSE
+	setmetatile 45, 50, METATILE_Petalburg_TileR, FALSE
+
+	setmetatile 43, 51, METATILE_Petalburg_TileL, FALSE
+	setmetatile 44, 51, METATILE_Petalburg_Tile, FALSE
+	setmetatile 45, 51, METATILE_Petalburg_TileR, FALSE
+
+	setmetatile 43, 52, METATILE_Petalburg_TileL, FALSE
+	setmetatile 44, 52, METATILE_Petalburg_Tile, FALSE
+	setmetatile 45, 52, METATILE_Petalburg_TileR, FALSE
+
+	setmetatile 43, 53, METATILE_Petalburg_TileVertexBR, FALSE
+	setmetatile 44, 53, METATILE_Petalburg_Tile, FALSE
+	setmetatile 45, 53, METATILE_Petalburg_TileR, FALSE
+
+	setmetatile 43, 54, METATILE_Petalburg_Tile, FALSE
+	setmetatile 44, 54, METATILE_Petalburg_Tile, FALSE
+	setmetatile 45, 54, METATILE_Petalburg_TileR, FALSE
+
+	setmetatile 43, 55, METATILE_Petalburg_TileVertexTR, FALSE
+	setmetatile 44, 55, METATILE_Petalburg_Tile, FALSE
+	setmetatile 45, 55, METATILE_Petalburg_TileVertexBL, FALSE
+
+	setmetatile 43, 56, METATILE_Petalburg_TileL, FALSE
+	setmetatile 44, 56, METATILE_Petalburg_Tile, FALSE
+	setmetatile 45, 56, METATILE_Petalburg_Tile, FALSE
+
+	setmetatile 43, 57, METATILE_Petalburg_TileBL, FALSE
+	setmetatile 44, 57, METATILE_Petalburg_TileB, FALSE
+	setmetatile 45, 57, METATILE_Petalburg_TileB, FALSE
+
+	setmetatile 37, 53, METATILE_Petalburg_TileTL, FALSE
+	setmetatile 38, 53, METATILE_Petalburg_TileT, FALSE
+	setmetatile 39, 53, METATILE_Petalburg_TileT, FALSE
+	setmetatile 40, 53, METATILE_Petalburg_TileT, FALSE
+	setmetatile 41, 53, METATILE_Petalburg_TileT, FALSE
+	setmetatile 42, 53, METATILE_Petalburg_TileT, FALSE
+
+	setmetatile 37, 54, METATILE_Petalburg_TileL, FALSE
+	setmetatile 38, 54, METATILE_Petalburg_Tile, FALSE
+	setmetatile 39, 54, METATILE_Petalburg_Tile, FALSE
+	setmetatile 40, 54, METATILE_Petalburg_Tile, FALSE
+	setmetatile 41, 54, METATILE_Petalburg_Tile, FALSE
+	setmetatile 42, 54, METATILE_Petalburg_Tile, FALSE
+
+	setmetatile 37, 55, METATILE_Petalburg_TileBL, FALSE
+	setmetatile 38, 55, METATILE_Petalburg_TileB, FALSE
+	setmetatile 39, 55, METATILE_Petalburg_TileB, FALSE
+	setmetatile 40, 55, METATILE_Petalburg_TileB, FALSE
+	setmetatile 41, 55, METATILE_Petalburg_TileB, FALSE
+	setmetatile 42, 55, METATILE_Petalburg_TileB, FALSE
+
+	setmetatile 46, 55, METATILE_Petalburg_TileT, FALSE
+	setmetatile 47, 55, METATILE_Petalburg_TileT, FALSE
+	setmetatile 48, 55, METATILE_Petalburg_TileT, FALSE
+	setmetatile 49, 55, METATILE_Petalburg_TileT, FALSE
+	setmetatile 50, 55, METATILE_Petalburg_TileT, FALSE
+	setmetatile 51, 55, METATILE_Petalburg_TileT, FALSE
+	setmetatile 52, 55, METATILE_Petalburg_TileT, FALSE
+	setmetatile 53, 55, METATILE_Petalburg_TileVertexBR, FALSE
+	setmetatile 54, 55, METATILE_Petalburg_Tile, FALSE
+	setmetatile 55, 55, METATILE_Petalburg_TileVertexBL, FALSE
+	setmetatile 56, 55, METATILE_Petalburg_TileT, FALSE
+	setmetatile 57, 55, METATILE_Petalburg_TileT, FALSE
+	setmetatile 58, 55, METATILE_Petalburg_TileTR, FALSE
+
+	setmetatile 46, 56, METATILE_Petalburg_Tile, FALSE
+	setmetatile 47, 56, METATILE_Petalburg_Tile, FALSE
+	setmetatile 48, 56, METATILE_Petalburg_Tile, FALSE
+	setmetatile 49, 56, METATILE_Petalburg_Tile, FALSE
+	setmetatile 50, 56, METATILE_Petalburg_Tile, FALSE
+	setmetatile 51, 56, METATILE_Petalburg_Tile, FALSE
+	setmetatile 52, 56, METATILE_Petalburg_Tile, FALSE
+	setmetatile 53, 56, METATILE_Petalburg_Tile, FALSE
+	setmetatile 54, 56, METATILE_Petalburg_Tile, FALSE
+	setmetatile 55, 56, METATILE_Petalburg_Tile, FALSE
+	setmetatile 56, 56, METATILE_Petalburg_Tile, FALSE
+	setmetatile 57, 56, METATILE_Petalburg_Tile, FALSE
+	setmetatile 58, 56, METATILE_Petalburg_TileR, FALSE
+
+	setmetatile 46, 57, METATILE_Petalburg_TileB, FALSE
+	setmetatile 47, 57, METATILE_Petalburg_TileB, FALSE
+	setmetatile 48, 57, METATILE_Petalburg_TileB, FALSE
+	setmetatile 49, 57, METATILE_Petalburg_TileBTreeL, FALSE
+	setmetatile 50, 57, METATILE_Petalburg_TileBTreeR, FALSE
+	setmetatile 51, 57, METATILE_Petalburg_TileBTreeL, FALSE
+	setmetatile 52, 57, METATILE_Petalburg_TileBTreeR, FALSE
+	setmetatile 53, 57, METATILE_Petalburg_TileBTreeL, FALSE
+	setmetatile 54, 57, METATILE_Petalburg_TileBTreeR, FALSE
+	setmetatile 55, 57, METATILE_Petalburg_TileBTreeL, FALSE
+	setmetatile 56, 57, METATILE_Petalburg_TileBTreeR, FALSE
+	setmetatile 57, 57, METATILE_Petalburg_TileBTreeL, FALSE
+	setmetatile 58, 57, METATILE_Petalburg_TileBRTreeR, FALSE
 	end
 
 LumiourIsland_EventScript_LabSign::

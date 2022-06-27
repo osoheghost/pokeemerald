@@ -1175,3 +1175,12 @@ LumiourLab_Text_Cygnus_Palkia:
 	.string "{COLOR BLUE}Professor Cygnus: Hmm…\p"
 	.string "So Palkia has the ability to\n"
 	.string "distort the flow of space…$"
+
+LumiourLab_EventScript_SetVar5::
+	setvar VAR_LUMIOUR_ISLAND_STATE, 5
+	msgbox LumiourIsland_Text_Var, MSGBOX_DEFAULT
+	release
+	end
+
+LumiourIsland_Text_Var::
+	.string "var.$"
