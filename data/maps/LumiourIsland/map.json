@@ -268,6 +268,60 @@
       "var": "VAR_STRENGTH_TRIGGER",
       "var_value": "99",
       "script": "LumiourIsland_Trigger_Strength_Button4"
+    },
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 32,
+      "elevation": 0,
+      "var": "VAR_ENCOUNTER_STATE",
+      "var_value": "1",
+      "script": "LumiourIsland_EventScript_SetLumiourEncounters"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 32,
+      "elevation": 0,
+      "var": "VAR_ENCOUNTER_STATE",
+      "var_value": "1",
+      "script": "LumiourIsland_EventScript_SetLumiourEncounters"
+    },
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 32,
+      "elevation": 0,
+      "var": "VAR_ENCOUNTER_STATE",
+      "var_value": "1",
+      "script": "LumiourIsland_EventScript_SetLumiourEncounters"
+    },
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_ENCOUNTER_STATE",
+      "var_value": "0",
+      "script": "LumiourIsland_EventScript_SetIslandEncounters"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_ENCOUNTER_STATE",
+      "var_value": "0",
+      "script": "LumiourIsland_EventScript_SetIslandEncounters"
+    },
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_ENCOUNTER_STATE",
+      "var_value": "0",
+      "script": "LumiourIsland_EventScript_SetIslandEncounters"
     }
   ],
   "bg_events": [

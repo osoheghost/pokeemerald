@@ -225,6 +225,8 @@ LumiourIsland_Movement_WalkOffScreen:
 	step_end
 
 LumiourIsland_EventScript_SetMemorialPillar::
+	setvar VAR_ENCOUNTER_STATE, 0
+	setvar VAR_LUMIOUR_WILD_SET, 0
 	goto_if_set FLAG_DAY_1_COMPLETE, LumiourIsland_EventScript_End
 	setmetatile 44, 44, METATILE_General_WaterCliffTL, TRUE
 	setmetatile 45, 44, METATILE_General_WaterCliffT, TRUE
@@ -1143,6 +1145,8 @@ LumiourIsland_EventScript_SetWhirlIsland::
 	end
 
 LumiourIsland_EventScript_SetMirageIsland::
+	setvar VAR_ENCOUNTER_STATE, 0
+	setvar VAR_LUMIOUR_WILD_SET, 0
 	setmetatile 38, 56, METATILE_General_RockWall_GrassBase, TRUE
 	setmetatile 39, 56, METATILE_General_RockWall_GrassBase, TRUE
 	setmetatile 40, 56, METATILE_General_RockWall_GrassBase, TRUE
@@ -1708,3 +1712,25 @@ LumiourIsland_EventScript_LabSign::
 
 LumiourIsland_Text_LabSign:
 	.string "Lumiour Island laboratory.$"
+
+LumiourIsland_EventScript_SetLumiourEncounters::
+	setvar VAR_ENCOUNTER_STATE, 0
+	setvar VAR_LUMIOUR_WILD_SET, 0
+	release
+	end
+
+LumiourIsland_EventScript_SetIslandEncounters::
+	setvar VAR_ENCOUNTER_STATE, 1
+	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 3, LumiourIsland_EventScript_SetMirageIslandEncounter
+	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 1, LumiourIsland_EventScript_SetMemorialPillarEncounter
+	end
+
+LumiourIsland_EventScript_SetMirageIslandEncounter::
+	setvar VAR_LUMIOUR_WILD_SET, 1
+	release
+	end
+
+LumiourIsland_EventScript_SetMemorialPillarEncounter::
+	setvar VAR_LUMIOUR_WILD_SET, 2
+	release
+	end
