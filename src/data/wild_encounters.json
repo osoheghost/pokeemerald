@@ -11703,7 +11703,7 @@
           "map": "MAP_VISCERA_CAVE",
           "base_label": "gVisceraCave0",
           "land_mons": {
-            "encounter_rate": 15,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 22,
@@ -11718,7 +11718,7 @@
               {
                 "min_level": 22,
                 "max_level": 25,
-                "species": "SPECIES_WOOBAT"
+                "species": "SPECIES_GEODUDE_ALOLAN"
               },
               {
                 "min_level": 23,

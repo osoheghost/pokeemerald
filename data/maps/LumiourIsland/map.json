@@ -322,6 +322,15 @@
       "var": "VAR_ENCOUNTER_STATE",
       "var_value": "0",
       "script": "LumiourIsland_EventScript_SetIslandEncounters"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_LUMIOUR_ISLAND_STATE",
+      "var_value": "3",
+      "script": "LumiourIsland_Trigger_SetRockClimb"
     }
   ],
   "bg_events": [
@@ -348,6 +357,30 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "EventScript_HiddenGrottoTree"
+    },
+    {
+      "type": "hidden_item",
+      "x": 41,
+      "y": 23,
+      "elevation": 3,
+      "item": "ITEM_PINSIRITE",
+      "flag": "FLAG_LUMIOUR_ISLAND_PINSIRITE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 32,
+      "y": 22,
+      "elevation": 3,
+      "item": "ITEM_STEELIXITE",
+      "flag": "FLAG_LUMIOUR_ISLAND_STEELIXITE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 39,
+      "y": 23,
+      "elevation": 3,
+      "item": "ITEM_SCIZORITE",
+      "flag": "FLAG_LUMIOUR_ISLAND_SCIZORITE"
     }
   ]
 }

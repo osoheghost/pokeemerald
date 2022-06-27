@@ -1,4 +1,4 @@
-.set LOCALID_SUDOWOODO, 14
+.set LOCALID_SUDOWOODO, 4
 
 BattleFrontier_OutsideEast_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, BattleFrontier_OutsideEast_OnResume
@@ -116,9 +116,6 @@ BattleFrontier_OutsideEast_EventScript_Sudowoodo::
 BattleFrontier_OutsideEast_EventScript_WaterSudowoodo::
 	lock
 	faceplayer
-	special DoWateringBerryTreeAnim
-	waitstate
-	waitse
 	playse SE_SUDOWOODO_SHAKE
 	applymovement LOCALID_SUDOWOODO, BattleFrontier_OutsideEast_Movement_SudowoodoShake
 	waitmovement 0
@@ -129,7 +126,7 @@ BattleFrontier_OutsideEast_EventScript_WaterSudowoodo::
 	delay 40
 	waitmoncry
 	setvar VAR_LAST_TALKED, LOCALID_SUDOWOODO
-	setwildbattle SPECIES_SUDOWOODO, 40
+	setwildbattle SPECIES_SUDOWOODO, 30
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE

@@ -346,7 +346,7 @@ LumiourLab_Text_UsingMachine:
 	.string "Ah there we go!$"
 
 LumiourLab_Text_DumbJoke:
-	.string "{COLOR BLUE}I havn't used one of these since\n"
+	.string "{COLOR BLUE}I haven't used one of these since\n"
 	.string "college.\p"
 	.string "Now we just let it do its thing and\n"
 	.string "before you know it you'll have yourself\l"
@@ -765,7 +765,7 @@ LumiourIslandLab_Text_PalkiaWebpage:
 	.string "Ancient Sinnoh writings tell of early\n"
 	.string "civilizations at odds with eachother\l"
 	.string "over the existence of these Pokémon.\p"
-	.string "That was until anomolies in the flow of\n"
+	.string "That was until anomalies in the flow of\n"
 	.string "space-time led to both their discoveries.$"
 
 LumiourLab_EventScript_GroudonWebpage::

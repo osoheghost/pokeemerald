@@ -1734,3 +1734,17 @@ LumiourIsland_EventScript_SetMemorialPillarEncounter::
 	setvar VAR_LUMIOUR_WILD_SET, 2
 	release
 	end
+
+LumiourIsland_Trigger_SetRockClimb::
+	lock
+	fadescreenswapbuffers FADE_TO_BLACK
+	setmetatile 36, 21, METATILE_General_RockClimbBase, TRUE
+	setmetatile 36, 20, METATILE_General_RockClimbTop, TRUE
+	setmetatile 36, 19, METATILE_General_RockClimbTop, TRUE
+	setmetatile 36, 18, METATILE_General_RockClimbTop, TRUE
+	setmetatile 36, 17, METATILE_General_RockClimbTop, TRUE
+	setmetatile 36, 16, METATILE_General_RockClimbTop, TRUE
+	special DrawWholeMapView
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end

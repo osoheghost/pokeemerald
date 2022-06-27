@@ -58,10 +58,10 @@
 #define FLAG_DAY_4_COMPLETE    0x2E // Day complete
 #define FLAG_DAY_5_COMPLETE    0x2F // Day complete
 #define FLAG_VISCERA_CAVE_THUNDERSTONE    0x30 // Viscera cave thunderstone item
-#define FLAG_VISCERA_CAVE_MEGA_RING    0x31 // Viscera cave mega ring
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
+#define FLAG_VISCERA_CAVE_MEGA_RING       0x31 // Viscera cave mega ring
+#define FLAG_LUMIOUR_ISLAND_PINSIRITE     0x32 // Lumiour Island Pinsirite
+#define FLAG_LUMIOUR_ISLAND_SCIZORITE     0x33 // Lumiour Island Scizorite
+#define FLAG_LUMIOUR_ISLAND_STEELIXITE    0x34 // Lumiour Island Steelixite
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag

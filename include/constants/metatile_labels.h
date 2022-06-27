@@ -284,6 +284,8 @@
 #define METATILE_General_RedCaveIndent           0x030
 #define METATILE_General_RedCaveOpen             0x031
 #define METATILE_General_ReflectiveWater         0x0A1
+#define METATILE_General_RockClimbBase           0x0C6
+#define METATILE_General_RockClimbTop            0x0C7
 #define METATILE_General_RockDirt                0x0E2
 #define METATILE_General_RockGrass               0x0E0
 #define METATILE_General_RockGrassCliffBL        0x078
@@ -527,7 +529,6 @@
 #define METATILE_Petalburg_Door_BirchsLab        0x2DA
 #define METATILE_Petalburg_Door_Littleroot       0x2DB
 #define METATILE_Petalburg_Door_Oldale           0x2D9
-#define METATILE_Petalburg_FlowerRed             0x204
 #define METATILE_Petalburg_HalfSWCliffL          0x24C
 #define METATILE_Petalburg_HalfSWCliffR          0x24B
 #define METATILE_Petalburg_LedgeLOnOceanSandB    0x21F

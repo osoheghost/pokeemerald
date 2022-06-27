@@ -37,7 +37,7 @@ gText_Birch_SoItsPlayer::
 gText_Birch_YourePlayer::
 	.string "Ah, okay!\p"
 	.string "You're {PLAYER}{KUN} who was selected to\n"
-	.string "help study ongoing anomlies on\l"
+	.string "help study ongoing anomalies on\l"
 	.string "Lumiour Island!\p"
 	.string "$"
 
