@@ -2,7 +2,11 @@ Text_PictureBookShelf:
 	.string "There's a set of POKéMON picture books.$"
 
 Text_BookShelf:
-	.string "It's filled with all sorts of books.$"
+	.string "It's filled with all sorts of books.\p"
+	.string "Wait… Theres one vinyl record on the\n"
+	.string "shelf too!\p"
+	.string "Its cover is a photo of man driving a\n"
+	.string "car while wearing a strange red mask!$"
 
 Text_PokemonCenterBookShelf:
 	.string "POKéMON magazines!\n"
@@ -25,3 +29,7 @@ Text_ShopShelf:
 Text_Blueprint:
 	.string "A blueprint of some sort?\n"
 	.string "It's too complicated!$"
+
+Text_MemorialPillar:
+    .string "“Here lies TECTONIX” is engraved\n"
+    .string "on a boulder.$"

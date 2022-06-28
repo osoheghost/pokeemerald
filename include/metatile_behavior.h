@@ -137,6 +137,7 @@ bool8 MetatileBehavior_IsCuttableGrass(u8);
 bool8 MetatileBehavior_IsRunningShoesManual(u8);
 bool8 MetatileBehavior_IsPictureBookShelf(u8);
 bool8 MetatileBehavior_IsBookShelf(u8);
+bool8 MetatileBehavior_IsMemorialPillar(u8);
 bool8 MetatileBehavior_IsPokeCenterBookShelf(u8);
 bool8 MetatileBehavior_IsVase(u8);
 bool8 MetatileBehavior_IsTrashCan(u8);

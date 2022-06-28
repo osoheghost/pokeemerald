@@ -21,7 +21,7 @@ LumiourIsland_EventScript_SetLiechiLocation::
 	end
 
 LumiourIsland_EventScript_SetMetalCoatLocation::
-	setobjectxyperm LOCALID_BOULDER1, 53, 55
+	setobjectxyperm LOCALID_BOULDER1, 18, 28
 	setobjectxyperm LOCALID_METAL_COAT, 50, 58
 	end
 
@@ -427,7 +427,7 @@ LumiourIsland_EventScript_SetMemorialPillar::
 	setmetatile 50, 55, METATILE_General_TallGrass, FALSE
 	setmetatile 51, 55, METATILE_General_TallGrass, FALSE
 	setmetatile 52, 55, METATILE_General_TallGrass, FALSE
-	setmetatile 53, 55, METATILE_General_FalseGrassMarking, FALSE
+	setmetatile 53, 55, METATILE_General_Grass2, FALSE
 	setmetatile 54, 55, METATILE_General_Grass1, FALSE
 	setmetatile 55, 55, METATILE_General_Grass2, FALSE
 	setmetatile 56, 55, METATILE_General_Grass1, FALSE
@@ -2255,6 +2255,19 @@ LumiourIsland_EventScript_SetIronIsland::
 	setmetatile 52, 50, METATILE_General_RockRockCliffBL, TRUE
 	setmetatile 51, 51, METATILE_General_RockRockCliffBL, TRUE
 	setmetatile 56, 47, METATILE_General_RockRockCliffBL, TRUE
+
+	setmetatile 51, 52, METATILE_General_CliffVertexBL, TRUE
+	setmetatile 52, 51, METATILE_General_CliffVertexBL, TRUE
+	setmetatile 53, 50, METATILE_General_CliffVertexBL, TRUE
+	setmetatile 54, 49, METATILE_General_CliffVertexBL, TRUE
+	setmetatile 56, 46, METATILE_General_CliffVertexBL, TRUE
+	setmetatile 61, 48, METATILE_General_CliffVertexBL, TRUE
+	setmetatile 62, 47, METATILE_General_CliffVertexBL, TRUE
+	setmetatile 60, 44, METATILE_General_CliffVertexBL, TRUE
+	setmetatile 59, 45, METATILE_General_CliffVertexBL, TRUE
+	setmetatile 58, 45, METATILE_General_CaveEntrance_Bottom, FALSE
+
+	setmetatile 58, 45, METATILE_General_CaveEntrance_Bottom, FALSE
 	end
 
 LumiourIsland_EventScript_SetLibertyIsland::
@@ -2855,7 +2868,7 @@ LumiourIsland_EventScript_LabSign::
 	end
 
 LumiourIsland_Text_LabSign:
-	.string "Lumiour Island laboratory.$"
+	.string "Lumiere Island laboratory.$"
 
 LumiourIsland_EventScript_SetLumiourEncounters::
 	setvar VAR_ENCOUNTER_STATE, 0
@@ -2892,3 +2905,12 @@ LumiourIsland_Trigger_SetRockClimb::
 	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end
+
+LumiourIsland_EventScript_MemorialPillarTectonix::
+	msgbox LumiourIsland_Text_Tectonix, MSGBOX_DEFAULT
+	release
+	end
+
+LumiourIsland_Text_Tectonix:
+    .string "“Here lies TECTONIX” is engraved\n"
+    .string "on a boulder.$"

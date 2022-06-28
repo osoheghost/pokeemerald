@@ -3383,7 +3383,7 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(HM06_ROCK_SMASH)
                                             | TMHM(TM39_ROCK_TOMB)
                                             | TMHM(TM37_SANDSTORM)
-
+                                            | TMHM(TM43_ROCK_CLIMB)
                                             | TMHM(HM03_SURF)
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
@@ -3408,7 +3408,7 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(HM06_ROCK_SMASH)
                                             | TMHM(TM39_ROCK_TOMB)
                                             | TMHM(TM37_SANDSTORM)
-
+                                            | TMHM(TM43_ROCK_CLIMB)
                                             | TMHM(HM03_SURF)
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
@@ -3434,7 +3434,7 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(HM06_ROCK_SMASH)
                                             | TMHM(TM39_ROCK_TOMB)
                                             | TMHM(TM37_SANDSTORM)
-
+                                            | TMHM(TM43_ROCK_CLIMB)
                                             | TMHM(HM03_SURF)
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
@@ -3464,7 +3464,7 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(HM06_ROCK_SMASH)
                                             | TMHM(TM39_ROCK_TOMB)
                                             | TMHM(TM37_SANDSTORM)
-
+                                            | TMHM(TM43_ROCK_CLIMB)
                                             | TMHM(HM03_SURF)
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
@@ -8564,7 +8564,7 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(TM27_RETURN)
                                             | TMHM(TM39_ROCK_TOMB)
                                             | TMHM(TM37_SANDSTORM)
-
+                                            | TMHM(TM43_ROCK_CLIMB)
                                             | TMHM(TM36_SLUDGE_BOMB)
                                             | TMHM(TM22_SOLAR_BEAM)
                                             | TMHM(TM11_SUNNY_DAY)
@@ -8586,7 +8586,7 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(HM06_ROCK_SMASH)
                                             | TMHM(TM39_ROCK_TOMB)
                                             | TMHM(TM37_SANDSTORM)
-
+                                            | TMHM(TM43_ROCK_CLIMB)
                                             | TMHM(TM36_SLUDGE_BOMB)
                                             | TMHM(TM22_SOLAR_BEAM)
                                             | TMHM(HM04_STRENGTH)
@@ -8608,7 +8608,7 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(HM06_ROCK_SMASH)
                                             | TMHM(TM39_ROCK_TOMB)
                                             | TMHM(TM37_SANDSTORM)
-
+                                            | TMHM(TM43_ROCK_CLIMB)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)),
@@ -8631,7 +8631,7 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(HM06_ROCK_SMASH)
                                             | TMHM(TM39_ROCK_TOMB)
                                             | TMHM(TM37_SANDSTORM)
-
+                                            | TMHM(TM43_ROCK_CLIMB)
                                             | TMHM(HM04_STRENGTH)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
@@ -10110,7 +10110,7 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(HM06_ROCK_SMASH)
                                             | TMHM(TM39_ROCK_TOMB)
                                             | TMHM(TM37_SANDSTORM)
-
+                                            | TMHM(TM43_ROCK_CLIMB)
                                             | TMHM(TM34_SHOCK_WAVE)
                                             | TMHM(HM04_STRENGTH)
                                             | TMHM(TM11_SUNNY_DAY)
@@ -10143,7 +10143,7 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(HM06_ROCK_SMASH)
                                             | TMHM(TM39_ROCK_TOMB)
                                             | TMHM(TM37_SANDSTORM)
-
+                                            | TMHM(TM43_ROCK_CLIMB)
                                             | TMHM(TM34_SHOCK_WAVE)
                                             | TMHM(HM04_STRENGTH)
                                             | TMHM(TM11_SUNNY_DAY)
@@ -10173,7 +10173,7 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(HM06_ROCK_SMASH)
                                             | TMHM(TM39_ROCK_TOMB)
                                             | TMHM(TM37_SANDSTORM)
-
+                                            | TMHM(TM43_ROCK_CLIMB)
                                             | TMHM(TM34_SHOCK_WAVE)
                                             | TMHM(HM04_STRENGTH)
                                             | TMHM(TM11_SUNNY_DAY)
@@ -10204,7 +10204,7 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(HM06_ROCK_SMASH)
                                             | TMHM(TM39_ROCK_TOMB)
                                             | TMHM(TM37_SANDSTORM)
-
+                                            | TMHM(TM43_ROCK_CLIMB)
                                             | TMHM(TM34_SHOCK_WAVE)
                                             | TMHM(HM04_STRENGTH)
                                             | TMHM(TM11_SUNNY_DAY)
@@ -13942,7 +13942,7 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(HM06_ROCK_SMASH)
                                             | TMHM(TM39_ROCK_TOMB)
                                             | TMHM(TM37_SANDSTORM)
-
+                                            | TMHM(TM43_ROCK_CLIMB)
                                             | TMHM(HM04_STRENGTH)
                                             | TMHM(HM03_SURF)
                                             | TMHM(TM06_TOXIC)
@@ -13968,7 +13968,7 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(HM06_ROCK_SMASH)
                                             | TMHM(TM39_ROCK_TOMB)
                                             | TMHM(TM37_SANDSTORM)
-
+                                            | TMHM(TM43_ROCK_CLIMB)
                                             | TMHM(HM04_STRENGTH)
                                             | TMHM(HM03_SURF)
                                             | TMHM(TM06_TOXIC)
@@ -13993,7 +13993,7 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(HM06_ROCK_SMASH)
                                             | TMHM(TM39_ROCK_TOMB)
                                             | TMHM(TM37_SANDSTORM)
-
+                                            | TMHM(TM43_ROCK_CLIMB)
                                             | TMHM(TM47_STEEL_WING)
                                             | TMHM(TM12_TAUNT)
                                             | TMHM(TM41_TORMENT)
@@ -14019,7 +14019,7 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(HM06_ROCK_SMASH)
                                             | TMHM(TM39_ROCK_TOMB)
                                             | TMHM(TM37_SANDSTORM)
-
+                                            | TMHM(TM43_ROCK_CLIMB)
                                             | TMHM(TM47_STEEL_WING)
                                             | TMHM(TM12_TAUNT)
                                             | TMHM(TM41_TORMENT)

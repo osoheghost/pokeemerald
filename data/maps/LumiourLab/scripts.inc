@@ -301,17 +301,17 @@ LumiourLab_Movement_CygnusMoveDown:
 	step_end
 
 LumiourLab_Text_ExplainFossilMachine:
-	.string "{COLOR BLUE}If you ever find a fossil you can revive \n"
-	.string "it here anytime.\p"
+	.string "{COLOR BLUE}If you ever find a fossil you can revive\n"
+	.string "it here at anytime.\p"
 	.string "And if you need to heal your Pokémon use\n"
 	.string "the machine behind you.\p"
 	.string "Well, I'd say its about time you get to\n"
-	.string "know and explore Lumiour Island!\p"
+	.string "know and explore Lumiere Island!\p"
 	.string "Nothing too unusual should happen yet…\p"
 	.string "I've had enough of the outdoors today.\n"
 	.string "I'm gonna stay inside where its safe.\p"
 	.string "Whenever you're ready to sleep you can\n"
-	.string "Use the bed downstairs.\p"
+	.string "use the bed downstairs.\p"
 	.string "One last thing!\p"
 	.string "If you ever need Pokéballs or potions\n"
 	.string "check the cardboard boxes in the corner.\p"
@@ -377,6 +377,7 @@ LumiourIsland_EventScript_GiveDay1Items::
 	goto_if_set FLAG_GOT_DAY_1_ITEMS, LumiourIsland_EventScript_GotItems
 	giveitem ITEM_GREAT_BALL, 10
 	giveitem ITEM_FULL_HEAL, 5
+	giveitem ITEM_SUPER_REPEL, 5
 	setflag FLAG_GOT_DAY_1_ITEMS
 	release
 	end
@@ -385,6 +386,7 @@ LumiourIsland_EventScript_GiveDay2Items::
 	goto_if_set FLAG_GOT_DAY_2_ITEMS, LumiourIsland_EventScript_GotItems
 	giveitem ITEM_GREAT_BALL, 10
 	giveitem ITEM_LEMONADE, 10
+	giveitem ITEM_MAX_REPEL, 3
 	setflag FLAG_GOT_DAY_2_ITEMS
 	release
 	end
@@ -402,6 +404,7 @@ LumiourIsland_EventScript_GiveDay4Items::
 	goto_if_set FLAG_GOT_DAY_4_ITEMS, LumiourIsland_EventScript_GotItems
 	giveitem ITEM_ELIXIR, 5
 	giveitem ITEM_REVIVE, 10
+	giveitem ITEM_MAX_REPEL, 5
 	setflag FLAG_GOT_DAY_4_ITEMS
 	release
 	end
@@ -735,7 +738,7 @@ LumiourIslandLab_Text_HoopaReport:
 	.string "Hoopa has been known to transport\n"
 	.string "particular pieces of land through\l"
 	.string "interdimensional portals.\p"
-	.string "Its said to have a keen affinity\n"
+	.string "It's said to have a keen affinity\n"
 	.string "for transporting Islands, as recorded\l"
 	.string "during its sightings in the Hoenn Region.$"
 
@@ -760,10 +763,10 @@ LumiourLab_EventScript_PalkiaWebpage::
 LumiourIslandLab_Text_PalkiaWebpage:
 	.string "It's a web page about the Pokémon\n"
 	.string "Palkia.\p"
-	.string "Palkia, ruler of time is part of the\n"
-	.string "Creation Trio with Dialga and Giratina.\p"
+	.string "Ruler of space and part of the Creation\n"
+	.string "Trio alongside Dialga and Giratina.\p"
 	.string "Ancient Sinnoh writings tell of early\n"
-	.string "civilizations at odds with eachother\l"
+	.string "civilizations at odds with each other\l"
 	.string "over the existence of these Pokémon.\p"
 	.string "That was until anomalies in the flow of\n"
 	.string "space-time led to both their discoveries.$"
@@ -787,7 +790,7 @@ LumiourLab_EventScript_InternetForum::
 
 LumiourIslandLab_Text_InternetForum:
 	.string "It's a web forum about the recent cases\n"
-	.string "of Mirage Islands\p"
+	.string "of Mirage Islands.\p"
 	.string "It appears to just be incoherent\n"
 	.string "theorizing.$"
 
@@ -850,17 +853,17 @@ LumiourLab_EventScript_TVLibertyGardenReturned::
 	end
 
 LumiourIslandLab_Text_Commercial:
-	.string "Its on commercial break…$"
+	.string "It's on commercial break…$"
 
 LumiourIslandLab_Text_TVMemorialPillar:
 	.string "The TV is set to a news channel.\p"
 	.string "{COLOR RED}News Anchor: Reports of Mirage Islands\n"
-	.string "across multiple regions continue\l"
-	.string "with claims of Memorial Pillar,\l"
-	.string "a small monument off the coast of\l"
-	.string "Five Island being the next target.\p"
-	.string "The Island's whereabouts are currently\n"
+	.string "continue.\p"
+	.string "Memorial Pillar off the coast of\n"
+	.string "Five Island has dissapeared.\p"
+	.string "Its current location is currently\n"
 	.string "unknown.$"
+
 
 LumiourIslandLab_Text_TVMemorialPillarReturned:
 	.string "The TV is set to a news channel.\p"
@@ -935,7 +938,7 @@ LumiourIslandLab_Text_TVLibertyGarden:
 LumiourIslandLab_Text_TVLibertyGardenReturned:
 	.string "The TV is set to a news channel.\p"
 	.string "{COLOR RED}News Anchor: Connection has been\n"
-	.string "made with Lumiour Island where\n"
+	.string "made with Lumiere Island where\n"
 	.string "all unnacounted trainers at the\l"
 	.string "Liberty Garden have been found.\p"
 	.string "A rescue ship has been sent to\n"
@@ -1037,7 +1040,7 @@ LumiourLab_Text_Cygnus_Day2Complete:
 
 LumiourLab_Text_Cygnus_HiPlayer2:
 	.string "{COLOR BLUE}OH! Hello {PLAYER}!\p"
-	.string "Sorry I was doing a bit of reading.\n"
+	.string "Sorry I was doing a bit of reading\n"
 	.string "to figure out what is causing the\l"
 	.string "Mirage Islands.\p"
 	.string "Take it easy today!$"
@@ -1045,7 +1048,7 @@ LumiourLab_Text_Cygnus_HiPlayer2:
 LumiourLab_Text_Cygnus_Hoopa:
 	.string "{COLOR BLUE}Professor Cygnus: Hoopa moves islands\n"
 	.string "through dimensional portals…\p"
-	.string "But the news reports, these islands\n"
+	.string "But the news reports… These islands\n"
 	.string "have to be from our dimension.$."
 
 LumiourLab_EventScript_CygnusDay3:
@@ -1176,11 +1179,8 @@ LumiourLab_Text_Cygnus_Palkia:
 	.string "So Palkia has the ability to\n"
 	.string "distort the flow of space…$"
 
-LumiourLab_EventScript_SetVar5::
-	setvar VAR_LUMIOUR_ISLAND_STATE, 4
-	msgbox LumiourIsland_Text_Var, MSGBOX_DEFAULT
+LumiereLab_ShowCredit::
+	lock
+	special Special_ShowDiploma
 	release
 	end
-
-LumiourIsland_Text_Var::
-	.string "var.$"

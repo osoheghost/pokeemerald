@@ -1,9 +1,9 @@
 #ifndef GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H
 #define GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H
 
-static const u8 sMapName_LittlerootTown[] = _("Lumiour Island");
+static const u8 sMapName_LittlerootTown[] = _("Lumiere Island");
 static const u8 sMapName_OldaleTown[] = _("OLDALE TOWN");
-static const u8 sMapName_DewfordTown[] = _("DEWFORD TOWN");
+static const u8 sMapName_DewfordTown[] = _("Liberty Garden");
 static const u8 sMapName_LavaridgeTown[] = _("LAVARIDGE TOWN");
 static const u8 sMapName_FallarborTown[] = _("FALLARBOR TOWN");
 static const u8 sMapName_VerdanturfTown[] = _("VERDANTURF TOWN");
@@ -56,7 +56,7 @@ static const u8 sMapName_GraniteCave[] = _("Viscera Cave");
 static const u8 sMapName_MtChimney[] = _("MT. CHIMNEY");
 static const u8 sMapName_SafariZone[] = _("SAFARI ZONE");
 static const u8 sMapName_BattleFrontier[] = _("BATTLE FRONTIER");
-static const u8 sMapName_PetalburgWoods[] = _("PETALBURG WOODS");
+static const u8 sMapName_PetalburgWoods[] = _("Iron Island");
 static const u8 sMapName_RusturfTunnel[] = _("Whirl Islands");
 static const u8 sMapName_AbandonedShip[] = _("ABANDONED SHIP");
 static const u8 sMapName_NewMauville[] = _("NEW MAUVILLE");

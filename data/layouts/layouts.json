@@ -4500,6 +4500,16 @@
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/LibertyGardenInterior/border.bin",
       "blockdata_filepath": "data/layouts/LibertyGardenInterior/map.bin"
+    },
+    {
+      "id": "LAYOUT_IRON_ISLAND_INTERIOR",
+      "name": "IronIsland_Interior_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/IronIsland_Interior/border.bin",
+      "blockdata_filepath": "data/layouts/IronIsland_Interior/map.bin"
     }
   ]
 }

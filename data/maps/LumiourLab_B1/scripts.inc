@@ -13,6 +13,14 @@ LumiourIsland_B1_EventScript_Sleep::
 	msgbox LumiourIsland_B1_Text_UseBed, MSGBOX_YESNO
 	switch VAR_RESULT
 	case NO, LumiourLab_B1_EventScript_Cancel
+	case YES, LumiourLab_B1_EventScript_GotoMorningCheck2
+	case MULTI_B_PRESSED, LumiourLab_B1_EventScript_Cancel
+	end
+
+LumiourLab_B1_EventScript_GotoMorningCheck2::
+	msgbox LumiourIsland_B1_Text_UseBed2, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, LumiourLab_B1_EventScript_Cancel
 	case YES, LumiourLab_B1_EventScript_GotoMorningCheck
 	case MULTI_B_PRESSED, LumiourLab_B1_EventScript_Cancel
 	end
@@ -62,3 +70,18 @@ LumiourLab_B1_EventScript_GotoMorning::
 
 LumiourIsland_B1_Text_UseBed:
 	.string "Go to sleep until morning?$"
+
+LumiourIsland_B1_Text_UseBed2:
+	.string "You may miss out on daily items and\n"
+	.string "secrets around Lumiour Island.\p"
+	.string "Are you sure you want to continue?$"
+
+LumiereLab_B1_EventScript_Computer::
+	lock
+	msgbox LumiereIsland_B1_Text_CygnusPC, MSGBOX_DEFAULT
+	release
+	end
+
+LumiereIsland_B1_Text_CygnusPC:
+	.string "Its Professor Cygnus' computer.\p"
+	.string "Better leave it alone.$"

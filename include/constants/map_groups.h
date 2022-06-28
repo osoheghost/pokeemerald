@@ -409,6 +409,7 @@
 #define MAP_VISCERA_CAVE                             (108 | (24 << 8))
 #define MAP_WHIRL_ISLAND                             (109 | (24 << 8))
 #define MAP_WHIRL_ISLAND_B1                          (110 | (24 << 8))
+#define MAP_IRON_ISLAND_INTERIOR                     (111 | (24 << 8))
 
 // gMapGroup_IndoorDynamic
 #define MAP_SECRET_BASE_RED_CAVE1    (0 | (25 << 8))

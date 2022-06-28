@@ -24,7 +24,6 @@ static void MainCB2(void);
 static void Task_DiplomaFadeIn(u8);
 static void Task_DiplomaWaitForKeyPress(u8);
 static void Task_DiplomaFadeOut(u8);
-static void DisplayDiplomaText(void);
 static void InitDiplomaBg(void);
 static void InitDiplomaWindow(void);
 static void PrintDiplomaText(u8 *, u8, u8);
@@ -82,7 +81,6 @@ void CB2_ShowDiploma(void)
         ;
     LZDecompressWram(sDiplomaTilemap, sDiplomaTilemapPtr);
     CopyBgTilemapBufferToVram(1);
-    DisplayDiplomaText();
     BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
     BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
     EnableInterrupts(1);
@@ -123,24 +121,6 @@ static void Task_DiplomaFadeOut(u8 taskId)
         DestroyTask(taskId);
         SetMainCallback2(CB2_ReturnToFieldFadeFromBlack);
     }
-}
-
-static void DisplayDiplomaText(void)
-{
-    if (HasAllMons())
-    {
-        SetGpuReg(REG_OFFSET_BG1HOFS, DISPLAY_WIDTH + 16);
-        StringCopy(gStringVar1, gText_DexNational);
-    }
-    else
-    {
-        SetGpuReg(REG_OFFSET_BG1HOFS, 0);
-        StringCopy(gStringVar1, gText_DexHoenn);
-    }
-    StringExpandPlaceholders(gStringVar4, gText_PokedexDiploma);
-    PrintDiplomaText(gStringVar4, 0, 1);
-    PutWindowTilemap(0);
-    CopyWindowToVram(0, COPYWIN_FULL);
 }
 
 static const struct BgTemplate sDiplomaBgTemplates[2] =

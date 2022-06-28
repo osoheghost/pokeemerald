@@ -439,7 +439,8 @@
     "MeteorFalls_StevensCave",
     "VisceraCave",
     "WhirlIsland",
-    "WhirlIsland_B1"
+    "WhirlIsland_B1",
+    "IronIsland_Interior"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

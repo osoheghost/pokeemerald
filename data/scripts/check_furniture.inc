@@ -25,3 +25,7 @@ EventScript_ShopShelf::
 EventScript_Blueprint::
 	msgbox Text_Blueprint, MSGBOX_SIGN
 	end
+
+EventScript_MemorialPillar::
+	msgbox Text_MemorialPillar, MSGBOX_SIGN
+	end
