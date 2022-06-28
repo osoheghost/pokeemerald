@@ -212,6 +212,13 @@
       "elevation": 0,
       "dest_map": "MAP_WHIRL_ISLAND",
       "dest_warp_id": 0
+    },
+    {
+      "x": 53,
+      "y": 51,
+      "elevation": 0,
+      "dest_map": "MAP_LIBERTY_GARDEN_INTERIOR",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [

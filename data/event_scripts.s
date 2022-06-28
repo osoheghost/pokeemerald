@@ -1070,3 +1070,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/NewMap1/scripts.inc"
 
 	.include "data/maps/LumiourLab_B1/scripts.inc"
+
+	.include "data/maps/LibertyGardenInterior/scripts.inc"

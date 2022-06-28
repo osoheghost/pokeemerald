@@ -1701,6 +1701,560 @@ LumiourIsland_EventScript_SetMirageIsland::
 	end
 
 LumiourIsland_EventScript_SetIronIsland::
+	setmetatile 47, 32, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 33, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 34, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 35, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 36, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 37, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 38, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 39, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 40, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 41, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 42, METATILE_General_BridgeLeft, FALSE
+	setmetatile 47, 43, METATILE_General_BridgeLeft, FALSE
+
+	setmetatile 48, 32, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 33, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 34, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 35, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 36, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 37, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 38, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 39, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 40, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 41, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 42, METATILE_General_BridgeHorizontalMiddle, FALSE
+	setmetatile 48, 43, METATILE_General_BridgeHorizontalMiddle, FALSE
+
+	setmetatile 49, 32, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 33, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 34, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 35, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 36, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 37, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 38, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 39, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 40, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 41, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 42, METATILE_General_BridgeRight, FALSE
+	setmetatile 49, 43, METATILE_General_BridgeRight, FALSE
+
+	setmetatile 47, 44, METATILE_Petalburg_SandThinRock, FALSE
+	setmetatile 48, 44, METATILE_Petalburg_SandThinRock, FALSE
+	setmetatile 49, 44, METATILE_Petalburg_SandThinRock, FALSE
+
+	setmetatile 47, 45, METATILE_General_Dirt, FALSE
+	setmetatile 48, 45, METATILE_General_Dirt, FALSE
+	setmetatile 49, 45, METATILE_General_Dirt, FALSE
+
+	setmetatile 47, 46, METATILE_General_Dirt, FALSE
+	setmetatile 48, 46, METATILE_General_Dirt, FALSE
+	setmetatile 49, 46, METATILE_General_Dirt, FALSE
+
+	setmetatile 47, 48, METATILE_General_Dirt, FALSE
+	setmetatile 48, 48, METATILE_General_Dirt, FALSE
+	setmetatile 49, 48, METATILE_General_Dirt, FALSE
+
+	setmetatile 47, 49, METATILE_General_Dirt, FALSE
+	setmetatile 48, 49, METATILE_General_Dirt, FALSE
+	setmetatile 49, 49, METATILE_General_Dirt, FALSE
+
+	setmetatile 47, 51, METATILE_General_Dirt, FALSE
+	setmetatile 48, 51, METATILE_General_Dirt, FALSE
+	setmetatile 49, 51, METATILE_General_Dirt, FALSE
+
+	setmetatile 47, 52, METATILE_General_Dirt, FALSE
+	setmetatile 48, 52, METATILE_General_Dirt, FALSE
+	setmetatile 49, 52, METATILE_General_Dirt, FALSE
+
+	setmetatile 47, 53, METATILE_General_Dirt, FALSE
+	setmetatile 48, 53, METATILE_General_Dirt, FALSE
+	setmetatile 49, 53, METATILE_General_Dirt, FALSE
+
+	setmetatile 47, 54, METATILE_General_Dirt, FALSE
+	setmetatile 48, 54, METATILE_General_Dirt, FALSE
+	setmetatile 49, 54, METATILE_General_DirtPathR, FALSE
+	
+	setmetatile 47, 55, METATILE_General_Dirt, FALSE
+	setmetatile 48, 55, METATILE_General_Dirt, FALSE
+	setmetatile 49, 55, METATILE_General_DirtPathR, FALSE
+
+	setmetatile 47, 56, METATILE_General_Dirt, FALSE
+	setmetatile 48, 56, METATILE_General_Dirt, FALSE
+	setmetatile 49, 56, METATILE_General_DirtPathR, FALSE
+
+	setmetatile 47, 57, METATILE_General_Dirt, FALSE
+	setmetatile 48, 57, METATILE_General_RockDirt, TRUE
+	setmetatile 49, 57, METATILE_General_Dirt, FALSE
+
+	setmetatile 47, 47, METATILE_General_LedgeJumpL, TRUE
+	setmetatile 48, 47, METATILE_General_LedgeJumpS, TRUE
+	setmetatile 49, 47, METATILE_General_LedgeJumpR, TRUE
+
+	setmetatile 47, 50, METATILE_General_LedgeJumpL, TRUE
+	setmetatile 48, 50, METATILE_General_LedgeJumpS, TRUE
+	setmetatile 49, 50, METATILE_General_LedgeJumpR, TRUE
+
+	setmetatile 55, 49, METATILE_General_Dirt, FALSE
+	setmetatile 56, 49, METATILE_General_Dirt, FALSE
+	setmetatile 57, 49, METATILE_General_Dirt, FALSE
+	setmetatile 58, 49, METATILE_General_Dirt, FALSE
+	setmetatile 59, 49, METATILE_General_Dirt, FALSE
+	setmetatile 60, 49, METATILE_General_Dirt, FALSE
+
+	setmetatile 55, 50, METATILE_General_Dirt, FALSE
+	setmetatile 56, 50, METATILE_General_Dirt, FALSE
+	setmetatile 57, 50, METATILE_General_Dirt, FALSE
+	setmetatile 58, 50, METATILE_General_Dirt, FALSE
+	setmetatile 59, 50, METATILE_General_Dirt, FALSE
+	setmetatile 60, 50, METATILE_General_Dirt, FALSE
+
+	setmetatile 55, 51, METATILE_General_Dirt, FALSE
+	setmetatile 56, 51, METATILE_General_Dirt, FALSE
+	setmetatile 57, 51, METATILE_General_Dirt, FALSE
+	setmetatile 58, 51, METATILE_General_RSandTL, TRUE
+	setmetatile 59, 51, METATILE_General_RSandTR, TRUE
+	setmetatile 60, 51, METATILE_General_Dirt, FALSE
+
+	setmetatile 55, 52, METATILE_General_Dirt, FALSE
+	setmetatile 56, 52, METATILE_General_Dirt, FALSE
+	setmetatile 57, 52, METATILE_General_Dirt, FALSE
+	setmetatile 58, 52, METATILE_General_RSandBL, TRUE
+	setmetatile 59, 52, METATILE_General_RSandBR, TRUE
+	setmetatile 60, 52, METATILE_General_Dirt, FALSE
+
+	setmetatile 55, 53, METATILE_General_Dirt, FALSE
+	setmetatile 56, 53, METATILE_General_Dirt, FALSE
+	setmetatile 57, 53, METATILE_General_RockDirt, TRUE
+	setmetatile 58, 53, METATILE_General_Dirt, FALSE
+	setmetatile 59, 53, METATILE_General_Dirt, FALSE
+	setmetatile 60, 53, METATILE_General_Dirt, FALSE
+
+	setmetatile 50, 53, METATILE_General_DirtPathBR, FALSE
+	setmetatile 50, 54, METATILE_General_Grass4, FALSE
+	setmetatile 50, 55, METATILE_General_Grass2, FALSE
+	setmetatile 50, 56, METATILE_General_Grass4, FALSE
+	setmetatile 50, 57, METATILE_General_DirtPathTR, FALSE
+
+	setmetatile 51, 53, METATILE_General_SSGrassTL, FALSE
+	setmetatile 51, 54, METATILE_General_SSGrassL, FALSE
+	setmetatile 51, 55, METATILE_General_SSGrassL, FALSE
+	setmetatile 51, 56, METATILE_General_SSGrassBL, FALSE
+
+	setmetatile 52, 52, METATILE_General_SSRockTL, FALSE
+	setmetatile 52, 53, METATILE_General_SSGrassL, FALSE
+	setmetatile 52, 54, METATILE_General_SSGrassL, FALSE
+	setmetatile 52, 55, METATILE_General_SSRockBL, FALSE
+
+	setmetatile 53, 51, METATILE_General_SSRockTL, FALSE
+	setmetatile 53, 52, METATILE_General_SSGrassL, FALSE
+	setmetatile 53, 53, METATILE_General_SSGrassL, FALSE
+	setmetatile 53, 54, METATILE_General_SSRockBL, FALSE
+
+	setmetatile 54, 50, METATILE_General_SSRockTL, FALSE
+	setmetatile 54, 51, METATILE_General_SSGrassL, FALSE
+	setmetatile 54, 52, METATILE_General_SSGrassL, FALSE
+	setmetatile 54, 53, METATILE_General_SSRockBL, FALSE
+
+	setmetatile 45, 46, METATILE_General_WaterCliffL, TRUE
+	setmetatile 45, 47, METATILE_General_WaterCliffL, TRUE
+	setmetatile 45, 48, METATILE_General_WaterCliffL, TRUE
+	setmetatile 45, 49, METATILE_General_WaterCliffL, TRUE
+	setmetatile 45, 50, METATILE_General_WaterCliffL, TRUE
+	setmetatile 45, 51, METATILE_General_WaterCliffL, TRUE
+	setmetatile 45, 52, METATILE_General_WaterCliffL, TRUE
+	setmetatile 45, 53, METATILE_General_WaterCliffL, TRUE
+	setmetatile 45, 54, METATILE_General_WaterCliffL, TRUE
+	setmetatile 45, 55, METATILE_General_WaterCliffL, TRUE
+	setmetatile 45, 56, METATILE_General_WaterCliffL, TRUE
+	setmetatile 45, 57, METATILE_General_WaterCliffL, TRUE
+	setmetatile 45, 58, METATILE_General_WaterCliffL, TRUE
+
+	setmetatile 46, 45, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 46, 46, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 46, 47, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 46, 48, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 46, 49, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 46, 50, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 46, 51, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 46, 52, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 46, 53, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 46, 54, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 46, 55, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 46, 56, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 46, 57, METATILE_General_RockRockCliffL, TRUE
+
+	setmetatile 50, 44, METATILE_General_RSandL, TRUE
+	setmetatile 50, 45, METATILE_General_RSandL, TRUE
+	setmetatile 50, 46, METATILE_General_RSandL, TRUE
+	setmetatile 50, 47, METATILE_General_RSandL, TRUE
+	setmetatile 50, 48, METATILE_General_RSandL, TRUE
+	setmetatile 50, 49, METATILE_General_RSandL, TRUE
+	setmetatile 50, 50, METATILE_General_RSandL, TRUE
+	setmetatile 50, 51, METATILE_General_RSandL, TRUE
+
+	setmetatile 51, 43, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 51, 44, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 51, 45, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 51, 46, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 51, 47, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 51, 48, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 51, 49, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 51, 50, METATILE_General_RockRockCliffL, TRUE
+
+	setmetatile 52, 42, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 52, 43, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 52, 44, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 52, 45, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 52, 46, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 52, 47, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 52, 48, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 52, 49, METATILE_General_RockRockCliffL, TRUE
+
+	setmetatile 53, 41, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 53, 42, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 53, 43, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 53, 44, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 53, 45, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 53, 46, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 53, 47, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 53, 48, METATILE_General_RockRockCliffL, TRUE
+
+	setmetatile 54, 40, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 54, 41, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 54, 42, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 54, 43, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 54, 44, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 54, 45, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 54, 46, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 54, 47, METATILE_General_RockRockCliffL, TRUE
+
+	setmetatile 55, 39, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 55, 40, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 55, 41, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 55, 42, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 55, 43, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 55, 44, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 55, 45, METATILE_General_RockRockCliffL, TRUE
+
+	setmetatile 56, 42, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 56, 43, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 56, 44, METATILE_General_RockRockCliffL, TRUE
+
+	setmetatile 57, 41, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 57, 42, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 57, 43, METATILE_General_RockRockCliffL, TRUE
+
+	setmetatile 61, 49, METATILE_General_RSandL, TRUE
+	setmetatile 61, 50, METATILE_General_RSandL, TRUE
+	setmetatile 61, 51, METATILE_General_RSandL, TRUE
+	setmetatile 61, 52, METATILE_General_RSandL, TRUE
+
+	setmetatile 62, 48, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 62, 49, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 62, 50, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 62, 51, METATILE_General_RockRockCliffL, TRUE
+
+	setmetatile 46, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 47, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 48, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 49, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 50, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 51, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 52, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 53, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 54, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 55, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 56, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 57, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 58, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 59, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 60, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 61, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 62, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 63, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 64, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 65, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 66, 59, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 67, 59, METATILE_General_RockWall_GrassBase, TRUE
+
+	setmetatile 47, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 48, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 49, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 50, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 51, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 52, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 53, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 54, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 55, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 56, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 57, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 58, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 59, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 60, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 61, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 62, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 63, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 64, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 65, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 66, 58, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 67, 58, METATILE_General_RockWall_RockBase, TRUE
+
+	setmetatile 52, 57, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 53, 57, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 54, 57, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 55, 57, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 56, 57, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 57, 57, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 58, 57, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 59, 57, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 60, 57, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 61, 57, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 62, 57, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 63, 57, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 64, 57, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 65, 57, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 66, 57, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 67, 57, METATILE_General_RockWall_RockBase, TRUE
+
+	setmetatile 53, 56, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 54, 56, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 55, 56, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 56, 56, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 57, 56, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 58, 56, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 59, 56, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 60, 56, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 61, 56, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 62, 56, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 63, 56, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 64, 56, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 65, 56, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 66, 56, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 67, 56, METATILE_General_RockWall_RockBase, TRUE
+
+	setmetatile 54, 55, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 55, 55, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 56, 55, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 57, 55, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 58, 55, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 59, 55, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 60, 55, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 61, 55, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 62, 55, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 63, 55, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 64, 55, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 65, 55, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 66, 55, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 67, 55, METATILE_General_RockWall_RockBase, TRUE
+
+	setmetatile 55, 54, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 56, 54, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 57, 54, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 58, 54, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 59, 54, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 60, 54, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 61, 54, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 62, 54, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 63, 54, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 64, 54, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 65, 54, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 66, 54, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 67, 54, METATILE_General_RockWall_RockBase, TRUE
+
+	setmetatile 62, 53, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 63, 53, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 64, 53, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 65, 53, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 66, 53, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 67, 53, METATILE_General_RockWall_RockBase, TRUE
+
+	setmetatile 63, 52, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 64, 52, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 65, 52, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 66, 52, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 67, 52, METATILE_General_RockWall_RockBase, TRUE
+
+
+	setmetatile 59, 47, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 60, 47, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 61, 47, METATILE_General_RockWall_RockBase, TRUE
+
+	setmetatile 60, 46, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 61, 46, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 62, 46, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 63, 46, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 64, 46, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 65, 46, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 66, 46, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 67, 46, METATILE_General_RockWall_RockBase, TRUE
+
+	setmetatile 61, 45, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 62, 45, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 63, 45, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 64, 45, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 65, 45, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 66, 45, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 67, 45, METATILE_General_RockWall_RockBase, TRUE
+
+	setmetatile 58, 44, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 59, 44, METATILE_General_RockWall_RockBase, TRUE
+
+	setmetatile 63, 47, METATILE_General_CliffM, TRUE
+	setmetatile 64, 47, METATILE_General_CliffM, TRUE
+	setmetatile 65, 47, METATILE_General_CliffM, TRUE
+	setmetatile 66, 47, METATILE_General_CliffM, TRUE
+	setmetatile 67, 47, METATILE_General_CliffM, TRUE
+
+	setmetatile 63, 48, METATILE_General_CliffM, TRUE
+	setmetatile 64, 48, METATILE_General_CliffM, TRUE
+	setmetatile 65, 48, METATILE_General_CliffM, TRUE
+	setmetatile 66, 48, METATILE_General_CliffM, TRUE
+	setmetatile 67, 48, METATILE_General_CliffM, TRUE
+
+	setmetatile 63, 49, METATILE_General_CliffM, TRUE
+	setmetatile 64, 49, METATILE_General_CliffM, TRUE
+	setmetatile 65, 49, METATILE_General_CliffM, TRUE
+	setmetatile 66, 49, METATILE_General_CliffM, TRUE
+	setmetatile 67, 49, METATILE_General_CliffM, TRUE
+
+	setmetatile 63, 50, METATILE_General_CliffM, TRUE
+	setmetatile 64, 50, METATILE_General_CliffM, TRUE
+	setmetatile 65, 50, METATILE_General_CliffM, TRUE
+	setmetatile 66, 50, METATILE_General_CliffM, TRUE
+	setmetatile 67, 50, METATILE_General_CliffM, TRUE
+
+	setmetatile 63, 51, METATILE_General_CliffM, TRUE
+	setmetatile 64, 51, METATILE_General_CliffM, TRUE
+	setmetatile 65, 51, METATILE_General_CliffM, TRUE
+	setmetatile 66, 51, METATILE_General_CliffM, TRUE
+	setmetatile 67, 51, METATILE_General_CliffM, TRUE
+
+	setmetatile 58, 41, METATILE_General_CliffM, TRUE
+	setmetatile 59, 41, METATILE_General_CliffM, TRUE
+	setmetatile 60, 41, METATILE_General_CliffM, TRUE
+	setmetatile 61, 41, METATILE_General_CliffM, TRUE
+	setmetatile 62, 41, METATILE_General_CliffM, TRUE
+	setmetatile 63, 41, METATILE_General_CliffM, TRUE
+	setmetatile 64, 41, METATILE_General_CliffM, TRUE
+	setmetatile 65, 41, METATILE_General_CliffM, TRUE
+	setmetatile 66, 41, METATILE_General_CliffM, TRUE
+	setmetatile 67, 41, METATILE_General_CliffM, TRUE
+
+	setmetatile 58, 42, METATILE_General_CliffM, TRUE
+	setmetatile 59, 42, METATILE_General_CliffM, TRUE
+	setmetatile 60, 42, METATILE_General_CliffM, TRUE
+	setmetatile 61, 42, METATILE_General_CliffM, TRUE
+	setmetatile 62, 42, METATILE_General_CliffM, TRUE
+	setmetatile 63, 42, METATILE_General_CliffM, TRUE
+	setmetatile 64, 42, METATILE_General_CliffM, TRUE
+	setmetatile 65, 42, METATILE_General_CliffM, TRUE
+	setmetatile 66, 42, METATILE_General_CliffM, TRUE
+	setmetatile 67, 42, METATILE_General_CliffM, TRUE
+
+	setmetatile 58, 43, METATILE_General_CliffM, TRUE
+	setmetatile 59, 43, METATILE_General_CliffM, TRUE
+	setmetatile 60, 43, METATILE_General_CliffM, TRUE
+	setmetatile 61, 43, METATILE_General_CliffM, TRUE
+	setmetatile 62, 43, METATILE_General_CliffM, TRUE
+	setmetatile 63, 43, METATILE_General_CliffM, TRUE
+	setmetatile 64, 43, METATILE_General_CliffM, TRUE
+	setmetatile 65, 43, METATILE_General_CliffM, TRUE
+	setmetatile 66, 43, METATILE_General_CliffM, TRUE
+	setmetatile 67, 43, METATILE_General_CliffM, TRUE
+
+	setmetatile 61, 44, METATILE_General_CliffM, TRUE
+	setmetatile 62, 44, METATILE_General_CliffM, TRUE
+	setmetatile 63, 44, METATILE_General_CliffM, TRUE
+	setmetatile 64, 44, METATILE_General_CliffM, TRUE
+	setmetatile 65, 44, METATILE_General_CliffM, TRUE
+	setmetatile 66, 44, METATILE_General_CliffM, TRUE
+	setmetatile 67, 44, METATILE_General_CliffM, TRUE
+
+	setmetatile 56, 39, METATILE_General_CliffM, TRUE
+	setmetatile 57, 39, METATILE_General_CliffM, TRUE
+	setmetatile 58, 39, METATILE_General_CliffM, TRUE
+	setmetatile 59, 39, METATILE_General_CliffM, TRUE
+	setmetatile 60, 39, METATILE_General_CliffM, TRUE
+	setmetatile 61, 39, METATILE_General_CliffM, TRUE
+	setmetatile 62, 39, METATILE_General_CliffM, TRUE
+	setmetatile 63, 39, METATILE_General_CliffM, TRUE
+
+	setmetatile 56, 40, METATILE_General_CliffM, TRUE
+
+	setmetatile 57, 46, METATILE_General_Dirt, FALSE
+	setmetatile 58, 46, METATILE_General_Dirt, FALSE
+
+	setmetatile 57, 47, METATILE_General_StairsShade, FALSE
+	setmetatile 58, 47, METATILE_General_Stairs, FALSE
+
+	setmetatile 57, 48, METATILE_General_StairsShade, FALSE
+	setmetatile 58, 48, METATILE_General_Stairs, FALSE
+
+	setmetatile 55, 47, METATILE_General_CliffM, TRUE
+
+	setmetatile 56, 38, METATILE_General_WaterCliffT, TRUE
+	setmetatile 57, 38, METATILE_General_WaterCliffT, TRUE
+	setmetatile 58, 38, METATILE_General_WaterCliffT, TRUE
+	setmetatile 59, 38, METATILE_General_WaterCliffT, TRUE
+	setmetatile 60, 38, METATILE_General_WaterCliffT, TRUE
+	setmetatile 61, 38, METATILE_General_WaterCliffT, TRUE
+	setmetatile 62, 38, METATILE_General_WaterCliffT, TRUE
+	setmetatile 63, 38, METATILE_General_WaterCliffT, TRUE
+
+	setmetatile 58, 40, METATILE_General_WaterCliffT, TRUE
+	setmetatile 59, 40, METATILE_General_WaterCliffT, TRUE
+	setmetatile 60, 40, METATILE_General_WaterCliffT, TRUE
+	setmetatile 61, 40, METATILE_General_WaterCliffT, TRUE
+	setmetatile 62, 40, METATILE_General_WaterCliffT, TRUE
+	setmetatile 63, 40, METATILE_General_WaterCliffT, TRUE
+	setmetatile 64, 40, METATILE_General_WaterCliffT, TRUE
+	setmetatile 65, 40, METATILE_General_WaterCliffT, TRUE
+	setmetatile 66, 40, METATILE_General_WaterCliffT, TRUE
+	setmetatile 67, 40, METATILE_General_WaterCliffT, TRUE
+
+	setmetatile 55, 48, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 56, 48, METATILE_General_RockWall_GrassBase, TRUE
+
+	setmetatile 59, 48, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 60, 48, METATILE_General_RockWall_GrassBase, TRUE
+
+	setmetatile 57, 45, METATILE_General_RockWall_GrassBase, TRUE
+
+	setmetatile 45, 45, METATILE_General_WaterCliffTL, TRUE
+	setmetatile 46, 44, METATILE_General_WaterCliffTL, TRUE
+	setmetatile 50, 43, METATILE_General_WaterCliffTL, TRUE
+	setmetatile 51, 42, METATILE_General_WaterCliffTL, TRUE
+	setmetatile 52, 41, METATILE_General_WaterCliffTL, TRUE
+	setmetatile 53, 40, METATILE_General_WaterCliffTL, TRUE
+	setmetatile 54, 39, METATILE_General_WaterCliffTL, TRUE
+	setmetatile 55, 38, METATILE_General_WaterCliffTL, TRUE
+
+	setmetatile 56, 41, METATILE_General_RockRockCliffTL, TRUE
+	setmetatile 57, 40, METATILE_General_RockRockCliffTL, TRUE
+
+	setmetatile 45, 59, METATILE_General_WaterCliffBL, TRUE
+
+	setmetatile 50, 52, METATILE_General_RSandBL, TRUE
+	setmetatile 61, 53, METATILE_General_RSandBL, TRUE
+	setmetatile 51, 57, METATILE_General_RockGrassCliffBL, TRUE
+	setmetatile 59, 46, METATILE_General_RSandBL, TRUE
+
+	setmetatile 46, 58, METATILE_General_RockRockCliffBL, TRUE
+	setmetatile 52, 56, METATILE_General_RockRockCliffBL, TRUE
+	setmetatile 53, 55, METATILE_General_RockRockCliffBL, TRUE
+	setmetatile 54, 54, METATILE_General_RockRockCliffBL, TRUE
+	setmetatile 62, 52, METATILE_General_RockRockCliffBL, TRUE
+	setmetatile 60, 45, METATILE_General_RockRockCliffBL, TRUE
+	setmetatile 57, 44, METATILE_General_RockRockCliffBL, TRUE
+	setmetatile 56, 45, METATILE_General_RockRockCliffBL, TRUE
+	setmetatile 55, 46, METATILE_General_RockRockCliffBL, TRUE
+	setmetatile 54, 48, METATILE_General_RockRockCliffBL, TRUE
+	setmetatile 53, 49, METATILE_General_RockRockCliffBL, TRUE
+	setmetatile 52, 50, METATILE_General_RockRockCliffBL, TRUE
+	setmetatile 51, 51, METATILE_General_RockRockCliffBL, TRUE
+	setmetatile 56, 47, METATILE_General_RockRockCliffBL, TRUE
 	end
 
 LumiourIsland_EventScript_SetLibertyIsland::

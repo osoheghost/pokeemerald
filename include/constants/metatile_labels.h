@@ -224,6 +224,7 @@
 #define METATILE_General_CliffVertexBR           0x074
 #define METATILE_General_CliffVertexTL           0x0BE
 #define METATILE_General_CliffVertexTR           0x0BF
+#define METATILE_General_Dirt                    0x121
 #define METATILE_General_DirtPathB               0x129
 #define METATILE_General_DirtPathBL              0x128
 #define METATILE_General_DirtPathBR              0x12A
@@ -253,6 +254,9 @@
 #define METATILE_General_Grass_TreeOverlap       0x006
 #define METATILE_General_Grass_TreeRight         0x1CF
 #define METATILE_General_Grass_TreeUp            0x00E
+#define METATILE_General_LedgeJumpL              0x0E5
+#define METATILE_General_LedgeJumpR              0x0E6
+#define METATILE_General_LedgeJumpS              0x08F
 #define METATILE_General_LightpostDown           0x04C
 #define METATILE_General_LightpostTop            0x044
 #define METATILE_General_LongGrass               0x015
@@ -318,6 +322,11 @@
 #define METATILE_General_SQBerrySoilT            0x1AB
 #define METATILE_General_SQBerrySoilTL           0x1AA
 #define METATILE_General_SQBerrySoilTR           0x1AC
+#define METATILE_General_SSGrassBL               0x056
+#define METATILE_General_SSGrassL                0x04E
+#define METATILE_General_SSGrassTL               0x046
+#define METATILE_General_SSRockBL                0x066
+#define METATILE_General_SSRockTL                0x05E
 #define METATILE_General_SWCliffBL               0x16E
 #define METATILE_General_SWCliffBR               0x16F
 #define METATILE_General_SWCliffL                0x166
@@ -327,7 +336,6 @@
 #define METATILE_General_SWCliffTR               0x15F
 #define METATILE_General_SWRockTL                0x168
 #define METATILE_General_SWRockTR                0x169
-#define METATILE_General_SandPit_Center          0x121
 #define METATILE_General_SecretBase_TreeLeft     0x011
 #define METATILE_General_SecretBase_TreeRight    0x01A
 #define METATILE_General_SecretBase_VineLeft     0x036
@@ -608,6 +616,7 @@
 #define METATILE_Petalburg_MetalFenceY           0x20E
 #define METATILE_Petalburg_MetalFenceZ           0x20F
 #define METATILE_Petalburg_RockLedgeWRSandBR     0x287
+#define METATILE_Petalburg_SandThinRock          0x230
 #define METATILE_Petalburg_Tile                  0x2DC
 #define METATILE_Petalburg_TileB                 0x2E4
 #define METATILE_Petalburg_TileBL                0x2E3

@@ -1177,7 +1177,7 @@ LumiourLab_Text_Cygnus_Palkia:
 	.string "distort the flow of space…$"
 
 LumiourLab_EventScript_SetVar5::
-	setvar VAR_LUMIOUR_ISLAND_STATE, 5
+	setvar VAR_LUMIOUR_ISLAND_STATE, 4
 	msgbox LumiourIsland_Text_Var, MSGBOX_DEFAULT
 	release
 	end

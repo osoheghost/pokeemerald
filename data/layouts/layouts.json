@@ -4490,6 +4490,16 @@
       "secondary_tileset": "gTileset_Lab",
       "border_filepath": "data/layouts/LumiourLab_B1/border.bin",
       "blockdata_filepath": "data/layouts/LumiourLab_B1/map.bin"
+    },
+    {
+      "id": "LAYOUT_LIBERTY_GARDEN_INTERIOR",
+      "name": "LibertyGardenInterior_Layout",
+      "width": 9,
+      "height": 9,
+      "primary_tileset": "gTileset_Indoors",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/LibertyGardenInterior/border.bin",
+      "blockdata_filepath": "data/layouts/LibertyGardenInterior/map.bin"
     }
   ]
 }
