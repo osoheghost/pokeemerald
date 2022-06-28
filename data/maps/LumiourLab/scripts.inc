@@ -1181,6 +1181,10 @@ LumiourLab_Text_Cygnus_Palkia:
 
 LumiereLab_ShowCredit::
 	lock
+	msgbox text_credit, MSGBOX_DEFAULT
 	special Special_ShowDiploma
 	release
 	end
+
+text_credit:
+	.string "Scan or go to this link to view credits$"

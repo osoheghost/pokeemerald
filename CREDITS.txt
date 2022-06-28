@@ -1,7 +1,7 @@
 Decomp Code
 Pret + RHH team (decomp base)
 Ghoulslash (Rock climb, sideways stairs, Item desc header, proper plural give item, Repeated Field Medicine Use)
-Spherical Ice (move camera special)
+Spherical Ice (move camera special, frlg strength button metatile behavior in em)
 Jaizu (Triple layer metatiles, Auto switch to lowercase, move camera special)
 DizzyEgg (Colored nature stats)
 Zeturic (XY Style Scrolling summary screen, Move item option)
@@ -11,3 +11,8 @@ Blurose (Survive poison with 1hp)
 
 Gaia Tileset Base:
 Spherical Ice, Cuddlesthefatcat, Mateo, Fanking Omega, Kyle-Dove, LunaMaddalena (Tiles/Pixel art)
+
+Beta Teseters:
+@rankomon
+@SnugboatThe2st
+@VLN_VS
