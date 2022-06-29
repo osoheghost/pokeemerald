@@ -82,6 +82,7 @@ HiddenGrotto_EventScript_Sudowoodo::
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, HiddenGrotto_EventScript_DefeatedSudowoodo
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, HiddenGrotto_EventScript_DefeatedSudowoodo
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, HiddenGrotto_EventScript_DefeatedSudowoodo
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, HiddenGrotto_EventScript_DefeatedSudowoodo
 	setflag FLAG_HIDDEN_GROTTO_4
 	release
 	end

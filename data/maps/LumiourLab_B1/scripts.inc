@@ -73,7 +73,7 @@ LumiourIsland_B1_Text_UseBed:
 
 LumiourIsland_B1_Text_UseBed2:
 	.string "You may miss out on daily items and\n"
-	.string "secrets around Lumiour Island.\p"
+	.string "secrets around Lumiere Island.\p"
 	.string "Are you sure you want to continue?$"
 
 LumiereLab_B1_EventScript_Computer::
@@ -85,3 +85,19 @@ LumiereLab_B1_EventScript_Computer::
 LumiereIsland_B1_Text_CygnusPC:
 	.string "Its Professor Cygnus' computer.\p"
 	.string "Better leave it alone.$"
+
+LumiereLab_B1_EventScript_TrashCan::
+	goto_if_set FLAG_LUMIERE_LAB_B1_LEFTOVERS, LumiereLab_B1_EventScript_OnlyTrash
+	giveitem ITEM_LEFTOVERS, 1
+	setflag FLAG_LUMIERE_LAB_B1_LEFTOVERS
+	release
+	end
+
+LumiereLab_B1_EventScript_OnlyTrash:
+	lock
+	msgbox LumiereLab_B1_Text_OnlyTrash, MSGBOX_DEFAULT
+	release
+	end
+
+LumiereLab_B1_Text_OnlyTrash:	
+	.string "The trash can is empty.$"

@@ -246,6 +246,7 @@ BerryTree_EventScript_PickBerry7::
 
 BerryTree_EventScript_SetDay3Complete::
 	setflag FLAG_DAY_3_COMPLETE
+	setflag FLAG_CAN_SLEEP
 	release
 	end
 

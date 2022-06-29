@@ -16,7 +16,7 @@ Route104_EventScript_ItemPPUp::
 
 Route104_EventScript_ItemPokeBall::
 	finditem ITEM_POKE_BALL
-	end
+	
 
 Route104_EventScript_ItemXAccuracy::
 	finditem ITEM_X_ACCURACY
@@ -692,5 +692,25 @@ HiddenGrotto_EventScript_Aerodactylite::
 
 VisceraCave_EventScript_MegaRing::
 	finditem ITEM_MEGA_RING
+	end
+
+LumiereIsland_EventScript_Galladite::
+	finditem ITEM_GALLADITE
+	end
+
+LumiereIsland_EventScript_Gardevoirite::
+	finditem ITEM_GARDEVOIRITE
+	end
+
+VisceraCave_EventScript_DawnStone::
+	finditem ITEM_DAWN_STONE
+	end
+
+VisceraCave_EventScript_TM28::
+	finditem ITEM_TM28
+	end
+	
+LumiereIsland_EventScript_TM35::
+	finditem ITEM_TM35
 	end
 

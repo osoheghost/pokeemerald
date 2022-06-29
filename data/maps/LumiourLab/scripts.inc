@@ -83,7 +83,7 @@ LumiourIsland_EventScript_SetCygnusLocation3::
 	end
 
 LumiourIsland_EventScript_SetCygnusLocation4::
-	setobjectxyperm LOCALID_PROF_CYGNUS, 14, 7
+	setobjectxyperm LOCALID_PROF_CYGNUS, 14, 6
 	applymovement LOCALID_PROF_CYGNUS Common_Movement_FaceLeft
 	end
 
@@ -796,6 +796,7 @@ LumiourIslandLab_Text_InternetForum:
 
 LumiourLab_EventScript_TV::
 	goto_if_unset FLAG_SYS_POKEMON_GET, LumiourIslandLab_EventScript_TVCommercial
+	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 0, LumiourIslandLab_EventScript_TVCommercial
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 1, LumiourIslandLab_EventScript_TVMemorialPillar
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 2, LumiourIslandLab_EventScript_TVWhirlIsland
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 3, LumiourIslandLab_EventScript_TVMirageIsland
@@ -861,8 +862,7 @@ LumiourIslandLab_Text_TVMemorialPillar:
 	.string "continue.\p"
 	.string "Memorial Pillar off the coast of\n"
 	.string "Five Island has dissapeared.\p"
-	.string "Its current location is currently\n"
-	.string "unknown.$"
+	.string "Its location is currently unknown.$"
 
 
 LumiourIslandLab_Text_TVMemorialPillarReturned:
@@ -967,7 +967,9 @@ LumiourLab_EventScript_CygnusDay0:
 LumiourLab_Text_Cygnus_RespondMessages:
 	.string "{COLOR BLUE}Sorry, I've gotta respond to some\n"
 	.string "important messages.\p"
-	.string "We can talk tomorrow!$"
+	.string "Whenever you're done exploring Lumiere\n"
+	.string "Island you can rest until tomorrow in\l"
+	.string "the bed downstairs.$"
 
 LumiourLab_EventScript_CygnusDay1:
 	goto_if_set FLAG_DAY_1_COMPLETE, LumiourLab_EventScript_CygnusDay1Complete
@@ -999,7 +1001,7 @@ LumiourLab_Text_Cygnus_Day1Complete:
 
 LumiourLab_Text_Cygnus_HiPlayer1:
 	.string "{COLOR BLUE}OH! Hello {PLAYER}!\p"
-	.string "Be sure to check the news before\n"
+	.string "Be sure to check the TV before\n"
 	.string "leaving.\p"
 	.string "It may seem odd now but its the only\n"
 	.string "thing that can prepare you.\p"
@@ -1043,7 +1045,7 @@ LumiourLab_Text_Cygnus_HiPlayer2:
 	.string "Sorry I was doing a bit of reading\n"
 	.string "to figure out what is causing the\l"
 	.string "Mirage Islands.\p"
-	.string "Take it easy today!$"
+	.string "Stay safe on the island please!$"
 
 LumiourLab_Text_Cygnus_Hoopa:
 	.string "{COLOR BLUE}Professor Cygnus: Hoopa moves islands\n"

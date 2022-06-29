@@ -62,12 +62,12 @@
 #define FLAG_LUMIOUR_ISLAND_PINSIRITE     0x32 // Lumiour Island Pinsirite
 #define FLAG_LUMIOUR_ISLAND_SCIZORITE     0x33 // Lumiour Island Scizorite
 #define FLAG_LUMIOUR_ISLAND_STEELIXITE    0x34 // Lumiour Island Steelixite
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
+#define FLAG_LUMIERE_LAB_B1_LEFTOVERS    0x35 // Lumiere Island Leftovers
+#define FLAG_LUMIERE_GARDEVOIRITE    0x36 // Lumiere Gardevoirite
+#define FLAG_LUMIERE_GALLADITE    0x37 // Lumiere Galladite
+#define FLAG_VISCERA_CAVE_DAWN_STONE    0x38 // Viscerq Cave Dawn stone
+#define FLAG_VISCERA_CAVE_TM28    0x39 // Viscera Cave tm 28
+#define FLAG_LUMIERE_ISLAND_TM35    0x3A // Lumiere Tm 35
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag

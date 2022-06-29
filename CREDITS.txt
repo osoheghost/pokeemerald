@@ -1,3 +1,11 @@
+Project Space Taker - Designed and Created by OsoheGhost
+
+Player OW Sprites:
+Rankomon
+
+Pokemon Gaia Tileset Base:
+Spherical Ice, Cuddlesthefatcat, Mateo, Fanking Omega, Kyle-Dove, LunaMaddalena (Tiles/Pixel art)
+
 Decomp Code
 Pret + RHH team (decomp base)
 Ghoulslash (Rock climb, sideways stairs, Item desc header, proper plural give item, Repeated Field Medicine Use)
@@ -8,9 +16,6 @@ Zeturic (XY Style Scrolling summary screen, Move item option)
 TheXaman (DS Style Party Screen)
 Lunos (Porting Survive poison with 1hp to em)
 Blurose (Survive poison with 1hp)
-
-Gaia Tileset Base:
-Spherical Ice, Cuddlesthefatcat, Mateo, Fanking Omega, Kyle-Dove, LunaMaddalena (Tiles/Pixel art)
 
 Beta Teseters:
 @rankomon

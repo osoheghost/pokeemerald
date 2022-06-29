@@ -5,6 +5,7 @@
 .set LOCALID_METAL_COAT, 5
 .set LOCALID_PROF_CYGNUS, 6
 .set LOCALID_LIECHI_BERRY, 7
+.set LOCALID_FLAMETHROWER, 16
 
 LumiourIsland_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, LumiourIsland_OnLoad
@@ -14,7 +15,12 @@ LumiourIsland_MapScripts::
 LumiourIsland_OnWarp:
 	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 1, LumiourIsland_EventScript_SetMetalCoatLocation
 	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 3, LumiourIsland_EventScript_SetLiechiLocation
+	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 4, LumiourIsland_EventScript_SetFlamethrowerLocation
 	.2byte 0
+
+LumiourIsland_EventScript_SetFlamethrowerLocation::
+	setobjectxyperm LOCALID_FLAMETHROWER, 58, 53
+	end
 
 LumiourIsland_EventScript_SetLiechiLocation::
 	setobjectxyperm LOCALID_LIECHI_BERRY, 62, 51
@@ -162,6 +168,8 @@ LumiourIsland_Trigger_Strength_Button4::
 	setobjectxyperm LOCALID_PROF_CYGNUS, 39, 28
 	addobject LOCALID_PROF_CYGNUS
 	goto LumiourIsland_EventScript_Day1PuzzleEnd
+	setvar VAR_ENCOUNTER_STATE, 0
+	setvar VAR_LUMIOUR_WILD_SET, 0
 	end
 
 LumiourIsland_Text_Strength:
@@ -1147,6 +1155,8 @@ LumiourIsland_EventScript_SetWhirlIsland::
 LumiourIsland_EventScript_SetMirageIsland::
 	setvar VAR_ENCOUNTER_STATE, 0
 	setvar VAR_LUMIOUR_WILD_SET, 0
+	setmetatile 36, 15, METATILE_General_GrassMarking, FALSE
+	setmetatile 23, 37, METATILE_Petalburg_MarkingTreeTR, FALSE
 	setmetatile 38, 56, METATILE_General_RockWall_GrassBase, TRUE
 	setmetatile 39, 56, METATILE_General_RockWall_GrassBase, TRUE
 	setmetatile 40, 56, METATILE_General_RockWall_GrassBase, TRUE
@@ -2266,8 +2276,6 @@ LumiourIsland_EventScript_SetIronIsland::
 	setmetatile 60, 44, METATILE_General_CliffVertexBL, TRUE
 	setmetatile 59, 45, METATILE_General_CliffVertexBL, TRUE
 	setmetatile 58, 45, METATILE_General_CaveEntrance_Bottom, FALSE
-
-	setmetatile 58, 45, METATILE_General_CaveEntrance_Bottom, FALSE
 	end
 
 LumiourIsland_EventScript_SetLibertyIsland::
@@ -2914,3 +2922,39 @@ LumiourIsland_EventScript_MemorialPillarTectonix::
 LumiourIsland_Text_Tectonix:
     .string "“Here lies TECTONIX” is engraved\n"
     .string "on a boulder.$"
+
+LumiereIsland_Trigger_SetShore::
+	lock
+	fadescreenswapbuffers FADE_TO_BLACK
+	setmetatile 22, 37, METATILE_General_TallGrass, FALSE
+	setmetatile 23, 37, METATILE_General_GrassMarking, FALSE
+	setmetatile 22, 40, METATILE_General_StairsShade FALSE
+	setmetatile 23, 40, METATILE_General_Stairs, FALSE
+	setmetatile 22, 41, METATILE_General_StairsShade, FALSE
+	setmetatile 23, 41, METATILE_General_Stairs, FALSE
+
+	setmetatile 22, 38, METATILE_General_Grass1, FALSE
+	setmetatile 23, 38, METATILE_General_Grass2, FALSE
+	setmetatile 22, 39, METATILE_General_Grass3, FALSE
+	setmetatile 23, 39, METATILE_General_Grass4, FALSE
+
+	setmetatile 22, 42, METATILE_General_ShallowWaterMid, FALSE
+	setmetatile 23, 42, METATILE_General_ShallowWaterMid, FALSE
+	setmetatile 24, 42, METATILE_General_ShallowWaterMid, FALSE
+	setmetatile 25, 42, METATILE_General_ShallowWaterMid, FALSE
+	setmetatile 26, 42, METATILE_General_ShallowWaterMid, FALSE
+	setmetatile 27, 42, METATILE_General_ShallowWaterMid, FALSE
+	setmetatile 28, 42, METATILE_General_ShallowWaterEdgeR, TRUE
+
+	setmetatile 22, 43, METATILE_General_ShallowWaterMid, FALSE
+	setmetatile 23, 43, METATILE_General_ShallowWaterMid, FALSE
+	setmetatile 24, 43, METATILE_General_ShallowWaterMid, FALSE
+	setmetatile 25, 43, METATILE_General_ShallowWaterMid, TRUE
+	setmetatile 26, 43, METATILE_General_ShallowWaterVertexBR, TRUE
+	setmetatile 27, 43, METATILE_General_ShallowWaterEdgeB, TRUE
+	setmetatile 28, 43, METATILE_General_ShallowWaterCornerBR, TRUE
+	setmetatile 21, 42, METATILE_General_SWCliffR, FALSE
+	special DrawWholeMapView
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end

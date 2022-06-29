@@ -103,7 +103,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_130_LIECHI",
       "script": "BerryTreeScript7",
-      "flag": "FLAG_BERRY_7"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -182,6 +182,45 @@
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_102_PECHA",
       "script": "BerryTreeScript1",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 24,
+      "y": 45,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LumiereIsland_EventScript_Gardevoirite",
+      "flag": "FLAG_LUMIERE_GARDEVOIRITE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 18,
+      "y": 44,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LumiereIsland_EventScript_Galladite",
+      "flag": "FLAG_LUMIERE_GALLADITE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 79,
+      "y": 42,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LumiereIsland_EventScript_TM35",
+      "flag": "FLAG_LUMIERE_ISLAND_TM35"
     }
   ],
   "warp_events": [
@@ -218,6 +257,13 @@
       "y": 51,
       "elevation": 0,
       "dest_map": "MAP_LIBERTY_GARDEN_INTERIOR",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 58,
+      "y": 45,
+      "elevation": 0,
+      "dest_map": "MAP_IRON_ISLAND_INTERIOR",
       "dest_warp_id": 0
     }
   ],
@@ -338,6 +384,15 @@
       "var": "VAR_LUMIOUR_ISLAND_STATE",
       "var_value": "3",
       "script": "LumiourIsland_Trigger_SetRockClimb"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 37,
+      "elevation": 0,
+      "var": "VAR_LUMIOUR_ISLAND_STATE",
+      "var_value": "3",
+      "script": "LumiereIsland_Trigger_SetShore"
     }
   ],
   "bg_events": [
