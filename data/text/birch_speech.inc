@@ -38,7 +38,7 @@ gText_Birch_YourePlayer::
 	.string "Ah, okay!\p"
 	.string "You're {PLAYER}{KUN} who was selected to\n"
 	.string "help study ongoing anomalies on\l"
-	.string "Lumiour Island!\p"
+	.string "Lumiere Island!\p"
 	.string "$"
 
 gText_Birch_AreYouReady::

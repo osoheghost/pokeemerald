@@ -709,8 +709,15 @@ VisceraCave_EventScript_DawnStone::
 VisceraCave_EventScript_TM28::
 	finditem ITEM_TM28
 	end
-	
+
+VisceraCave_EventScript_TM31::
+	finditem ITEM_TM31
+	end
+
 LumiereIsland_EventScript_TM35::
 	finditem ITEM_TM35
 	end
 
+HiddenGrotto_EventScript_Absolite::
+	finditem ITEM_ABSOLITE
+	end

@@ -4476,86 +4476,96 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Andrew[] = {
 
 static const struct TrainerMonNoItemDefaultMoves sParty_Ivan[] = {
     {
-    .iv = 0,
-    .lvl = 5,
-    .species = SPECIES_MAGIKARP,
+    .iv = 15,
+    .lvl = 36,
+    .species = SPECIES_SIMISEAR,
     },
     {
-    .iv = 0,
-    .lvl = 6,
-    .species = SPECIES_MAGIKARP,
+    .iv = 15,
+    .lvl = 36,
+    .species = SPECIES_DURANT,
     },
     {
-    .iv = 0,
-    .lvl = 7,
-    .species = SPECIES_MAGIKARP,
-    }
+    .iv = 15,
+    .lvl = 39,
+    .species = SPECIES_SCRAFTY,
+    },
 };
 
 static const struct TrainerMonNoItemDefaultMoves sParty_Claude[] = {
     {
-    .iv = 0,
-    .lvl = 16,
-    .species = SPECIES_MAGIKARP,
+    .iv = 15,
+    .lvl = 36,
+    .species = SPECIES_ZEBSTRIKA,
     },
     {
-    .iv = 0,
-    .lvl = 17,
-    .species = SPECIES_GOLDEEN,
+    .iv = 15,
+    .lvl = 36,
+    .species = SPECIES_MUSHARNA,
     },
     {
-    .iv = 0,
-    .lvl = 18,
-    .species = SPECIES_BARBOACH,
+    .iv = 15,
+    .lvl = 36,
+    .species = SPECIES_SEISMITOAD,
     }
 };
 
 static const struct TrainerMonNoItemDefaultMoves sParty_Elliot1[] = {
     {
-    .iv = 0,
-    .lvl = 10,
-    .species = SPECIES_MAGIKARP,
+    .iv = 15,
+    .lvl = 36,
+    .species = SPECIES_ESCAVALIER,
     },
     {
-    .iv = 0,
-    .lvl = 7,
-    .species = SPECIES_TENTACOOL,
+    .iv = 15,
+    .lvl = 39,
+    .species = SPECIES_EELEKTROSS,
     },
     {
-    .iv = 0,
-    .lvl = 10,
-    .species = SPECIES_MAGIKARP,
+    .iv = 15,
+    .lvl = 40,
+    .species = SPECIES_JELLICENT,
     }
 };
 
 static const struct TrainerMonNoItemDefaultMoves sParty_Ned[] = {
     {
-    .iv = 10,
-    .lvl = 11,
-    .species = SPECIES_TENTACOOL,
+    .iv = 15,
+    .lvl = 38,
+    .species = SPECIES_SAWSBUCK,
+    },
+    {
+    .iv = 15,
+    .lvl = 38,
+    .species = SPECIES_LILLIGANT,
+    },
+    {
+    .iv = 15,
+    .lvl = 38,
+    .species = SPECIES_WHIMSICOTT,
     }
 };
 
 static const struct TrainerMonNoItemDefaultMoves sParty_Dale[] = {
     {
-    .iv = 0,
-    .lvl = 11,
-    .species = SPECIES_TENTACOOL,
+    .iv = 15,
+    .lvl = 39,
+    .species = SPECIES_CINCCINO,
     },
     {
-    .iv = 0,
-    .lvl = 14,
-    .species = SPECIES_WAILMER,
+    .iv = 15,
+    .lvl = 39,
+    .species = SPECIES_AUDINO,
     },
     {
-    .iv = 0,
-    .lvl = 11,
-    .species = SPECIES_TENTACOOL,
+    .iv = 15,
+    .lvl = 39,
+    .species = SPECIES_EMOLGA,
     },
     {
-    .iv = 0,
-    .lvl = 14,
-    .species = SPECIES_WAILMER,
+    .iv = 15,
+    .lvl = 41,
+    .species = SPECIES_GOTHITELLE,
     }
 };
 

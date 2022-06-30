@@ -4,6 +4,7 @@
 .set LOCALID_SUDOWOODO, 4
 .set LOCALID_GROTTO_OBJECT5, 5
 .set LOCALID_GROTTO_OBJECT0, 6
+.set LOCALID_AZUMARILL, 7
 
 HiddenGrotto_MapScripts::
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, HiddenGrotto_OnWarp
@@ -16,6 +17,7 @@ HiddenGrotto_OnWarp:
 	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 3, HiddenGrotto_EventScript_HideItems3
 	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 4, HiddenGrotto_EventScript_HideItems4
 	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 5, HiddenGrotto_EventScript_HideItems5
+	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 6, HiddenGrotto_EventScript_HideItems6
 	.2byte 0
 
 HiddenGrotto_EventScript_HideItems0::
@@ -43,25 +45,9 @@ HiddenGrotto_EventScript_HideItems5::
 	setobjectxyperm LOCALID_GROTTO_OBJECT5, 5, 5
 	end
 
-HiddenGrotto_EventScript_Item3::
-	lock
-	faceplayer
-	msgbox HiddenGrotto_Text_Item3, MSGBOX_DEFAULT
-	release
+HiddenGrotto_EventScript_HideItems6::
+	setobjectxyperm LOCALID_AZUMARILL, 5, 5
 	end
-
-HiddenGrotto_Text_Item3:
-	.string "Item 3.$"
-
-HiddenGrotto_EventScript_Item5::
-	lock
-	faceplayer
-	msgbox HiddenGrotto_Text_Item5, MSGBOX_DEFAULT
-	release
-	end
-
-HiddenGrotto_Text_Item5:
-	.string "Item 5.$"
 
 HiddenGrotto_EventScript_Sudowoodo::
 	lock
@@ -109,3 +95,28 @@ HiddenGrotto_Movement_SudowoodoShake:
 	delay_8
 	face_down
 	step_end
+
+HiddenGrotto_EventScript_Azumarill::
+	lock
+	faceplayer
+	playmoncry SPECIES_AZUMARILL, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setvar VAR_LAST_TALKED, LOCALID_AZUMARILL
+	setwildbattle SPECIES_AZUMARILL, 40
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, HiddenGrotto_EventScript_DefeatedAzumarill
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, HiddenGrotto_EventScript_DefeatedAzumarill
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, HiddenGrotto_EventScript_DefeatedAzumarill
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, HiddenGrotto_EventScript_DefeatedAzumarill
+	setflag FLAG_HIDDEN_GROTTO_4
+	release
+	end
+
+HiddenGrotto_EventScript_DefeatedAzumarill::
+	setflag FLAG_HIDDEN_GROTTO_6
+	goto Common_EventScript_RemoveStaticPokemon
+	end

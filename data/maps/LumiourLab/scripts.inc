@@ -17,6 +17,7 @@ LumiourLab_OnWarp:
 	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 3 LumiourIsland_EventScript_SetCygnusDirection3
 	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 4 LumiourIsland_EventScript_SetCygnusDirection4
 	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 5 LumiourIsland_EventScript_SetCygnusDirection5
+	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 6 LumiourIsland_EventScript_SetCygnusDirection6
 	.2byte 0
 
 LumiourIsland_EventScript_SetCygnusDirection0:
@@ -49,6 +50,11 @@ LumiourIsland_EventScript_SetCygnusDirection5:
 	return
 	end
 
+LumiourIsland_EventScript_SetCygnusDirection6:
+	applymovement LOCALID_PROF_CYGNUS Common_Movement_FaceLeft
+	return
+	end
+
 LumiourLab_EventScript_SetCygnusLocation:
 	goto_if_unset FLAG_SYS_POKEMON_GET, LumiourIsland_EventScript_SetCygnusLocation0
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 0, LumiourIsland_EventScript_SetCygnusLocationPostIntro
@@ -57,6 +63,7 @@ LumiourLab_EventScript_SetCygnusLocation:
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 3, LumiourIsland_EventScript_SetCygnusLocation3
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 4, LumiourIsland_EventScript_SetCygnusLocation4
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 5, LumiourIsland_EventScript_SetCygnusLocation5
+	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 6, LumiourIsland_EventScript_SetCygnusLocation6
 	end
 
 LumiourIsland_EventScript_SetCygnusLocationPostIntro::
@@ -90,6 +97,11 @@ LumiourIsland_EventScript_SetCygnusLocation4::
 LumiourIsland_EventScript_SetCygnusLocation5::
 	setobjectxyperm LOCALID_PROF_CYGNUS, 6, 5
 	applymovement LOCALID_PROF_CYGNUS Common_Movement_FaceRight
+	end
+
+LumiourIsland_EventScript_SetCygnusLocation6::
+	setobjectxyperm LOCALID_PROF_CYGNUS, 9, 6
+	applymovement LOCALID_PROF_CYGNUS Common_Movement_FaceLeft
 	end
 
 LumiourLab_EventScript_SetRun::
@@ -802,7 +814,18 @@ LumiourLab_EventScript_TV::
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 3, LumiourIslandLab_EventScript_TVMirageIsland
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 4, LumiourIslandLab_EventScript_TVIronIsland
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 5, LumiourIslandLab_EventScript_TVLibertyGarden
+	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 6, LumiourIslandLab_EventScript_TVExtinctPokemon
 	end
+
+LumiourIslandLab_EventScript_TVExtinctPokemon::
+	msgbox LumiourIslandLab_Text_ExtinctPokemon, MSGBOX_SIGN
+	end
+
+LumiourIslandLab_Text_ExtinctPokemon:
+	.string "The TV is set to a news channel.\p"
+	.string "{COLOR RED}News Anchor: The previously thought\n"
+	.string "to be extinct Pokémon Kleavor has been\l"
+	.string "spotted near Eterna Forest in Sinnoh.$"
 
 LumiourIslandLab_EventScript_TVCommercial::
 	msgbox LumiourIslandLab_Text_Commercial, MSGBOX_SIGN
@@ -919,8 +942,8 @@ LumiourIslandLab_Text_TVIronIsland:
 
 LumiourIslandLab_Text_TVIronIslandReturned:
 	.string "The TV is set to a news channel.\p"
-	.string "{COLOR RED}News Anchor: Iron Island has\n"
-	.string "reportedly returned to it's previous state.\p"
+	.string "{COLOR RED}News Anchor: Iron Island has returned\n"
+	.string "to it's previous state.\p"
 	.string "All mining equipment is confirmed to be\n"
 	.string "functioning as normal.$"
 
@@ -937,12 +960,13 @@ LumiourIslandLab_Text_TVLibertyGarden:
 
 LumiourIslandLab_Text_TVLibertyGardenReturned:
 	.string "The TV is set to a news channel.\p"
-	.string "{COLOR RED}News Anchor: Connection has been\n"
-	.string "made with Lumiere Island where\n"
-	.string "all unnacounted trainers at the\l"
-	.string "Liberty Garden have been found.\p"
-	.string "A rescue ship has been sent to\n"
-	.string "the remote island.$"
+	.string "{COLOR RED}News Anchor: Connection has been made\n"
+	.string "with Professor Cygnus on Lumiere Island.\p"
+	.string "All missing passengers have been found\n"
+	.string "by {PLAYER}, the professor's aide.\p"
+	.string "A team of sailors from Castelia City \n"
+	.string "has been sent to escort the passengers\l"
+	.string "back home safely.$"
 
 LumiourLab_EventScript_ProfCygnus::
 	lock
@@ -952,8 +976,21 @@ LumiourLab_EventScript_ProfCygnus::
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 3, LumiourLab_EventScript_CygnusDay3
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 4, LumiourLab_EventScript_CygnusDay4
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 5, LumiourLab_EventScript_CygnusDay5
+	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 6, LumiourLab_EventScript_CygnusDay6
 	release
 	end
+
+LumiourLab_EventScript_CygnusDay6:
+	lock
+	faceplayer
+	msgbox LumiourLab_Text_Cygnus_GoPlayer, MSGBOX_DEFAULT
+	release
+	end
+
+LumiourLab_Text_Cygnus_GoPlayer:
+	.string "{COLOR BLUE}Professor Cygnus: Go {PLAYER}!\n"
+	.string "You have to find and stop Palkia!\p"
+	.string "Its all up to you now!$"
 
 LumiourLab_EventScript_CygnusDay0:
 	lock
@@ -1135,7 +1172,7 @@ LumiourLab_Text_Cygnus_HiPlayer4:
 	.string "soon.$"
 
 LumiourLab_Text_Cygnus_Necrozma:
-	.string "{COLOR BLUE}Professor Cygnus: I havn't\n"
+	.string "{COLOR BLUE}Professor Cygnus: I haven't\n"
 	.string "even seen any Ultra Wormwholes.\p"
 	.string "Of course it can't be Necrozma.$"
 
@@ -1154,19 +1191,51 @@ LumiourLab_EventScript_CygnusDay5Complete:
 	lock
 	faceplayer
 	msgbox LumiourLab_Text_Cygnus_Day5Complete, MSGBOX_DEFAULT
+	closemessage
+	playse SE_PIN
+	applymovement LOCALID_PROF_CYGNUS, Common_Movement_QuestionMark
+	waitmovement 0
+	waitse
+	msgbox LumiourLab_Text_Cygnus_StrangeStone, MSGBOX_DEFAULT
+	playse SE_PIN
+	applymovement LOCALID_PROF_CYGNUS, Common_Movement_ExclamationMark
+	waitmovement 0
+	waitse
+	msgbox LumiourLab_Text_Cygnus_LustrousOrb, MSGBOX_DEFAULT
+	closemessage
 	applymovement LOCALID_PROF_CYGNUS, Common_Movement_FaceRight
 	waitmovement 0
 	release
 	end
 
+LumiourLab_Text_Cygnus_LustrousOrb:
+	.string "{COLOR BLUE}It can't be…\n"
+	.string "{PLAYER}, you know what this is correct?\p"
+	.string "This is Palkia's Lustrous Orb…\p"
+	.string "So this was found on the Liberty Garden\n"
+	.string "When it first appeared near Lumiere.\p"
+	.string "That must mean my theories were correct.\p"
+	.string "Palkia has the power to control the flow\n"
+	.string "of space.\p"
+	.string "That must be how these islands can\n"
+	.string "appear and dissapear at the blink of\l"
+	.string "an eye.\p"
+	.string "I have a feeling tomorrow is the big day…\p"
+	.string "Go get some well deserved rest {PLAYER}!\p"
+	.string "Oh, and check the TV!\p"
+	.string "At least im on the news for something\n"
+	.string "good this time!$"
+
+LumiourLab_Text_Cygnus_StrangeStone:
+	.string "{COLOR BLUE}Huh? The captain gave you a strange\n"
+	.string "stone?$"
+
 LumiourLab_Text_Cygnus_Day5Complete:
-	.string "{COLOR BLUE}Professor Cygnus: Nothing of note\n"
-	.string "on the island huh?\p"
-	.string "However you did battle an extremely\n"
-	.string "powerful Lucario.\p"
-	.string "We have to find an answer soon.\p"
-	.string "Get some sleep, im sure you will\n"
-	.string "need it for tomorrow.$"
+	.string "{COLOR BLUE}Professor Cygnus: There you are!\p"
+	.string "I didn't expect a bunch of stubborn\n"
+	.string "trainers to come visit Lumiere Island!\p"
+	.string "If it weren't for you I don't think we'd\n"
+	.string "be able to get them back home!$"
 
 LumiourLab_Text_Cygnus_HiPlayer5:
 	.string "{COLOR BLUE}OH! Hello {PLAYER}!\p"

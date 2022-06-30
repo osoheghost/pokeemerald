@@ -595,6 +595,7 @@
 #define METATILE_Petalburg_LH7                   0x2A8
 #define METATILE_Petalburg_LH8                   0x2A9
 #define METATILE_Petalburg_LH9                   0x2AA
+#define METATILE_Petalburg_Lab_Door              0x293
 #define METATILE_Petalburg_LedgeLOnOceanSandB    0x21F
 #define METATILE_Petalburg_MP1                   0x25B
 #define METATILE_Petalburg_MP2                   0x25C

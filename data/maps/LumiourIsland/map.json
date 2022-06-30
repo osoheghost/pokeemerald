@@ -221,6 +221,110 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LumiereIsland_EventScript_TM35",
       "flag": "FLAG_LUMIERE_ISLAND_TM35"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
+      "x": 77,
+      "y": 79,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LumiereIsland_EventScript_Sailor",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
+      "x": 76,
+      "y": 79,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LumiereIsland_EventScript_Woman",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "x": 74,
+      "y": 77,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LumiereIsland_EventScript_Lass",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 75,
+      "y": 77,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LumiereIsland_EventScript_AromaLady",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "x": 76,
+      "y": 77,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LumiereIsland_EventScript_Camper",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
+      "x": 77,
+      "y": 77,
+      "elevation": 4,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LumiereIsland_EventScript_SchoolKid",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "x": 78,
+      "y": 77,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LumiereIsland_EventScript_Gentleman",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
+      "x": 79,
+      "y": 76,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LumiereIsland_EventScript_Beauty",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -276,24 +380,6 @@
       "var": "VAR_STRENGTH_TRIGGER",
       "var_value": "99",
       "script": "LumiourIsland_Trigger_Strength_Button1"
-    },
-    {
-      "type": "trigger",
-      "x": 52,
-      "y": 52,
-      "elevation": 0,
-      "var": "VAR_LUMIOUR_ISLAND_STATE",
-      "var_value": "1",
-      "script": "NULL"
-    },
-    {
-      "type": "trigger",
-      "x": 53,
-      "y": 52,
-      "elevation": 0,
-      "var": "VAR_LUMIOUR_ISLAND_STATE",
-      "var_value": "1",
-      "script": "NULL"
     },
     {
       "type": "trigger",
@@ -393,6 +479,15 @@
       "var": "VAR_LUMIOUR_ISLAND_STATE",
       "var_value": "3",
       "script": "LumiereIsland_Trigger_SetShore"
+    },
+    {
+      "type": "trigger",
+      "x": 53,
+      "y": 52,
+      "elevation": 0,
+      "var": "VAR_LIBERTY_GARDEN_TRAINERS",
+      "var_value": "0",
+      "script": "LumiereIsland_Trigger_TrainerWarning"
     }
   ],
   "bg_events": [

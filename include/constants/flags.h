@@ -68,12 +68,12 @@
 #define FLAG_VISCERA_CAVE_DAWN_STONE    0x38 // Viscerq Cave Dawn stone
 #define FLAG_VISCERA_CAVE_TM28    0x39 // Viscera Cave tm 28
 #define FLAG_LUMIERE_ISLAND_TM35    0x3A // Lumiere Tm 35
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
+#define FLAG_HIDE_LUCARIO    0x3B // Hide Lucario
+#define FLAG_DEFEATED_LUCARIO    0x3C
+#define FLAG_CAUGHT_LUCARIO    0x3D // 
+#define FLAG_VISCERA_CAVE_TM31    0x3E //tm 31
+#define FLAG_LIBERTY_GARDEN_TRAINERS_DEFEATED    0x3F // liberty garden trainers 
+#define FLAG_HAS_LUSTROUS_ORB    0x40 // set when you have lustrous orb
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
@@ -511,12 +511,12 @@
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_UNUSED_0x1DE                    0x1DE // Unused Flag
-#define FLAG_UNUSED_0x1DF                    0x1DF // Unused Flag
-#define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
-#define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
-#define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
-#define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
+#define FLAG_LIBERTY_CAMPER                    0x1DE // Unused Flag
+#define FLAG_LIBERTY_GENTELMAN                    0x1DF // Unused Flag
+#define FLAG_LIBERTY_LASS                    0x1E0 // Unused Flag
+#define FLAG_LIBERTY_BOY                    0x1E1 // Unused Flag
+#define FLAG_LIBERTY_AROMA_LADY                    0x1E2 // Unused Flag
+#define FLAG_LIBERTY_                       0x1E3 // Unused Flag
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4
@@ -663,7 +663,7 @@
 #define FLAG_HIDDEN_GROTTO_4  0x26D // Hidden grotto object day 4
 #define FLAG_HIDDEN_GROTTO_5  0x26E // Hidden grotto object day 5
 #define FLAG_HIDDEN_GROTTO_0  0x26F // Hidden grotto object day 0
-#define FLAG_UNUSED_0x270  0x270 // Unused Flag
+#define FLAG_HIDDEN_GROTTO_6  0x270 // hidden grotto object day 6
 #define FLAG_UNUSED_0x271  0x271 // Unused Flag
 #define FLAG_UNUSED_0x272  0x272 // Unused Flag
 #define FLAG_UNUSED_0x273  0x273 // Unused Flag

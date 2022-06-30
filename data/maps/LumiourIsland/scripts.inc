@@ -6,17 +6,49 @@
 .set LOCALID_PROF_CYGNUS, 6
 .set LOCALID_LIECHI_BERRY, 7
 .set LOCALID_FLAMETHROWER, 16
+.set LOCALID_SAILOR, 17
+.set LOCALID_WOMAN, 18
+.set LOCALID_LASS, 19
+.set LOCALID_AROMA_LADY, 20
+.set LOCALID_CAMPER, 21
+.set LOCALID_LITTLE_BOY, 22
+.set LOCALID_GENTELMAN, 23
+.set LOCALID_BEAUTY, 24
 
 LumiourIsland_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, LumiourIsland_OnLoad
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LumiourIsland_OnWarp
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, LumiereIsland_OnFrame
 	.byte 0
+
+LumiereIsland_OnFrame::
+	map_script_2 VAR_LIBERTY_GARDEN_TRAINERS, 5, LumiereIsland_EventScript_Day5EndScene
+	.2byte 0
 
 LumiourIsland_OnWarp:
 	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 1, LumiourIsland_EventScript_SetMetalCoatLocation
 	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 3, LumiourIsland_EventScript_SetLiechiLocation
 	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 4, LumiourIsland_EventScript_SetFlamethrowerLocation
+	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 5, LumiourIsland_EventScript_SetLibertyGardenOWS
 	.2byte 0
+
+LumiourIsland_EventScript_SetLibertyGardenOWS::
+	goto_if_set FLAG_DAY_5_COMPLETE LumiereIsland_EventScript_SetLibertyGardenOWs2
+	setobjectxyperm LOCALID_SAILOR, 42, 46
+	setobjectxyperm LOCALID_WOMAN, 40, 53
+	setobjectxyperm LOCALID_BEAUTY, 55, 52
+	end
+
+LumiereIsland_EventScript_SetLibertyGardenOWs2::
+	setobjectxyperm LOCALID_SAILOR, 46, 31
+	setobjectxyperm LOCALID_WOMAN, 18, 26
+	setobjectxyperm LOCALID_BEAUTY, 60, 20
+	setobjectxyperm LOCALID_LASS, 43, 15
+	setobjectxyperm LOCALID_AROMA_LADY, 10, 20
+	setobjectxyperm LOCALID_CAMPER, 37, 7
+	setobjectxyperm LOCALID_LITTLE_BOY, 36, 26
+	setobjectxyperm LOCALID_GENTELMAN, 62, 10
+	end
 
 LumiourIsland_EventScript_SetFlamethrowerLocation::
 	setobjectxyperm LOCALID_FLAMETHROWER, 58, 53
@@ -29,6 +61,11 @@ LumiourIsland_EventScript_SetLiechiLocation::
 LumiourIsland_EventScript_SetMetalCoatLocation::
 	setobjectxyperm LOCALID_BOULDER1, 18, 28
 	setobjectxyperm LOCALID_METAL_COAT, 50, 58
+	goto_if_set FLAG_DAY_1_COMPLETE LumiereIsland_EventScript_HideBoulder
+	end
+	
+LumiereIsland_EventScript_HideBoulder::
+	setobjectxyperm LOCALID_BOULDER1, 79, 41
 	end
 
 LumiourIsland_OnLoad:
@@ -37,6 +74,10 @@ LumiourIsland_OnLoad:
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 3, LumiourIsland_EventScript_SetMirageIsland
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 4, LumiourIsland_EventScript_SetIronIsland
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 5, LumiourIsland_EventScript_SetLibertyIsland
+	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 6, LumiourIsland_EventScript_SetDay6tiles
+	end
+
+LumiourIsland_EventScript_SetDay6tiles:
 	end
 
 LumiourIsland_Trigger_Strength_Button1::
@@ -1711,6 +1752,7 @@ LumiourIsland_EventScript_SetMirageIsland::
 	end
 
 LumiourIsland_EventScript_SetIronIsland::
+	goto_if_set FLAG_DAY_4_COMPLETE LumiourIsland_EventScript_End
 	setmetatile 47, 32, METATILE_General_BridgeLeft, FALSE
 	setmetatile 47, 33, METATILE_General_BridgeLeft, FALSE
 	setmetatile 47, 34, METATILE_General_BridgeLeft, FALSE
@@ -2278,7 +2320,94 @@ LumiourIsland_EventScript_SetIronIsland::
 	setmetatile 58, 45, METATILE_General_CaveEntrance_Bottom, FALSE
 	end
 
+LumiereIsland_EventScript_Day5EndScene::
+	setvar VAR_0x8004, 2  @ vertical pan
+	setvar VAR_0x8005, 1  @ horizontal pan
+	setvar VAR_0x8006, 8  @ num shakes
+	setvar VAR_0x8007, 5  @ shake delay
+	special ShakeCamera
+	waitse
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitse
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_KecleonAppears
+	waitmovement 0
+	playse SE_WARP_OUT
+	fadescreenswapbuffers FADE_TO_BLACK
+	setobjectxy OBJ_EVENT_ID_PLAYER, 47, 28
+	setvar VAR_0x8004, 47  @ x
+	setvar VAR_0x8005, 28  @ y
+	special TeleportCamera
+	setmetatile 47, 32, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 48, 32, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 49, 32, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 47, 33, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 48, 33, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 49, 33, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 47, 34, METATILE_General_CalmWater, TRUE
+	setmetatile 48, 34, METATILE_General_CalmWater, TRUE
+	setmetatile 49, 34, METATILE_General_CalmWater, TRUE
+	setmetatile 47, 35, METATILE_General_CalmWater, TRUE
+	setmetatile 48, 35, METATILE_General_CalmWater, TRUE
+	setmetatile 49, 35, METATILE_General_CalmWater, TRUE
+	setmetatile 47, 36, METATILE_General_CalmWater, TRUE
+	setmetatile 48, 36, METATILE_General_CalmWater, TRUE
+	setmetatile 49, 36, METATILE_General_CalmWater, TRUE
+	special DrawWholeMapView
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto LumiereIsland_EventScript_SailorGiveLustrousOrb
+	end
+
+LumiereIsland_EventScript_SailorGiveLustrousOrb:
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_KecleonAppears
+	waitmovement 0
+	applymovement LOCALID_SAILOR, LumiereIsland_Movement_SailorWalkToPlayer
+	waitmovement 0
+	msgbox LumiereIsland_Text_ThanksForHelping, MSGBOX_DEFAULT
+	giveitem ITEM_LUSTROUS_ORB, 1
+	setflag FLAG_HAS_LUSTROUS_ORB
+	msgbox LumiereIsland_Text_ThinkItsImportant, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SAILOR, LumiereIsland_Movement_SailorWalkBack
+	waitmovement 0
+	setflag FLAG_CAN_SLEEP
+	setvar VAR_LIBERTY_GARDEN_TRAINERS, 6
+	release
+	end
+
+LumiereIsland_Text_ThanksForHelping:
+	.string "{COLOR BLUE}Hey kid!\p"
+	.string "Thanks helping convince those trainers\n"
+	.string "to get to safety.\p"
+	.string "I found this stone on Liberty Garden.\p"
+	.string "It started glowing right before we\n"
+	.string "were first transported here.$"
+
+LumiereIsland_Text_ThinkItsImportant:
+	.string "{COLOR BLUE}I think it might be important for\n"
+	.string "something here on Lumiere Island.\p"
+	.string "Maybe show it to that Professor\n"
+	.string "friend of yours!$"
+
+
+LumiereIsland_Movement_SailorWalkToPlayer:
+	walk_right
+	walk_up
+	walk_up
+	step_end
+
+LumiereIsland_Movement_SailorWalkBack:
+	walk_down
+	walk_down
+	walk_left
+	face_right
+	step_end
+
 LumiourIsland_EventScript_SetLibertyIsland::
+	goto_if_set FLAG_HAS_LUSTROUS_ORB, LumiourIsland_EventScript_End
 	setmetatile 47, 32, METATILE_General_BridgeLeft, FALSE
 	setmetatile 47, 33, METATILE_General_BridgeLeft, FALSE
 	setmetatile 47, 34, METATILE_General_BridgeLeft, FALSE
@@ -2958,3 +3087,153 @@ LumiereIsland_Trigger_SetShore::
 	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end
+
+LumiereIsland_EventScript_Sailor::
+	lock
+	faceplayer
+	goto_if_set FLAG_HAS_LUSTROUS_ORB, LumiereIsland_EventScript_SailorPostLG
+	msgbox LumiereIsland_Text_Sailor, MSGBOX_DEFAULT
+	release
+	end
+
+LumiereIsland_EventScript_SailorPostLG::
+	msgbox LumiereIsland_Text_ThanksAgain, MSGBOX_DEFAULT
+	release
+	end
+
+LumiereIsland_Text_ThanksAgain:
+	.string "{COLOR BLUE}Thanks again for all the help!$"
+
+LumiereIsland_Text_Sailor:
+	.string "{COLOR BLUE}Are you a trainer?\p"
+	.string "You have to help us. There are trainers\n"
+	.string "inside Liberty Garden that won't leave!$"
+
+LumiereIsland_EventScript_Woman::
+	lock
+	faceplayer
+	goto_if_set FLAG_HAS_LUSTROUS_ORB, LumiereIsland_EventScript_WomanPostLG
+	msgbox LumiereIsland_Text_Woman, MSGBOX_DEFAULT
+	release
+	end
+
+LumiereIsland_EventScript_WomanPostLG::
+	msgbox LumiereIsland_Text_SonIsSafe, MSGBOX_DEFAULT
+	release
+	end
+
+LumiereIsland_Text_SonIsSafe:
+	.string "{COLOR RED}Thank you so much!\p"
+	.string "Sorry my son can be so stubborn\n"
+	.string "sometimes.$"
+
+LumiereIsland_Text_Woman:
+	.string "{COLOR RED}Please, my son won't leave Liberty\n"
+	.string "Garden until you battle him!$"
+
+LumiereIsland_Trigger_TrainerWarning::
+	lock
+	playse SE_PIN
+	applymovement LOCALID_BEAUTY, Common_Movement_ExclamationMark
+	waitmovement 0
+	waitse
+	applymovement LOCALID_BEAUTY, LumiereIsland_Movement_Beauty_StepLeft
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	msgbox LumiereIsland_Text_BeCareful, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BEAUTY, LumiereIsland_Movement_Beauty_Stepback
+	waitmovement 0
+	clearflag FLAG_LIBERTY_AROMA_LADY
+	clearflag FLAG_LIBERTY_CAMPER
+	clearflag FLAG_LIBERTY_GENTELMAN
+	clearflag FLAG_LIBERTY_LASS
+	clearflag FLAG_LIBERTY_BOY
+	release
+	end
+
+LumiereIsland_EventScript_Beauty::
+	lock
+	faceplayer
+	msgbox LumiereIsland_Text_BeCareful, MSGBOX_DEFAULT
+	clearflag FLAG_LIBERTY_AROMA_LADY
+	clearflag FLAG_LIBERTY_CAMPER
+	clearflag FLAG_LIBERTY_GENTELMAN
+	clearflag FLAG_LIBERTY_LASS
+	clearflag FLAG_LIBERTY_BOY
+	release
+	end
+
+LumiereIsland_Text_BeCareful:
+	.string "{COLOR RED}Before you go inside make sure you're\n"
+	.string "ready to have a Pokémon battle.\p"
+	.string "There are five trainers inside who\n"
+	.string "will only leave if you defeat them\l"
+	.string "all in a row.$"
+
+LumiereIsland_Movement_Beauty_StepLeft:
+	walk_left
+	step_end
+
+LumiereIsland_Movement_Beauty_Stepback:
+	walk_right
+	face_left
+	step_end
+
+LumiereIsland_EventScript_Gentleman::
+	lock
+	faceplayer
+	msgbox LumiereIsland_Text_SentRescue, MSGBOX_DEFAULT
+	release
+	end
+
+LumiereIsland_Text_SentRescue:
+	.string "{COLOR BLUE}This is quite a strange Island\p"
+	.string "Exploring here reminds me of all the\n"
+	.string "traveling I did when I was young.$"
+
+LumiereIsland_EventScript_SchoolKid::
+	lock
+	faceplayer
+	msgbox LumiereIsland_Text_MissSchool, MSGBOX_DEFAULT
+	release
+	end
+
+LumiereIsland_Text_MissSchool:
+	.string "{COLOR BLUE}I think I may have to miss a day\n"
+	.string "of school if the rescue boat doesn't\l"
+	.string "arrive soon.$"
+
+LumiereIsland_EventScript_Camper::
+	lock
+	faceplayer
+	msgbox LumiereIsland_Text_GreatPlaceTo, MSGBOX_DEFAULT
+	release
+	end
+
+LumiereIsland_Text_GreatPlaceTo:
+	.string "{COLOR BLUE}Lumiere Island would be a perfect\n"
+	.string "place to setup camp!$"
+
+LumiereIsland_EventScript_AromaLady::
+	lock
+	faceplayer
+	msgbox LumiereIsland_Text_TheseFlowers, MSGBOX_DEFAULT
+	release
+	end
+
+LumiereIsland_Text_TheseFlowers:
+	.string "{COLOR RED}I've never seen flowers like this in\n"
+	.string "the Unova Region!$"
+
+LumiereIsland_EventScript_Lass::
+	lock
+	faceplayer
+	msgbox LumiereIsland_Text_ProfCygnusWeird, MSGBOX_DEFAULT
+	release
+	end
+
+LumiereIsland_Text_ProfCygnusWeird:
+	.string "{COLOR RED}Professor Cygnus is quite a strange\n"
+	.string "fella, isn't he?$"
