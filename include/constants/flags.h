@@ -664,7 +664,7 @@
 #define FLAG_HIDDEN_GROTTO_5  0x26E // Hidden grotto object day 5
 #define FLAG_HIDDEN_GROTTO_0  0x26F // Hidden grotto object day 0
 #define FLAG_HIDDEN_GROTTO_6  0x270 // hidden grotto object day 6
-#define FLAG_UNUSED_0x271  0x271 // Unused Flag
+#define FLAG_GOT_DAY_6_ITEMS  0x271 // Day 6 item box
 #define FLAG_UNUSED_0x272  0x272 // Unused Flag
 #define FLAG_UNUSED_0x273  0x273 // Unused Flag
 #define FLAG_UNUSED_0x274  0x274 // Unused Flag

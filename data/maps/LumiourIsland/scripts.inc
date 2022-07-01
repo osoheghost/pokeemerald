@@ -30,6 +30,7 @@ LumiourIsland_OnWarp:
 	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 3, LumiourIsland_EventScript_SetLiechiLocation
 	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 4, LumiourIsland_EventScript_SetFlamethrowerLocation
 	map_script_2 VAR_LUMIOUR_ISLAND_STATE, 5, LumiourIsland_EventScript_SetLibertyGardenOWS
+	map_script_2 VAR_PALKIA_SEQUENCE_STATE, 3 LumiereIsland_EventScript_SetVisceraCaveClosed
 	.2byte 0
 
 LumiourIsland_EventScript_SetLibertyGardenOWS::
@@ -37,6 +38,7 @@ LumiourIsland_EventScript_SetLibertyGardenOWS::
 	setobjectxyperm LOCALID_SAILOR, 42, 46
 	setobjectxyperm LOCALID_WOMAN, 40, 53
 	setobjectxyperm LOCALID_BEAUTY, 55, 52
+	setvar VAR_LIBERTY_GARDEN_TRAINERS, 10
 	end
 
 LumiereIsland_EventScript_SetLibertyGardenOWs2::
@@ -69,6 +71,11 @@ LumiereIsland_EventScript_HideBoulder::
 	end
 
 LumiourIsland_OnLoad:
+	goto_if_eq VAR_PALKIA_SEQUENCE_STATE, 3 LumiereIsland_EventScript_SetVisceraCaveClosed
+	goto_if_eq VAR_PALKIA_SEQUENCE_STATE, 4 LumiereIsland_EventScript_PalkiaTiles4
+	goto_if_eq VAR_PALKIA_SEQUENCE_STATE, 5 LumiereIsland_EventScript_PalkiaTiles5
+	goto_if_eq VAR_PALKIA_SEQUENCE_STATE, 6 LumiereIsland_EventScript_PalkiaTiles6
+	goto_if_eq VAR_PALKIA_SEQUENCE_STATE, 7 LumiereIsland_EventScript_PalkiaTiles7
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 1, LumiourIsland_EventScript_SetMemorialPillar
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 2, LumiourIsland_EventScript_SetWhirlIsland
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 3, LumiourIsland_EventScript_SetMirageIsland
@@ -78,6 +85,11 @@ LumiourIsland_OnLoad:
 	end
 
 LumiourIsland_EventScript_SetDay6tiles:
+	goto_if_eq VAR_PALKIA_SEQUENCE_STATE, 0, LumiereIsland_EventScript_SetPalkiaSequenceVar
+	end
+
+LumiereIsland_EventScript_SetPalkiaSequenceVar::
+	setvar VAR_PALKIA_SEQUENCE_STATE, 1
 	end
 
 LumiourIsland_Trigger_Strength_Button1::
@@ -3156,6 +3168,7 @@ LumiereIsland_Trigger_TrainerWarning::
 LumiereIsland_EventScript_Beauty::
 	lock
 	faceplayer
+	goto_if_set FLAG_HAS_LUSTROUS_ORB, LumiereIsland_EventScript_Beauty2
 	msgbox LumiereIsland_Text_BeCareful, MSGBOX_DEFAULT
 	clearflag FLAG_LIBERTY_AROMA_LADY
 	clearflag FLAG_LIBERTY_CAMPER
@@ -3164,6 +3177,18 @@ LumiereIsland_EventScript_Beauty::
 	clearflag FLAG_LIBERTY_BOY
 	release
 	end
+
+LumiereIsland_EventScript_Beauty2::
+	msgbox LumiereIsland_Text_ComingFromCastelia, MSGBOX_DEFAULT
+	release
+	end
+
+LumiereIsland_Text_ComingFromCastelia:
+	.string "{COLOR RED}I heard a boat from Castelia City\n"
+	.string "is being sent over to pick us up.\p"
+	.string "How close is Lumiere Island to the\n"
+	.string "Unova Region?$"
+
 
 LumiereIsland_Text_BeCareful:
 	.string "{COLOR RED}Before you go inside make sure you're\n"
@@ -3237,3 +3262,472 @@ LumiereIsland_EventScript_Lass::
 LumiereIsland_Text_ProfCygnusWeird:
 	.string "{COLOR RED}Professor Cygnus is quite a strange\n"
 	.string "fella, isn't he?$"
+
+LumiereIsland_Trigger_SetPalkiaSequenceTiles3::
+	lock
+	setvar VAR_0x8004, 2  @ vertical pan
+	setvar VAR_0x8005, 1  @ horizontal pan
+	setvar VAR_0x8006, 8  @ num shakes
+	setvar VAR_0x8007, 5  @ shake delay
+	special ShakeCamera
+	waitse
+	playmoncry SPECIES_PALKIA, CRY_MODE_NORMAL
+	waitmoncry
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitse
+	waitmovement 0
+	fadescreenswapbuffers FADE_TO_BLACK
+	setvar VAR_PALKIA_SEQUENCE_STATE, 4
+	setmetatile 47, 16, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 48, 16, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 49, 16, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 47, 17, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 48, 17, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 49, 17, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 22, 9, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 22, 10, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 22, 11, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 22, 12, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 23, 8, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 23, 9, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 23, 10, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 23, 11, METATILE_General_RockRockCliffL, TRUE
+	special DrawWholeMapView
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+LumiereIsland_Trigger_SetPalkiaSequenceTiles4::
+	lock
+	setvar VAR_0x8004, 2  @ vertical pan
+	setvar VAR_0x8005, 1  @ horizontal pan
+	setvar VAR_0x8006, 8  @ num shakes
+	setvar VAR_0x8007, 5  @ shake delay
+	special ShakeCamera
+	waitse
+	playmoncry SPECIES_PALKIA, CRY_MODE_NORMAL
+	waitmoncry
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitse
+	waitmovement 0
+	fadescreenswapbuffers FADE_TO_BLACK
+	setvar VAR_PALKIA_SEQUENCE_STATE, 5
+	setmetatile 15, 19, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 16, 19, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 17, 19, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 18, 19, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 19, 19, METATILE_General_RockGrassCliffBR, TRUE
+	setmetatile 20, 19, METATILE_General_TreeBL, TRUE
+	setmetatile 21, 19, METATILE_General_TreeBR, TRUE
+
+	setmetatile 15, 20, METATILE_General_Grass3, FALSE
+	setmetatile 16, 20, METATILE_General_Grass4, FALSE
+	setmetatile 17, 20, METATILE_General_Grass3, FALSE
+	setmetatile 18, 20, METATILE_General_Grass4, FALSE
+	setmetatile 19, 20, METATILE_General_Grass3, FALSE
+	setmetatile 20, 20, METATILE_General_Grass4, FALSE
+	setmetatile 21, 20, METATILE_General_Grass3, FALSE
+
+	setmetatile 15, 21, METATILE_General_Grass1, FALSE
+	setmetatile 16, 21, METATILE_General_Grass2, FALSE
+	setmetatile 17, 21, METATILE_General_Grass1, FALSE
+	setmetatile 18, 21, METATILE_General_Grass2, FALSE
+	setmetatile 19, 21, METATILE_General_Grass1, FALSE
+	setmetatile 20, 21, METATILE_General_Grass2, FALSE
+	setmetatile 21, 21, METATILE_General_Grass1, FALSE
+
+	setmetatile 15, 22, METATILE_General_Grass3, FALSE
+	setmetatile 16, 22, METATILE_General_Grass4, FALSE
+	setmetatile 17, 22, METATILE_General_Grass3, FALSE
+	setmetatile 18, 22, METATILE_General_Grass4, FALSE
+	setmetatile 19, 22, METATILE_General_Grass3, FALSE
+	setmetatile 20, 22, METATILE_General_Grass4, FALSE
+	setmetatile 21, 22, METATILE_General_Grass3, FALSE
+
+	setmetatile 18, 23, METATILE_General_Grass2, FALSE
+	setmetatile 19, 23, METATILE_General_Grass1, FALSE
+	setmetatile 20, 23, METATILE_General_Grass2, FALSE
+
+	special DrawWholeMapView
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+LumiereIsland_Trigger_SetPalkiaSequenceTiles5::
+	lock
+	setvar VAR_0x8004, 2  @ vertical pan
+	setvar VAR_0x8005, 1  @ horizontal pan
+	setvar VAR_0x8006, 8  @ num shakes
+	setvar VAR_0x8007, 5  @ shake delay
+	special ShakeCamera
+	waitse
+	playmoncry SPECIES_PALKIA, CRY_MODE_NORMAL
+	waitmoncry
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitse
+	waitmovement 0
+	fadescreenswapbuffers FADE_TO_BLACK
+	setvar VAR_PALKIA_SEQUENCE_STATE, 6
+	setmetatile 32, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 33, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 34, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 35, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 36, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 37, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 38, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 39, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 40, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 41, 26, METATILE_General_CalmWater, TRUE
+
+	setmetatile 32, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 33, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 34, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 35, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 36, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 37, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 38, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 39, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 40, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 41, 27, METATILE_General_CalmWater, TRUE
+
+	setmetatile 32, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 33, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 34, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 35, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 36, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 37, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 38, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 39, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 40, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 41, 28, METATILE_General_CalmWater, TRUE
+
+	setmetatile 30, 26, METATILE_General_RockRockCliffR, TRUE
+	setmetatile 30, 27, METATILE_General_RockRockCliffR, TRUE
+	setmetatile 30, 28, METATILE_General_RockRockCliffR, TRUE
+	setmetatile 31, 26, METATILE_General_WaterCliffR, TRUE
+	setmetatile 31, 27, METATILE_General_WaterCliffR, TRUE
+	setmetatile 31, 28, METATILE_General_WaterCliffR, TRUE
+
+
+	setmetatile 43, 26, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 43, 27, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 43, 28, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 42, 26, METATILE_General_WaterCliffL, TRUE
+	setmetatile 42, 27, METATILE_General_WaterCliffL, TRUE
+	setmetatile 42, 28, METATILE_General_WaterCliffL, TRUE
+
+	special DrawWholeMapView
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+LumiereIsland_Trigger_SetPalkiaSequenceTiles6::
+	lock
+	setvar VAR_0x8004, 2  @ vertical pan
+	setvar VAR_0x8005, 1  @ horizontal pan
+	setvar VAR_0x8006, 8  @ num shakes
+	setvar VAR_0x8007, 5  @ shake delay
+	special ShakeCamera
+	waitse
+	playmoncry SPECIES_PALKIA, CRY_MODE_NORMAL
+	waitmoncry
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitse
+	waitmovement 0
+	fadescreenswapbuffers FADE_TO_BLACK
+	setvar VAR_PALKIA_SEQUENCE_STATE, 7
+	setmetatile 58, 14, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 58, 15, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 58, 16, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 58, 17, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 63, 9, METATILE_General_CaveEntrance_Bottom, FALSE
+	special DrawWholeMapView
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+LumiereIsland_EventScript_SetVisceraCaveClosed::
+	setmetatile 49, 9, METATILE_General_RockWall_GrassBase, TRUE
+	end
+
+LumiereIsland_EventScript_PalkiaTiles4::
+	setmetatile 49, 9, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 47, 16, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 48, 16, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 49, 16, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 47, 17, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 48, 17, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 49, 17, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 22, 9, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 22, 10, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 22, 11, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 22, 12, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 23, 8, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 23, 9, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 23, 10, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 23, 11, METATILE_General_RockRockCliffL, TRUE
+	end
+
+LumiereIsland_EventScript_PalkiaTiles5::
+	setmetatile 49, 9, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 47, 16, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 48, 16, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 49, 16, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 47, 17, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 48, 17, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 49, 17, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 22, 9, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 22, 10, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 22, 11, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 22, 12, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 23, 8, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 23, 9, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 23, 10, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 23, 11, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 15, 19, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 16, 19, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 17, 19, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 18, 19, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 19, 19, METATILE_General_RockGrassCliffBR, TRUE
+	setmetatile 20, 19, METATILE_General_TreeBL, TRUE
+	setmetatile 21, 19, METATILE_General_TreeBR, TRUE
+
+	setmetatile 15, 20, METATILE_General_Grass3, FALSE
+	setmetatile 16, 20, METATILE_General_Grass4, FALSE
+	setmetatile 17, 20, METATILE_General_Grass3, FALSE
+	setmetatile 18, 20, METATILE_General_Grass4, FALSE
+	setmetatile 19, 20, METATILE_General_Grass3, FALSE
+	setmetatile 20, 20, METATILE_General_Grass4, FALSE
+	setmetatile 21, 20, METATILE_General_Grass3, FALSE
+
+	setmetatile 15, 21, METATILE_General_Grass1, FALSE
+	setmetatile 16, 21, METATILE_General_Grass2, FALSE
+	setmetatile 17, 21, METATILE_General_Grass1, FALSE
+	setmetatile 18, 21, METATILE_General_Grass2, FALSE
+	setmetatile 19, 21, METATILE_General_Grass1, FALSE
+	setmetatile 20, 21, METATILE_General_Grass2, FALSE
+	setmetatile 21, 21, METATILE_General_Grass1, FALSE
+
+	setmetatile 15, 22, METATILE_General_Grass3, FALSE
+	setmetatile 16, 22, METATILE_General_Grass4, FALSE
+	setmetatile 17, 22, METATILE_General_Grass3, FALSE
+	setmetatile 18, 22, METATILE_General_Grass4, FALSE
+	setmetatile 19, 22, METATILE_General_Grass3, FALSE
+	setmetatile 20, 22, METATILE_General_Grass4, FALSE
+	setmetatile 21, 22, METATILE_General_Grass3, FALSE
+
+	setmetatile 18, 23, METATILE_General_Grass2, FALSE
+	setmetatile 19, 23, METATILE_General_Grass1, FALSE
+	setmetatile 20, 23, METATILE_General_Grass2, FALSE
+	end
+
+LumiereIsland_EventScript_PalkiaTiles6::
+	setmetatile 49, 9, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 47, 16, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 48, 16, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 49, 16, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 47, 17, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 48, 17, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 49, 17, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 22, 9, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 22, 10, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 22, 11, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 22, 12, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 23, 8, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 23, 9, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 23, 10, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 23, 11, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 15, 19, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 16, 19, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 17, 19, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 18, 19, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 19, 19, METATILE_General_RockGrassCliffBR, TRUE
+	setmetatile 20, 19, METATILE_General_TreeBL, TRUE
+	setmetatile 21, 19, METATILE_General_TreeBR, TRUE
+
+	setmetatile 15, 20, METATILE_General_Grass3, FALSE
+	setmetatile 16, 20, METATILE_General_Grass4, FALSE
+	setmetatile 17, 20, METATILE_General_Grass3, FALSE
+	setmetatile 18, 20, METATILE_General_Grass4, FALSE
+	setmetatile 19, 20, METATILE_General_Grass3, FALSE
+	setmetatile 20, 20, METATILE_General_Grass4, FALSE
+	setmetatile 21, 20, METATILE_General_Grass3, FALSE
+
+	setmetatile 15, 21, METATILE_General_Grass1, FALSE
+	setmetatile 16, 21, METATILE_General_Grass2, FALSE
+	setmetatile 17, 21, METATILE_General_Grass1, FALSE
+	setmetatile 18, 21, METATILE_General_Grass2, FALSE
+	setmetatile 19, 21, METATILE_General_Grass1, FALSE
+	setmetatile 20, 21, METATILE_General_Grass2, FALSE
+	setmetatile 21, 21, METATILE_General_Grass1, FALSE
+
+	setmetatile 15, 22, METATILE_General_Grass3, FALSE
+	setmetatile 16, 22, METATILE_General_Grass4, FALSE
+	setmetatile 17, 22, METATILE_General_Grass3, FALSE
+	setmetatile 18, 22, METATILE_General_Grass4, FALSE
+	setmetatile 19, 22, METATILE_General_Grass3, FALSE
+	setmetatile 20, 22, METATILE_General_Grass4, FALSE
+	setmetatile 21, 22, METATILE_General_Grass3, FALSE
+
+	setmetatile 18, 23, METATILE_General_Grass2, FALSE
+	setmetatile 19, 23, METATILE_General_Grass1, FALSE
+	setmetatile 20, 23, METATILE_General_Grass2, FALSE
+
+	setmetatile 32, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 33, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 34, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 35, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 36, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 37, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 38, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 39, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 40, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 41, 26, METATILE_General_CalmWater, TRUE
+
+	setmetatile 32, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 33, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 34, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 35, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 36, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 37, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 38, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 39, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 40, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 41, 27, METATILE_General_CalmWater, TRUE
+
+	setmetatile 32, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 33, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 34, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 35, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 36, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 37, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 38, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 39, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 40, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 41, 28, METATILE_General_CalmWater, TRUE
+
+	setmetatile 30, 26, METATILE_General_RockRockCliffR, TRUE
+	setmetatile 30, 27, METATILE_General_RockRockCliffR, TRUE
+	setmetatile 30, 28, METATILE_General_RockRockCliffR, TRUE
+	setmetatile 31, 26, METATILE_General_WaterCliffR, TRUE
+	setmetatile 31, 27, METATILE_General_WaterCliffR, TRUE
+	setmetatile 31, 28, METATILE_General_WaterCliffR, TRUE
+
+
+	setmetatile 43, 26, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 43, 27, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 43, 28, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 42, 26, METATILE_General_WaterCliffL, TRUE
+	setmetatile 42, 27, METATILE_General_WaterCliffL, TRUE
+	setmetatile 42, 28, METATILE_General_WaterCliffL, TRUE
+	end
+
+LumiereIsland_EventScript_PalkiaTiles7::
+	setmetatile 49, 9, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 47, 16, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 48, 16, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 49, 16, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 47, 17, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 48, 17, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 49, 17, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 22, 9, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 22, 10, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 22, 11, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 22, 12, METATILE_General_RockGrassCliffL, TRUE
+	setmetatile 23, 8, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 23, 9, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 23, 10, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 23, 11, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 15, 19, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 16, 19, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 17, 19, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 18, 19, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 19, 19, METATILE_General_RockGrassCliffBR, TRUE
+	setmetatile 20, 19, METATILE_General_TreeBL, TRUE
+	setmetatile 21, 19, METATILE_General_TreeBR, TRUE
+
+	setmetatile 15, 20, METATILE_General_Grass3, FALSE
+	setmetatile 16, 20, METATILE_General_Grass4, FALSE
+	setmetatile 17, 20, METATILE_General_Grass3, FALSE
+	setmetatile 18, 20, METATILE_General_Grass4, FALSE
+	setmetatile 19, 20, METATILE_General_Grass3, FALSE
+	setmetatile 20, 20, METATILE_General_Grass4, FALSE
+	setmetatile 21, 20, METATILE_General_Grass3, FALSE
+
+	setmetatile 15, 21, METATILE_General_Grass1, FALSE
+	setmetatile 16, 21, METATILE_General_Grass2, FALSE
+	setmetatile 17, 21, METATILE_General_Grass1, FALSE
+	setmetatile 18, 21, METATILE_General_Grass2, FALSE
+	setmetatile 19, 21, METATILE_General_Grass1, FALSE
+	setmetatile 20, 21, METATILE_General_Grass2, FALSE
+	setmetatile 21, 21, METATILE_General_Grass1, FALSE
+
+	setmetatile 15, 22, METATILE_General_Grass3, FALSE
+	setmetatile 16, 22, METATILE_General_Grass4, FALSE
+	setmetatile 17, 22, METATILE_General_Grass3, FALSE
+	setmetatile 18, 22, METATILE_General_Grass4, FALSE
+	setmetatile 19, 22, METATILE_General_Grass3, FALSE
+	setmetatile 20, 22, METATILE_General_Grass4, FALSE
+	setmetatile 21, 22, METATILE_General_Grass3, FALSE
+
+	setmetatile 18, 23, METATILE_General_Grass2, FALSE
+	setmetatile 19, 23, METATILE_General_Grass1, FALSE
+	setmetatile 20, 23, METATILE_General_Grass2, FALSE
+
+	setmetatile 32, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 33, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 34, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 35, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 36, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 37, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 38, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 39, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 40, 26, METATILE_General_CalmWater, TRUE
+	setmetatile 41, 26, METATILE_General_CalmWater, TRUE
+
+	setmetatile 32, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 33, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 34, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 35, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 36, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 37, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 38, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 39, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 40, 27, METATILE_General_CalmWater, TRUE
+	setmetatile 41, 27, METATILE_General_CalmWater, TRUE
+
+	setmetatile 32, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 33, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 34, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 35, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 36, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 37, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 38, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 39, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 40, 28, METATILE_General_CalmWater, TRUE
+	setmetatile 41, 28, METATILE_General_CalmWater, TRUE
+
+	setmetatile 30, 26, METATILE_General_RockRockCliffR, TRUE
+	setmetatile 30, 27, METATILE_General_RockRockCliffR, TRUE
+	setmetatile 30, 28, METATILE_General_RockRockCliffR, TRUE
+	setmetatile 31, 26, METATILE_General_WaterCliffR, TRUE
+	setmetatile 31, 27, METATILE_General_WaterCliffR, TRUE
+	setmetatile 31, 28, METATILE_General_WaterCliffR, TRUE
+
+
+	setmetatile 43, 26, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 43, 27, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 43, 28, METATILE_General_RockRockCliffL, TRUE
+	setmetatile 42, 26, METATILE_General_WaterCliffL, TRUE
+	setmetatile 42, 27, METATILE_General_WaterCliffL, TRUE
+	setmetatile 42, 28, METATILE_General_WaterCliffL, TRUE
+	setmetatile 58, 14, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 58, 15, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 58, 16, METATILE_General_RockWall_RockBase, TRUE
+	setmetatile 58, 17, METATILE_General_RockWall_GrassBase, TRUE
+	setmetatile 63, 9, METATILE_General_CaveEntrance_Bottom, FALSE
+	end

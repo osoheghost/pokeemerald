@@ -440,7 +440,8 @@
     "VisceraCave",
     "WhirlIsland",
     "WhirlIsland_B1",
-    "IronIsland_Interior"
+    "IronIsland_Interior",
+    "VisceraCave_2"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

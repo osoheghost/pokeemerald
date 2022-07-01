@@ -266,7 +266,7 @@
 #define VAR_LUMIOUR_ISLAND_STATE             0x40F7 // 1-Memorial Pillar 2-Whirl Island 3-Mirage Island 4-Iron Island 5-Liberty Island
 #define VAR_INTRO_STATE                      0x40F8 // Used for Lumiour lab intro
 #define VAR_STRENGTH_TRIGGER                 0x40F9 // If set to 99 loads script??
-#define VAR_UNUSED_0x40FA                    0x40FA // Unused Var
+#define VAR_PALKIA_SEQUENCE_STATE            0x40FA // used in palkia sequence triggers
 #define VAR_UNUSED_0x40FB                    0x40FB // Unused Var
 #define VAR_UNUSED_0x40FC                    0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                    0x40FD // Unused Var

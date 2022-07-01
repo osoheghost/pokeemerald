@@ -9,7 +9,7 @@ LibertyGardenInterior_MapScripts::
 	.byte 0
 
 LibertyGardenInterior_OnFrame::
-	map_script_2 VAR_LIBERTY_GARDEN_TRAINERS, 0, LibertyGardenInterior_EventScript_TrainerSequence
+	map_script_2 VAR_LIBERTY_GARDEN_TRAINERS, 10, LibertyGardenInterior_EventScript_TrainerSequence
 	.2byte 0
 
 LibertyGardenInterior_EventScript_TrainerSequence::

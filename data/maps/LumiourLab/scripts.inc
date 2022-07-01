@@ -374,6 +374,7 @@ LumiourLab_EventScript_Boxes::
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 3, LumiourIsland_EventScript_GiveDay3Items
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 4, LumiourIsland_EventScript_GiveDay4Items
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 5, LumiourIsland_EventScript_GiveDay5Items
+	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 6, LumiourIsland_EventScript_GiveDay6Items
 	goto LumiourLab_EventScript_DontTouchBoxes
 	end
 
@@ -427,6 +428,14 @@ LumiourIsland_EventScript_GiveDay5Items::
 	giveitem ITEM_FULL_RESTORE, 5
 	giveitem ITEM_REVIVE, 5
 	setflag FLAG_GOT_DAY_5_ITEMS
+	release
+	end
+
+LumiourIsland_EventScript_GiveDay6Items::
+	goto_if_set FLAG_GOT_DAY_6_ITEMS, LumiourIsland_EventScript_GotItems
+	giveitem ITEM_ULTRA_BALL, 20
+	giveitem ITEM_ESCAPE_ROPE, 2
+	setflag FLAG_GOT_DAY_6_ITEMS
 	release
 	end
 

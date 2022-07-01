@@ -168,9 +168,87 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_PALKIA_SEQUENCE_STATE",
+      "var_value": "1",
+      "script": "VisceraCave_Trigger_SetPalkiaSequenceTiles1"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_PALKIA_SEQUENCE_STATE",
+      "var_value": "1",
+      "script": "VisceraCave_Trigger_SetPalkiaSequenceTiles1"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_PALKIA_SEQUENCE_STATE",
+      "var_value": "1",
+      "script": "VisceraCave_Trigger_SetPalkiaSequenceTiles1"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_PALKIA_SEQUENCE_STATE",
+      "var_value": "2",
+      "script": "VisceraCave_Trigger_SetPalkiaSequenceTiles2"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_PALKIA_SEQUENCE_STATE",
+      "var_value": "2",
+      "script": "VisceraCave_Trigger_SetPalkiaSequenceTiles2"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_PALKIA_SEQUENCE_STATE",
+      "var_value": "2",
+      "script": "VisceraCave_Trigger_SetPalkiaSequenceTiles2"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_PALKIA_SEQUENCE_STATE",
+      "var_value": "2",
+      "script": "VisceraCave_Trigger_SetPalkiaSequenceTiles2"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_PALKIA_SEQUENCE_STATE",
+      "var_value": "2",
+      "script": "VisceraCave_Trigger_SetPalkiaSequenceTiles2"
+    }
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    }
   ]
 }

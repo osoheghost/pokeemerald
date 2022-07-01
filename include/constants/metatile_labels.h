@@ -196,6 +196,9 @@
 #define METATILE_Fortree_BridgeOverTrees_Lowered           0x257
 #define METATILE_Fortree_BridgeOverTrees_Raised            0x256
 #define METATILE_Fortree_BridgeT                           0x23F
+#define METATILE_Fortree_Cave                              0x201
+#define METATILE_Fortree_CaveLedgeB                        0x219
+#define METATILE_Fortree_CaveLedgeT                        0x209
 #define METATILE_Fortree_CaveStairs                        0x204
 #define METATILE_Fortree_LongGrass_Root                    0x208
 #define METATILE_Fortree_RockClimb                         0x2A0
