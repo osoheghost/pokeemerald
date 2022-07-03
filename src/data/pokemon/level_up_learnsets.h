@@ -9609,7 +9609,7 @@ static const struct LevelUpMove sPorygonZLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sGalladeLevelUpLearnset[] = {
-    //LEVEL_UP_MOVE( 0, MOVE_SLASH),
+    LEVEL_UP_MOVE( 0, MOVE_SLASH),
     LEVEL_UP_MOVE( 1, MOVE_SLASH),
     LEVEL_UP_MOVE( 1, MOVE_STORED_POWER),
     LEVEL_UP_MOVE( 1, MOVE_CLOSE_COMBAT),
@@ -18127,7 +18127,7 @@ static const struct LevelUpMove sRaticateAlolanLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sRaichuAlolanLevelUpLearnset[] = {
-    //LEVEL_UP_MOVE( 0, MOVE_PSYCHIC),
+    LEVEL_UP_MOVE( 0, MOVE_PSYCHIC),
     LEVEL_UP_MOVE( 1, MOVE_PSYCHIC),
     LEVEL_UP_MOVE( 1, MOVE_SPEED_SWAP),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_SHOCK),

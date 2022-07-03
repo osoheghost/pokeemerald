@@ -4520,6 +4520,16 @@
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/VisceraCave_2/border.bin",
       "blockdata_filepath": "data/layouts/VisceraCave_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_VISCERA_CAVE3",
+      "name": "VisceraCave3_Layout",
+      "width": 21,
+      "height": 62,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/VisceraCave3/border.bin",
+      "blockdata_filepath": "data/layouts/VisceraCave3/map.bin"
     }
   ]
 }

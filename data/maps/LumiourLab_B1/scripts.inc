@@ -1,5 +1,15 @@
 LumiourLab_B1_MapScripts::
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LumiereLab_B1_OnWarp
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, LumiereLab_B1_OnFrame
 	.byte 0
+
+LumiereLab_B1_OnFrame::
+	map_script_2 VAR_PALKIA_SEQUENCE_STATE, 8, LumiereLab_B1_EventScript_Credits2
+	.2byte 0
+
+LumiereLab_B1_OnWarp:
+	map_script_2 VAR_PALKIA_SEQUENCE_STATE, 8, LumiereLab_B1_EventScript_SetDirection
+	.2byte 0
 
 LumiourLab_B1_EventScript_Bed::
 	lock
@@ -78,6 +88,7 @@ LumiourIsland_B1_Text_UseBed2:
 
 LumiereLab_B1_EventScript_Computer::
 	lock
+	goto_if_set FLAG_GAME_COMPLETE LumiereLab_B1_EventScript_Credits
 	msgbox LumiereIsland_B1_Text_CygnusPC, MSGBOX_DEFAULT
 	release
 	end
@@ -101,3 +112,60 @@ LumiereLab_B1_EventScript_OnlyTrash:
 
 LumiereLab_B1_Text_OnlyTrash:	
 	.string "The trash can is empty.$"
+
+LumiereLab_B1_EventScript_SetDirection::
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	end
+
+LumiereLab_B1_EventScript_Credits::
+	lock
+	msgbox LumiereLab_B1_Text_QRCode, MSGBOX_DEFAULT
+	special Special_ShowDiploma
+	waitbuttonpress
+	msgbox LumiereLab_B1_Text_ViewInGame, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LumiourLab_B1_EventScript_End
+	msgbox LumiereLab_B1_Text_Credits, MSGBOX_DEFAULT
+	release
+	end
+
+LumiereLab_B1_EventScript_Credits2::
+	lock
+	setvar VAR_PALKIA_SEQUENCE_STATE, 9
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	msgbox LumiereLab_B1_Text_QRCode, MSGBOX_AUTOCLOSE
+	closemessage
+	special Special_ShowDiploma
+	waitstate
+	release
+	end
+
+
+LumiourLab_B1_EventScript_End::
+	end
+
+LumiereLab_B1_Text_QRCode:
+	.string "There's a QR code on the computer.$"
+
+LumiereLab_B1_Text_ViewInGame:
+	.string "Would you like to view credits in game?$"
+
+LumiereLab_B1_Text_Credits:
+	.string "Projects Space Taker:\n"
+	.string "Designed and created by OsoheGhost.\p"
+	.string "Player sprites: Rankomon\p"
+	.string "Pokémon Gaia Tileset:\n"
+	.string "Spherical Ice, Cuddlesthefatcat\l"
+	.string "Mateo, Fanking Omega, Kyle-Dove\l"
+	.string "LunaMaddalena.\p"
+	.string "Decomp base:\n"
+	.string "Pret/RHH team\p"
+	.string "Additional code:\n"
+	.string "Ghoulslash, Spherical Ice, Jaizu\l"
+	.string "DizzyEgg, Zeturic, TheXaman, Lunos\l"
+	.string "Blurose.\p"
+	.string "Beta Testers:\n"
+	.string "Rankomon, Snugboat, VLN-VS and Nick\p"
+	.string "Special thanks to Spherical Ice!\n"
+	.string "If it weren't for Gaia I would've\l"
+	.string "never been as interested in romhacks\l"
+	.string "and fangames as I am now :>$"

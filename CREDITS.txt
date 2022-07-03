@@ -10,7 +10,7 @@ Decomp Code
 Pret + RHH team (decomp base)
 Ghoulslash (Rock climb, sideways stairs, Item desc header, proper plural give item, Repeated Field Medicine Use)
 Spherical Ice (move camera special, frlg strength button metatile behavior in em)
-Jaizu (Triple layer metatiles, Auto switch to lowercase, move camera special)
+Jaizu (Triple layer metatiles, Auto switch to lowercase, move camera special, Not showing dex entries until obtaining pokedex)
 DizzyEgg (Colored nature stats)
 Zeturic (XY Style Scrolling summary screen, Move item option)
 TheXaman (DS Style Party Screen)
@@ -21,4 +21,6 @@ Beta Teseters:
 @rankomon
 @SnugboatThe2st
 @VLN_VS
+Nick
+
 

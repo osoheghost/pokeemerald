@@ -1076,3 +1076,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/IronIsland_Interior/scripts.inc"
 
 	.include "data/maps/VisceraCave_2/scripts.inc"
+
+	.include "data/maps/VisceraCave3/scripts.inc"

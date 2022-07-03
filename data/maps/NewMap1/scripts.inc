@@ -62,6 +62,7 @@ WhirlIsland_Bottom_EventScript_Lugia::
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, WhirlIsland_Bottom_EventScript_DefeatedLugia
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, WhirlIsland_Bottom_EventScript_RanFromLugia
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, WhirlIsland_Bottom_EventScript_RanFromLugia
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, WhirlIsland_Bottom_EventScript_DefeatedLugia
 	setflag FLAG_CAUGHT_LUGIA
 	release
 	end

@@ -282,7 +282,7 @@ LumiourLab_EventScript_ExplainFossil:
 	applymovement LOCALID_PROF_CYGNUS, Common_Movement_FaceRight
 	msgbox LumiourLab_Text_GetStarter, MSGBOX_DEFAULT
 	setflag FLAG_SYS_POKEMON_GET
-	givemon SPECIES_AERODACTYL, 25, ITEM_NONE
+	givemon SPECIES_AERODACTYL, 30, ITEM_NONE
 	playfanfare MUS_OBTAIN_ITEM
 	bufferleadmonspeciesname 0
 	msgbox LumiourLab_Text_RecievedAerodactyl, MSGBOX_DEFAULT
@@ -514,7 +514,7 @@ LumiourLab_EventScript_GiveOmanyte::
 	playse SE_DING_DONG
 	waitse
 	setvar VAR_TEMP_1, SPECIES_OMANYTE
-	givemon SPECIES_OMANYTE, 25, ITEM_NONE
+	givemon SPECIES_OMANYTE, 35, ITEM_NONE
 	bufferspeciesname STR_VAR_1, SPECIES_OMANYTE
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LumiourLab_EventScript_ReceiveFossilParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LumiourLab_EventScript_ReceiveFossilPC
@@ -531,7 +531,7 @@ LumiourLab_EventScript_GiveKabuto::
 	playse SE_DING_DONG
 	waitse
 	setvar VAR_TEMP_1, SPECIES_KABUTO
-	givemon SPECIES_KABUTO, 25, ITEM_NONE
+	givemon SPECIES_KABUTO, 35, ITEM_NONE
 	bufferspeciesname STR_VAR_1, SPECIES_KABUTO
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LumiourLab_EventScript_ReceiveFossilParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LumiourLab_EventScript_ReceiveFossilPC
@@ -548,7 +548,7 @@ LumiourLab_EventScript_GiveLileep::
 	playse SE_DING_DONG
 	waitse
 	setvar VAR_TEMP_1, SPECIES_LILEEP
-	givemon SPECIES_LILEEP, 25, ITEM_NONE
+	givemon SPECIES_LILEEP, 35, ITEM_NONE
 	bufferspeciesname STR_VAR_1, SPECIES_LILEEP
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LumiourLab_EventScript_ReceiveFossilParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LumiourLab_EventScript_ReceiveFossilPC
@@ -565,7 +565,7 @@ LumiourLab_EventScript_GiveAnorith::
 	playse SE_DING_DONG
 	waitse
 	setvar VAR_TEMP_1, SPECIES_ANORITH
-	givemon SPECIES_ANORITH, 25, ITEM_NONE
+	givemon SPECIES_ANORITH, 35, ITEM_NONE
 	bufferspeciesname STR_VAR_1, SPECIES_ANORITH
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LumiourLab_EventScript_ReceiveFossilParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LumiourLab_EventScript_ReceiveFossilPC
@@ -582,7 +582,7 @@ LumiourLab_EventScript_GiveShieldon::
 	playse SE_DING_DONG
 	waitse
 	setvar VAR_TEMP_1, SPECIES_SHIELDON
-	givemon SPECIES_SHIELDON, 25, ITEM_NONE
+	givemon SPECIES_SHIELDON, 35, ITEM_NONE
 	bufferspeciesname STR_VAR_1, SPECIES_SHIELDON
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LumiourLab_EventScript_ReceiveFossilParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LumiourLab_EventScript_ReceiveFossilPC
@@ -599,7 +599,7 @@ LumiourLab_EventScript_GiveCranidos::
 	playse SE_DING_DONG
 	waitse
 	setvar VAR_TEMP_1, SPECIES_CRANIDOS
-	givemon SPECIES_CRANIDOS, 25, ITEM_NONE
+	givemon SPECIES_CRANIDOS, 35, ITEM_NONE
 	bufferspeciesname STR_VAR_1, SPECIES_CRANIDOS
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LumiourLab_EventScript_ReceiveFossilParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LumiourLab_EventScript_ReceiveFossilPC
@@ -616,7 +616,7 @@ LumiourLab_EventScript_GiveArchen::
 	playse SE_DING_DONG
 	waitse
 	setvar VAR_TEMP_1, SPECIES_ARCHEN
-	givemon SPECIES_ARCHEN, 25, ITEM_NONE
+	givemon SPECIES_ARCHEN, 35, ITEM_NONE
 	bufferspeciesname STR_VAR_1, SPECIES_ARCHEN
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LumiourLab_EventScript_ReceiveFossilParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LumiourLab_EventScript_ReceiveFossilPC
@@ -633,7 +633,7 @@ LumiourLab_EventScript_GiveTirtouga::
 	playse SE_DING_DONG
 	waitse
 	setvar VAR_TEMP_1, SPECIES_TIRTOUGA
-	givemon SPECIES_TIRTOUGA, 25, ITEM_NONE
+	givemon SPECIES_TIRTOUGA, 35, ITEM_NONE
 	bufferspeciesname STR_VAR_1, SPECIES_TIRTOUGA
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LumiourLab_EventScript_ReceiveFossilParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LumiourLab_EventScript_ReceiveFossilPC
@@ -1258,13 +1258,3 @@ LumiourLab_Text_Cygnus_Palkia:
 	.string "{COLOR BLUE}Professor Cygnus: Hmm…\p"
 	.string "So Palkia has the ability to\n"
 	.string "distort the flow of space…$"
-
-LumiereLab_ShowCredit::
-	lock
-	msgbox text_credit, MSGBOX_DEFAULT
-	special Special_ShowDiploma
-	release
-	end
-
-text_credit:
-	.string "Scan or go to this link to view credits$"

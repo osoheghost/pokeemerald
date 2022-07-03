@@ -74,8 +74,8 @@
 #define FLAG_VISCERA_CAVE_TM31    0x3E //tm 31
 #define FLAG_LIBERTY_GARDEN_TRAINERS_DEFEATED    0x3F // liberty garden trainers 
 #define FLAG_HAS_LUSTROUS_ORB    0x40 // set when you have lustrous orb
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
+#define FLAG_PALKIA    0x41 // Unused Flag
+#define FLAG_GAME_COMPLETE    0x42 // Unused Flag
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
 #define FLAG_BERRY_1    0x44 // Unused Flag
 #define FLAG_BERRY_2    0x45 // Unused Flag
