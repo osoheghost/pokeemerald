@@ -267,7 +267,7 @@
 #define VAR_INTRO_STATE                      0x40F8 // Used for Lumiour lab intro
 #define VAR_STRENGTH_TRIGGER                 0x40F9 // If set to 99 loads script??
 #define VAR_PALKIA_SEQUENCE_STATE            0x40FA // used in palkia sequence triggers
-#define VAR_UNUSED_0x40FB                    0x40FB // Unused Var
+#define VAR_MIRAGE_ISLAND_BATTLE             0x40FB // set for mirage island events
 #define VAR_UNUSED_0x40FC                    0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                    0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                    0x40FE // Unused Var

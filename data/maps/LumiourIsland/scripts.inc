@@ -14,6 +14,8 @@
 .set LOCALID_LITTLE_BOY, 22
 .set LOCALID_GENTELMAN, 23
 .set LOCALID_BEAUTY, 24
+.set LOCALID_BRENDAN, 25
+.set LOCALID_MAY, 26
 
 LumiourIsland_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, LumiourIsland_OnLoad
@@ -58,6 +60,7 @@ LumiourIsland_EventScript_SetFlamethrowerLocation::
 
 LumiourIsland_EventScript_SetLiechiLocation::
 	setobjectxyperm LOCALID_LIECHI_BERRY, 62, 51
+	setvar VAR_MIRAGE_ISLAND_BATTLE, 1
 	end
 
 LumiourIsland_EventScript_SetMetalCoatLocation::
@@ -3731,3 +3734,100 @@ LumiereIsland_EventScript_PalkiaTiles7::
 	setmetatile 58, 17, METATILE_General_RockWall_GrassBase, TRUE
 	setmetatile 63, 9, METATILE_General_CaveEntrance_Bottom, FALSE
 	end
+
+LumiereIsland_Trigger_BrendanMay::
+	lock
+	setvar VAR_MIRAGE_ISLAND_BATTLE, 2
+	setobjectxyperm LOCALID_BRENDAN, 60, 59
+	setobjectxyperm LOCALID_MAY, 60, 59
+	addobject LOCALID_BRENDAN
+	addobject LOCALID_MAY
+	applymovement LOCALID_MAY, LumiereIsland_Movement_MayWalkUp
+	waitmovement 0
+	msgbox LumiereIsland_Text_MayBerryOverHere, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BRENDAN, LumiereIsland_Movement_BrendanWalkUp
+	waitmovement 0
+	applymovement LOCALID_MAY, Common_Movement_FaceLeft
+	waitmovement 0
+	msgbox LumiereIsland_Text_StrangeBerryConversation, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LumiereIsland_Movement_MayWalkUp:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	step_end
+
+LumiereIsland_Movement_BrendanWalkUp:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_up
+	walk_up
+	face_right
+	step_end
+
+LumiereIsland_Text_MayBerryOverHere:
+	.string "{COLOR RED}May: Brendan, there's a strange berry\n"
+	.string "tree over here!$"
+
+LumiereIsland_Text_StrangeBerryConversation:
+	.string "{COLOR BLUE}Brendan: I've never seen this one before.\p"
+	.string "{COLOR RED} May: We'll have to send one to Professor\n"
+	.string "Birch.$"
+
+LumiereIsland_EventScript_May::
+	lock
+	faceplayer
+	playse SE_PIN
+	applymovement LOCALID_MAY, Common_Movement_ExclamationMark
+	waitmovement 0
+	waitse
+	applymovement LOCALID_BRENDAN, Common_Movement_FaceDown
+	waitmovement 0
+	msgbox LumiereIsland_Text_MayWeFoundFirst, MSGBOX_DEFAULT
+	trainerbattle_double TRAINER_MIU_AND_YUKI, Route123_Text_MiuIntro, Route123_Text_MiuDefeat, Route123_Text_MiuNotEnoughMons
+	msgbox Route123_Text_MiuPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+LumiereIsland_EventScript_Brendan::
+	lock
+	faceplayer
+	playse SE_PIN
+	applymovement LOCALID_BRENDAN, Common_Movement_ExclamationMark
+	waitmovement 0
+	waitse
+	applymovement LOCALID_MAY, Common_Movement_FaceDown
+	waitmovement 0
+	trainerbattle_double TRAINER_MIU_AND_YUKI, LumiereIsland_Text_BrendanWeFoundFirst, LumiereIsland_Text_BrendanMayDefeat, LumiereIsland_Text_BrendanMayNotEnoughMons
+	msgbox Route123_Text_MiuPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+LumiereIsland_Text_MayWeFoundFirst:
+	.string "{COLOR RED}Hey! We found this berry first!\p"
+	.string "{COLOR BLUE}I know. We should have a Pokémon\n"
+	.string "battle to settle it!$"
+
+LumiereIsland_Text_BrendanWeFoundFirst:
+	.string "{COLOR BLUE}Hey! We found this berry first!\p"
+	.string "{COLOR RED}I know. We should have a Pokémon\n"
+	.string "battle to settle it!$"
+
+LumiereIsland_Text_BrendanMayDefeat:
+	.string "Alright I guess you can have the berry.$"
+
+LumiereIsland_Text_BrendanMayNotEnoughMons:
+	.string "You don't have enough Pokémon.$"
+

@@ -325,6 +325,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LumiereIsland_EventScript_Beauty",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RS_BRENDAN",
+      "x": 74,
+      "y": 79,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LumiereIsland_EventScript_Brendan",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RS_MAY",
+      "x": 73,
+      "y": 79,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LumiereIsland_EventScript_May",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -621,6 +647,60 @@
       "var": "VAR_PALKIA_SEQUENCE_STATE",
       "var_value": "5",
       "script": "LumiereIsland_Trigger_SetPalkiaSequenceTiles5"
+    },
+    {
+      "type": "trigger",
+      "x": 58,
+      "y": 52,
+      "elevation": 0,
+      "var": "VAR_MIRAGE_ISLAND_BATTLE",
+      "var_value": "1",
+      "script": "LumiereIsland_Trigger_BrendanMay"
+    },
+    {
+      "type": "trigger",
+      "x": 59,
+      "y": 51,
+      "elevation": 0,
+      "var": "VAR_MIRAGE_ISLAND_BATTLE",
+      "var_value": "1",
+      "script": "LumiereIsland_Trigger_BrendanMay"
+    },
+    {
+      "type": "trigger",
+      "x": 57,
+      "y": 53,
+      "elevation": 0,
+      "var": "VAR_MIRAGE_ISLAND_BATTLE",
+      "var_value": "1",
+      "script": "LumiereIsland_Trigger_BrendanMay"
+    },
+    {
+      "type": "trigger",
+      "x": 59,
+      "y": 50,
+      "elevation": 0,
+      "var": "VAR_MIRAGE_ISLAND_BATTLE",
+      "var_value": "1",
+      "script": "LumiereIsland_Trigger_BrendanMay"
+    },
+    {
+      "type": "trigger",
+      "x": 61,
+      "y": 48,
+      "elevation": 0,
+      "var": "VAR_MIRAGE_ISLAND_BATTLE",
+      "var_value": "1",
+      "script": "LumiereIsland_Trigger_BrendanMay"
+    },
+    {
+      "type": "trigger",
+      "x": 60,
+      "y": 49,
+      "elevation": 0,
+      "var": "VAR_MIRAGE_ISLAND_BATTLE",
+      "var_value": "1",
+      "script": "LumiereIsland_Trigger_BrendanMay"
     }
   ],
   "bg_events": [

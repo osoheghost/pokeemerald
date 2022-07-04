@@ -6289,16 +6289,48 @@ static const struct TrainerMonNoItemDefaultMoves sParty_GinaAndMia1[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_MiuAndYuki[] = {
-    {
-    .iv = 0,
-    .lvl = 26,
-    .species = SPECIES_BEAUTIFLY,
+static const struct TrainerMonItemCustomMoves sParty_MiuAndYuki[] = {
+   {
+    .iv = 250,
+    .lvl = 36,
+    .species = SPECIES_WAILORD,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SURF, MOVE_REST, MOVE_SLEEP_TALK, MOVE_ICE_BEAM}
     },
     {
-    .iv = 0,
-    .lvl = 26,
-    .species = SPECIES_DUSTOX,
+    .iv = 250,
+    .lvl = 36,
+    .species = SPECIES_PELIPPER,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HURRICANE, MOVE_ROOST, MOVE_TAILWIND, MOVE_HYDRO_PUMP}
+    },
+    {
+    .iv = 250,
+    .lvl = 36,
+    .species = SPECIES_CAMERUPT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE, MOVE_FLAMETHROWER, MOVE_YAWN}
+    },
+    {
+    .iv = 250,
+    .lvl = 36,
+    .species = SPECIES_LUDICOLO,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_FAKE_OUT, MOVE_KNOCK_OFF, MOVE_GIGA_DRAIN, MOVE_SURF}
+    },
+    {
+    .iv = 250,
+    .lvl = 36,
+    .species = SPECIES_SCEPTILE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_X_SCISSOR, MOVE_LEAF_BLADE, MOVE_AERIAL_ACE, MOVE_LOW_SWEEP}
+    },
+    {
+    .iv = 250,
+    .lvl = 36,
+    .species = SPECIES_SWAMPERT,
+    .heldItem = ITEM_SWAMPERTITE,
+    .moves = {MOVE_WATERFALL, MOVE_EARTHQUAKE, MOVE_HAMMER_ARM, MOVE_ROCK_SLIDE}
     }
 };
 

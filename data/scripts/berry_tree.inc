@@ -209,9 +209,14 @@ BerryTree_EventScript_PickBerry6::
 	end
 
 BerryTreeScript7::
-	goto_if_set FLAG_BERRY_7, BerryTree_EventScript_PickedAlready
-	goto BerryTree_EventScript_CheckBerryFullyGrown7
+	lock
+	msgbox BerryTree_Text_StrangeTree, MSGBOX_DEFAULT
+	release
 	end
+
+BerryTree_Text_StrangeTree:
+	.string "A never before seen berry tree.\p"
+	.string "The berries have been taken already.$"
 
 @ VAR_0x8006 here is the number of berries
 BerryTree_EventScript_CheckBerryFullyGrown7::

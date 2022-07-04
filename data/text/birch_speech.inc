@@ -11,8 +11,8 @@ gText_Birch_Pokemon::
 	.string "$"
 
 gText_Birch_MainSpeech::
-	.string "This game is segmented into five in\n"
-	.string "game days.\p"
+	.string "This game is segmented into seven\n"
+	.string "in game days.\p"
 	.string "Make sure to explore all you can\n"
 	.string "during each day.\p"
 	.string "Enough preempting.\p"
