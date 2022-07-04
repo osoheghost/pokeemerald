@@ -3797,8 +3797,7 @@ LumiereIsland_EventScript_May::
 	waitse
 	applymovement LOCALID_BRENDAN, Common_Movement_FaceDown
 	waitmovement 0
-	msgbox LumiereIsland_Text_MayWeFoundFirst, MSGBOX_DEFAULT
-	trainerbattle_double TRAINER_MIU_AND_YUKI, Route123_Text_MiuIntro, Route123_Text_MiuDefeat, Route123_Text_MiuNotEnoughMons
+	trainerbattle_double TRAINER_MIU_AND_YUKI, LumiereIsland_Text_MayWeFoundFirst, LumiereIsland_Text_BrendanMayDefeat, LumiereIsland_Text_BrendanMayNotEnoughMons
 	msgbox Route123_Text_MiuPostBattle, MSGBOX_AUTOCLOSE
 	end
 
