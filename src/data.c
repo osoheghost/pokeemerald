@@ -57,11 +57,10 @@ const struct SpriteFrameImage gTrainerBackPicTable_Brendan[] =
 
 const struct SpriteFrameImage gTrainerBackPicTable_May[] =
 {
-    gTrainerBackPic_Leaf, 0x0800,
-    gTrainerBackPic_Leaf + 0x0800, 0x0800,
-    gTrainerBackPic_Leaf + 0x1000, 0x0800,
-    gTrainerBackPic_Leaf + 0x1800, 0x0800,
-    gTrainerBackPic_Leaf + 0x2000, 0x0800,
+    gTrainerBackPic_May, 0x0800,
+    gTrainerBackPic_May + 0x0800, 0x0800,
+    gTrainerBackPic_May + 0x1000, 0x0800,
+    gTrainerBackPic_May + 0x1800, 0x0800,
 };
 
 const struct SpriteFrameImage gTrainerBackPicTable_Red[] =

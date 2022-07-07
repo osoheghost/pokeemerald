@@ -924,21 +924,16 @@ LumiourIslandLab_Text_TVMirageIsland:
 	.string "{COLOR RED}News Anchor: A Mirage Island has\n"
 	.string "been identified near Pacifidlog Town\l"
 	.string "in the Hoenn Region.\p"
-	.string "A local trainer managed to travel to\n"
-	.string "the island and discovered a never\l"
-	.string "before seen Liechi Berry.\p"
-	.string "Effects of the berry are being\n"
-	.string "studied at the Birch Pokémon Lab.\p"
-	.string "Trainers are advised to not use\n"
-	.string "any untagged berries.$"
+	.string "however it's whereabouts haven't\n"
+	.string "been confirmed.$"
 
 LumiourIslandLab_Text_TVMirageIslandReturned:
 	.string "The TV is set to a news channel.\p"
-	.string "{COLOR RED}News Anchor: The Liechi Berry\n"
-	.string "has been approved and is safe for use.\p"
-	.string "However due to such short supply of\n"
-	.string "the berry it will likely be unable\l"
-	.string "to grow.$"
+	.string "{COLOR RED}News Anchor: A Mirage Island has\n"
+	.string "been identified near Pacifidlog Town\l"
+	.string "in the Hoenn Region.\p"
+	.string "however it's whereabouts haven't\n"
+	.string "been confirmed.$"
 
 LumiourIslandLab_Text_TVIronIsland:
 	.string "The TV is set to a news channel.\p"
@@ -1120,17 +1115,15 @@ LumiourLab_EventScript_CygnusDay3Complete:
 	end
 
 LumiourLab_Text_Cygnus_Day3Complete:
-	.string "{COLOR BLUE}Professor Cygnus: So you found\n"
-	.string "a Liechi Berry.\p"
-	.string "I can get into contact with Professor\n"
-	.string "Birch and have it sent to his lab\l"
-	.string "to be studied.\p"
-	.string "Easy day today huh?\p"
-	.string "Thats strange how the island didn't\n"
-	.string "dissapear this time…\p"
-	.string "Maybe there's still something to \n"
-	.string "discover today.\p"
-	.string "If not you can relax today.$"
+	.string "{COLOR BLUE}Professor Cygnus: So you found two\n"
+	.string "Pokémon trainers on the island.\p"
+	.string "Wait, they said something about\n"
+	.string "Professor Birch?\p"
+	.string "Well if anyone can figure out what\n"
+	.string "this strange berry does its him!\p"
+	.string "Good work today {PLAYER}!\p"
+	.string "Make sure to take your time\n"
+	.string "preparing for tomorrow.$"
 
 LumiourLab_Text_Cygnus_HiPlayer3:
 	.string "{COLOR BLUE}OH! Hello {PLAYER}!\p"

@@ -669,7 +669,7 @@
     {
       "type": "trigger",
       "x": 57,
-      "y": 53,
+      "y": 52,
       "elevation": 0,
       "var": "VAR_MIRAGE_ISLAND_BATTLE",
       "var_value": "1",
@@ -697,6 +697,24 @@
       "type": "trigger",
       "x": 60,
       "y": 49,
+      "elevation": 0,
+      "var": "VAR_MIRAGE_ISLAND_BATTLE",
+      "var_value": "1",
+      "script": "LumiereIsland_Trigger_BrendanMay"
+    },
+    {
+      "type": "trigger",
+      "x": 55,
+      "y": 52,
+      "elevation": 0,
+      "var": "VAR_MIRAGE_ISLAND_BATTLE",
+      "var_value": "1",
+      "script": "LumiereIsland_Trigger_BrendanMay"
+    },
+    {
+      "type": "trigger",
+      "x": 56,
+      "y": 52,
       "elevation": 0,
       "var": "VAR_MIRAGE_ISLAND_BATTLE",
       "var_value": "1",

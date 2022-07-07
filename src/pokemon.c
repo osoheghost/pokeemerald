@@ -2968,7 +2968,7 @@ static const struct SpriteTemplate sTrainerBackSpriteTemplates[] =
         .paletteTag = 0,
         .oam = &gOamData_BattleSpritePlayerSide,
         .anims = NULL,
-        .images = gTrainerBackPicTable_Leaf,
+        .images = gTrainerBackPicTable_May,
         .affineAnims = gAffineAnims_BattleSpritePlayerSide,
         .callback = SpriteCB_BattleSpriteStartSlideLeft,
     },

@@ -3791,37 +3791,75 @@ LumiereIsland_Text_StrangeBerryConversation:
 LumiereIsland_EventScript_May::
 	lock
 	faceplayer
+	goto_if_set FLAG_DAY_3_COMPLETE, LumiereIsland_EventScript_MayPostBattle
 	playse SE_PIN
 	applymovement LOCALID_MAY, Common_Movement_ExclamationMark
 	waitmovement 0
 	waitse
-	applymovement LOCALID_BRENDAN, Common_Movement_FaceDown
-	waitmovement 0
-	trainerbattle_double TRAINER_MIU_AND_YUKI, LumiereIsland_Text_MayWeFoundFirst, LumiereIsland_Text_BrendanMayDefeat, LumiereIsland_Text_BrendanMayNotEnoughMons
-	msgbox Route123_Text_MiuPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_double TRAINER_MIU_AND_YUKI, LumiereIsland_Text_MayWeFoundFirst, LumiereIsland_Text_BrendanMayDefeat, LumiereIsland_Text_BrendanMayNotEnoughMons, LumiereIsland_EventScript_MayDefeat
 	end
 
 LumiereIsland_EventScript_Brendan::
 	lock
 	faceplayer
+	goto_if_set FLAG_DAY_3_COMPLETE, LumiereIsland_EventScript_BrendanPostBattle
 	playse SE_PIN
 	applymovement LOCALID_BRENDAN, Common_Movement_ExclamationMark
 	waitmovement 0
 	waitse
-	applymovement LOCALID_MAY, Common_Movement_FaceDown
-	waitmovement 0
-	trainerbattle_double TRAINER_MIU_AND_YUKI, LumiereIsland_Text_BrendanWeFoundFirst, LumiereIsland_Text_BrendanMayDefeat, LumiereIsland_Text_BrendanMayNotEnoughMons
-	msgbox Route123_Text_MiuPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_double TRAINER_MIU_AND_YUKI, LumiereIsland_Text_BrendanWeFoundFirst, LumiereIsland_Text_BrendanMayDefeat, LumiereIsland_Text_BrendanMayNotEnoughMons, LumiereIsland_EventScript_BrendanDefeat
 	end
 
+LumiereIsland_EventScript_MayPostBattle::
+	msgbox LumiereIsland_Text_HadAfunMay, MSGBOX_DEFAULT
+	release
+	end
+
+LumiereIsland_EventScript_BrendanDefeat::
+	msgbox LumiereIsland_Text_GiveBerryBrendan, MSGBOX_DEFAULT
+	giveitem ITEM_LIECHI_BERRY, 1
+	msgbox LumiereIsland_Text_HadAfunBrendan, MSGBOX_DEFAULT
+	setflag FLAG_DAY_3_COMPLETE
+	setflag FLAG_CAN_SLEEP
+	release
+	end
+
+LumiereIsland_EventScript_MayDefeat::
+	msgbox LumiereIsland_Text_GiveBerryMay, MSGBOX_DEFAULT
+	giveitem ITEM_LIECHI_BERRY, 1
+	msgbox LumiereIsland_Text_HadAfunMay, MSGBOX_DEFAULT
+	setflag FLAG_DAY_3_COMPLETE
+	setflag FLAG_CAN_SLEEP
+	release
+	end
+
+LumiereIsland_EventScript_BrendanPostBattle::
+	msgbox LumiereIsland_Text_HadAfunBrendan, MSGBOX_DEFAULT
+	release
+	end
+
+LumiereIsland_Text_HadAfunMay:
+	.string "{COLOR RED}Thanks for such a fun battle!$"
+
+LumiereIsland_Text_HadAfunBrendan:
+	.string "{COLOR BLUE}Thanks for such a fun battle!$"
+
+
+LumiereIsland_Text_GiveBerryBrendan:
+	.string "{COLOR BLUE}Alright you can have one.$"
+
+LumiereIsland_Text_GiveBerryMay:
+	.string "{COLOR RED}Alright you can have one.$"
+
 LumiereIsland_Text_MayWeFoundFirst:
-	.string "{COLOR RED}Hey! We found this berry first!\p"
-	.string "{COLOR BLUE}I know. We should have a Pokémon\n"
-	.string "battle to settle it!$"
+	.string "{COLOR RED}May: Hey! We found this berry first!\p"
+	.string "{COLOR BLUE}Brendan: I know. We should have a\n"
+	.string "Pokémon battle to settle it!$"
 
 LumiereIsland_Text_BrendanWeFoundFirst:
-	.string "{COLOR BLUE}Hey! We found this berry first!\p"
-	.string "{COLOR RED}I know. We should have a Pokémon\n"
+	.string "{COLOR BLUE}Brendan: Hey! We found this berry\n"
+	.string "first!\p"
+	.string "{COLOR RED}May: I know. We should have a Pokémon\n"
 	.string "battle to settle it!$"
 
 LumiereIsland_Text_BrendanMayDefeat:
