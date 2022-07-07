@@ -76,7 +76,7 @@
 #define FLAG_HAS_LUSTROUS_ORB    0x40 // set when you have lustrous orb
 #define FLAG_PALKIA    0x41 // Unused Flag
 #define FLAG_GAME_COMPLETE    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
+#define FLAG_GIVE_AERODACTYLITE    0x43 // Unused Flag
 #define FLAG_BERRY_1    0x44 // Unused Flag
 #define FLAG_BERRY_2    0x45 // Unused Flag
 #define FLAG_BERRY_3    0x46 // Unused Flag

@@ -9,6 +9,30 @@ VisceraCave_OnLoad:
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 4, VisceraCave_EventScript_SetTiles4
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 5, VisceraCave_EventScript_SetTiles5
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 6, VisceraCave_EventScript_SetTiles5
+	goto_if_eq VAR_PALKIA_SEQUENCE_STATE, 1, VisceraCave_EventScript_SetTilesPalkia1
+	goto_if_eq VAR_PALKIA_SEQUENCE_STATE, 2, VisceraCave_EventScript_SetTilesPalkia2
+	end
+
+VisceraCave_EventScript_SetTilesPalkia1::
+	setmetatile 11, 12, METATILE_Fortree_CaveLedgeB, TRUE
+	setmetatile 12, 12, METATILE_Fortree_CaveLedgeB, TRUE
+	setmetatile 13, 12, METATILE_Fortree_CaveLedgeB, TRUE
+	setmetatile 11, 13, METATILE_Fortree_CaveLedgeB, TRUE
+	setmetatile 12, 13, METATILE_Fortree_CaveLedgeB, TRUE
+	setmetatile 13, 13, METATILE_Fortree_CaveLedgeB, TRUE
+	end
+
+VisceraCave_EventScript_SetTilesPalkia2::
+	setmetatile 11, 12, METATILE_Fortree_CaveLedgeB, TRUE
+	setmetatile 12, 12, METATILE_Fortree_CaveLedgeB, TRUE
+	setmetatile 13, 12, METATILE_Fortree_CaveLedgeB, TRUE
+	setmetatile 11, 13, METATILE_Fortree_CaveLedgeB, TRUE
+	setmetatile 12, 13, METATILE_Fortree_CaveLedgeB, TRUE
+	setmetatile 13, 13, METATILE_Fortree_CaveLedgeB, TRUE
+	setmetatile 8, 24, METATILE_Fortree_CaveLedgeT, TRUE
+	setmetatile 9, 24, METATILE_Fortree_CaveLedgeT, TRUE
+	setmetatile 10, 24, METATILE_Fortree_CaveLedgeT, TRUE
+	setmetatile 9, 23, METATILE_Fortree_Cave, FALSE
 	end
 
 VisceraCave_EventScript_Fossil1::
@@ -313,5 +337,16 @@ VisceraCave_Trigger_SetPalkiaSequenceTiles2::
 	setmetatile 9, 23, METATILE_Fortree_Cave, FALSE
 	special DrawWholeMapView
 	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+VisceraCave_EventScript_EmergencyEscapeRope::
+	checkitem ITEM_ESCAPE_ROPE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq VisceraCave_EventScript_GiveEscapeRope
+	end
+
+VisceraCave_EventScript_GiveEscapeRope::
+	giveitem ITEM_ESCAPE_ROPE, 1
 	release
 	end

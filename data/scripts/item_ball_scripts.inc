@@ -687,10 +687,11 @@ HiddenGrotto_EventScript_Thunder::
 	end
 
 HiddenGrotto_EventScript_Aerodactylite::
-	finditem ITEM_AERODACTYLITE
+	finditem ITEM_RAZOR_CLAW
 	end
 
 VisceraCave_EventScript_MegaRing::
+	setflag FLAG_GIVE_AERODACTYLITE
 	finditem ITEM_MEGA_RING
 	end
 

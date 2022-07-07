@@ -974,6 +974,8 @@ LumiourIslandLab_Text_TVLibertyGardenReturned:
 
 LumiourLab_EventScript_ProfCygnus::
 	lock
+	goto_if_set FLAG_GAME_COMPLETE LumiereLab_EventScript_CygnusEnd
+	goto_if_set FLAG_GIVE_AERODACTYLITE, LumiereLab_EventScript_GiveAerodactylite
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 0, LumiourLab_EventScript_CygnusDay0
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 1, LumiourLab_EventScript_CygnusDay1
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 2, LumiourLab_EventScript_CygnusDay2
@@ -983,6 +985,55 @@ LumiourLab_EventScript_ProfCygnus::
 	goto_if_eq VAR_LUMIOUR_ISLAND_STATE, 6, LumiourLab_EventScript_CygnusDay6
 	release
 	end
+
+LumiereLab_EventScript_CygnusEnd::
+	faceplayer
+	msgbox LumiereLab_Text_ThankYou, MSGBOX_DEFAULT
+	release
+	end
+
+LumiereLab_Text_ThankYou:
+	.string "{COLOR BLUE}Professor Cygnus: Hey {PLAYER}!\p"
+	.string "Do you wanna hear a message from\n"
+	.string "the creator of this game?\p"
+	.string "Too bad, you don't get a choice.\p"
+	.string "{COLOR GREEN}Hey its me, OsoheGhost!\p"
+	.string "If you're reading this I hope you liked\n"
+	.string "this goofy little project of mine!\p"
+	.string "Before anything else I wanna give\n"
+	.string "a HUGE thanks to Ranko for helping out\l"
+	.string "with the player sprites in this project!\p"
+	.string "Not only that but she gave me\n"
+	.string "so much good advice and feedback.\p"
+	.string "She taught me a lot about what it\n"
+	.string "takes to design a game like this!\p"
+	.string "Also Thanks to Vaulen, Snugboat\n"
+	.string "and Nick for beta testing!\p"
+	.string "I apologize to you all for being a little\n"
+	.string "bundle of stress over the past month\l"
+	.string "while working on this project.\p"
+	.string "I know its not perfect and its messy\n"
+	.string "at times but I'm so glad I decided to\l"
+	.string "actually follow through with entering\l"
+	.string "MAGM6!\p"
+	.string "Again, I cannot thank you all\n"
+	.string "enough for playing this!$"
+
+LumiereLab_EventScript_GiveAerodactylite::
+	faceplayer
+	msgbox LumiereLab_Text_IsThatAMega, MSGBOX_DEFAULT
+	giveitem ITEM_AERODACTYLITE, 1
+	clearflag FLAG_GIVE_AERODACTYLITE
+	setvar VAR_MEGAS_AVAILABLE, 1
+	release
+	end
+
+LumiereLab_Text_IsThatAMega:
+	.string "{COLOR BLUE}Professor Cygnus: Woah, {PLAYER}!\p"
+	.string "Where in the world did you find a\n"
+	.string "Mega Ring?\p"
+	.string "Well you'll find far more use for this\n"
+	.string "than me.$"
 
 LumiourLab_EventScript_CygnusDay6:
 	lock

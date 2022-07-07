@@ -11506,17 +11506,17 @@
               {
                 "min_level": 30,
                 "max_level": 34,
-                "species": "SPECIES_STUFFUL"
+                "species": "SPECIES_BEWEAR"
               },
               {
                 "min_level": 30,
                 "max_level": 34,
-                "species": "SPECIES_VENIPEDE"
+                "species": "SPECIES_SCOLIPEDE"
               },
               {
                 "min_level": 30,
                 "max_level": 34,
-                "species": "SPECIES_BUIZEL"
+                "species": "SPECIES_FLOATZEL"
               },
               {
                 "min_level": 30,
@@ -11713,52 +11713,52 @@
               {
                 "min_level": 30,
                 "max_level": 34,
-                "species": "SPECIES_GEODUDE"
+                "species": "SPECIES_GRAVELER"
               },
               {
                 "min_level": 30,
                 "max_level": 34,
-                "species": "SPECIES_GEODUDE_ALOLAN"
+                "species": "SPECIES_PARASECT"
+              },
+              {
+                "min_level": 31,
+                "max_level": 34,
+                "species": "SPECIES_EXCADRILL"
               },
               {
                 "min_level": 30,
                 "max_level": 34,
-                "species": "SPECIES_DRILBUR"
+                "species": "SPECIES_LAIRON"
               },
               {
                 "min_level": 30,
                 "max_level": 34,
-                "species": "SPECIES_HONEDGE"
+                "species": "SPECIES_CRUSTLE"
+              },
+              {
+                "min_level": 32,
+                "max_level": 36,
+                "species": "SPECIES_TYROGUE"
               },
               {
                 "min_level": 30,
+                "max_level": 36,
+                "species": "SPECIES_TYROGUE"
+              },
+              {
+                "min_level": 32,
                 "max_level": 34,
-                "species": "SPECIES_PAWNIARD"
+                "species": "SPECIES_DUNSPARCE"
               },
               {
                 "min_level": 32,
                 "max_level": 36,
-                "species": "SPECIES_SABLEYE"
-              },
-              {
-                "min_level": 30,
-                "max_level": 36,
-                "species": "SPECIES_MAWILE"
+                "species": "SPECIES_DRUDDIGON"
               },
               {
                 "min_level": 32,
                 "max_level": 36,
-                "species": "SPECIES_NOIBAT"
-              },
-              {
-                "min_level": 32,
-                "max_level": 36,
-                "species": "SPECIES_AXEW"
-              },
-              {
-                "min_level": 32,
-                "max_level": 36,
-                "species": "SPECIES_GIBLE"
+                "species": "SPECIES_METANG"
               },
               {
                 "min_level": 32,
