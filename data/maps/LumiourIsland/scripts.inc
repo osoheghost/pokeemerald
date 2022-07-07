@@ -88,6 +88,8 @@ LumiourIsland_OnLoad:
 	end
 
 LumiourIsland_EventScript_SetDay6tiles:
+	setmetatile 36, 15, METATILE_General_GrassMarking, FALSE
+	setmetatile 23, 37, METATILE_Petalburg_MarkingTreeTR, FALSE
 	goto_if_eq VAR_PALKIA_SEQUENCE_STATE, 0, LumiereIsland_EventScript_SetPalkiaSequenceVar
 	end
 
@@ -1768,6 +1770,8 @@ LumiourIsland_EventScript_SetMirageIsland::
 
 LumiourIsland_EventScript_SetIronIsland::
 	goto_if_set FLAG_DAY_4_COMPLETE LumiourIsland_EventScript_End
+	setmetatile 36, 15, METATILE_General_GrassMarking, FALSE
+	setmetatile 23, 37, METATILE_Petalburg_MarkingTreeTR, FALSE
 	setmetatile 47, 32, METATILE_General_BridgeLeft, FALSE
 	setmetatile 47, 33, METATILE_General_BridgeLeft, FALSE
 	setmetatile 47, 34, METATILE_General_BridgeLeft, FALSE
@@ -2423,6 +2427,8 @@ LumiereIsland_Movement_SailorWalkBack:
 
 LumiourIsland_EventScript_SetLibertyIsland::
 	goto_if_set FLAG_HAS_LUSTROUS_ORB, LumiourIsland_EventScript_End
+	setmetatile 36, 15, METATILE_General_GrassMarking, FALSE
+	setmetatile 23, 37, METATILE_Petalburg_MarkingTreeTR, FALSE
 	setmetatile 47, 32, METATILE_General_BridgeLeft, FALSE
 	setmetatile 47, 33, METATILE_General_BridgeLeft, FALSE
 	setmetatile 47, 34, METATILE_General_BridgeLeft, FALSE
@@ -3821,6 +3827,7 @@ LumiereIsland_EventScript_BrendanDefeat::
 	msgbox LumiereIsland_Text_HadAfunBrendan, MSGBOX_DEFAULT
 	setflag FLAG_DAY_3_COMPLETE
 	setflag FLAG_CAN_SLEEP
+	setvar VAR_MEGAS_AVAILABLE, 1
 	release
 	end
 

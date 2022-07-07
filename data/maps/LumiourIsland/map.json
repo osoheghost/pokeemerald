@@ -500,8 +500,8 @@
       "x": 36,
       "y": 15,
       "elevation": 0,
-      "var": "VAR_LUMIOUR_ISLAND_STATE",
-      "var_value": "3",
+      "var": "VAR_MEGAS_AVAILABLE",
+      "var_value": "1",
       "script": "LumiourIsland_Trigger_SetRockClimb"
     },
     {
@@ -509,8 +509,8 @@
       "x": 23,
       "y": 37,
       "elevation": 0,
-      "var": "VAR_LUMIOUR_ISLAND_STATE",
-      "var_value": "3",
+      "var": "VAR_MEGAS_AVAILABLE",
+      "var_value": "1",
       "script": "LumiereIsland_Trigger_SetShore"
     },
     {

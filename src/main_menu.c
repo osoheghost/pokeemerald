@@ -1420,14 +1420,14 @@ static void Task_NewGameBirchSpeech_StartPlayerFadeIn(u8 taskId)
         }
         else
         {
-            u8 spriteId = gTasks[taskId].tBrendanSpriteId;
+            u8 spriteId = gTasks[taskId].tMaySpriteId;
 
             gSprites[spriteId].x = 180;
             gSprites[spriteId].y = 60;
             gSprites[spriteId].invisible = FALSE;
             gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
             gTasks[taskId].tPlayerSpriteId = spriteId;
-            gTasks[taskId].tPlayerGender = MALE;
+            gTasks[taskId].tPlayerGender = FEMALE;
             NewGameBirchSpeech_StartFadeInTarget1OutTarget2(taskId, 2);
             NewGameBirchSpeech_StartFadePlatformOut(taskId, 1);
             gTasks[taskId].func = Task_NewGameBirchSpeech_WaitForPlayerFadeIn;
@@ -1601,7 +1601,7 @@ static void Task_NewGameBirchSpeech_ProcessNameYesNoMenu(u8 taskId)
         case -1:
         case 1:
             PlaySE(SE_SELECT);
-            gTasks[taskId].func = Task_NewGameBirchSpeech_BoyOrGirl;
+            gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
     }
 }
 
