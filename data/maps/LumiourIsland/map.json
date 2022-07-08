@@ -728,7 +728,7 @@
       "y": 22,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LumiereIsland_Trigger_SetPalkiaSequenceTiles4"
+      "script": "LumiourIsland_EventScript_LabSign"
     },
     {
       "type": "sign",

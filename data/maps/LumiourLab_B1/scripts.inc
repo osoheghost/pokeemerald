@@ -141,6 +141,7 @@ LumiereLab_B1_EventScript_Credits2::
 
 
 LumiourLab_B1_EventScript_End::
+	closemessage
 	end
 
 LumiereLab_B1_Text_QRCode:

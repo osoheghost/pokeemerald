@@ -225,9 +225,9 @@ LumiourIsland_Trigger_Strength_Button4::
 	special DrawWholeMapView
 	setobjectxyperm LOCALID_PROF_CYGNUS, 39, 28
 	addobject LOCALID_PROF_CYGNUS
-	goto LumiourIsland_EventScript_Day1PuzzleEnd
 	setvar VAR_ENCOUNTER_STATE, 0
 	setvar VAR_LUMIOUR_WILD_SET, 0
+	goto LumiourIsland_EventScript_Day1PuzzleEnd
 	end
 
 LumiourIsland_Text_Strength:
@@ -3817,6 +3817,7 @@ LumiereIsland_EventScript_Brendan::
 	end
 
 LumiereIsland_EventScript_MayPostBattle::
+	setvar VAR_MIRAGE_ISLAND_BATTLE, 0
 	msgbox LumiereIsland_Text_HadAfunMay, MSGBOX_DEFAULT
 	release
 	end
@@ -3841,6 +3842,7 @@ LumiereIsland_EventScript_MayDefeat::
 	end
 
 LumiereIsland_EventScript_BrendanPostBattle::
+	setvar VAR_MIRAGE_ISLAND_BATTLE, 0
 	msgbox LumiereIsland_Text_HadAfunBrendan, MSGBOX_DEFAULT
 	release
 	end

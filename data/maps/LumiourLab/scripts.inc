@@ -1276,7 +1276,7 @@ LumiourLab_Text_Cygnus_LustrousOrb:
 	.string "I have a feeling tomorrow is the big day…\p"
 	.string "Go get some well deserved rest {PLAYER}!\p"
 	.string "Oh, and check the TV!\p"
-	.string "At least im on the news for something\n"
+	.string "At least I'm on the news for something\n"
 	.string "good this time!$"
 
 LumiourLab_Text_Cygnus_StrangeStone:
