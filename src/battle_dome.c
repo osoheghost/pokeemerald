@@ -108,8 +108,8 @@ static u8 UpdateTourneyTreeCursor(u8);
 static void DecideRoundWinners(u8);
 static u8 GetOpposingNPCTournamentIdByRound(u8, u8);
 static void DrawTourneyAdvancementLine(u8, u8);
-static void SpriteCb_HorizontalScrollArrow(struct Sprite *);
-static void SpriteCb_VerticalScrollArrow(struct Sprite *);
+static void SpriteCB_HorizontalScrollArrow(struct Sprite *);
+static void SpriteCB_VerticalScrollArrow(struct Sprite *);
 static void InitDomeChallenge(void);
 static void GetDomeData(void);
 static void SetDomeData(void);
@@ -153,7 +153,7 @@ static const u8 sBattleStyleMovePoints[MOVES_COUNT][NUM_MOVE_POINT_TYPES] =
     [MOVE_ICE_PUNCH]     = {[MOVE_POINTS_DMG] = 1, [MOVE_POINTS_ACCURATE] = 1, [MOVE_POINTS_EFFECT] = 1},
     [MOVE_THUNDER_PUNCH] = {[MOVE_POINTS_DMG] = 1, [MOVE_POINTS_ACCURATE] = 1, [MOVE_POINTS_EFFECT] = 1},
     [MOVE_SCRATCH]       = {[MOVE_POINTS_DMG] = 1, [MOVE_POINTS_ACCURATE] = 1},
-    [MOVE_VICE_GRIP]     = {[MOVE_POINTS_DMG] = 1, [MOVE_POINTS_ACCURATE] = 1},
+    [MOVE_VISE_GRIP]     = {[MOVE_POINTS_DMG] = 1, [MOVE_POINTS_ACCURATE] = 1},
     [MOVE_GUILLOTINE]    = {[MOVE_POINTS_DMG] = 1, [MOVE_POINTS_LOW_PP] = 1},
     [MOVE_RAZOR_WIND]    = {[MOVE_POINTS_DMG] = 1, [MOVE_POINTS_ACCURATE] = 1},
     [MOVE_SWORDS_DANCE]  = {[MOVE_POINTS_COMBO] = 1, [MOVE_POINTS_STAT_RAISE] = 1, [MOVE_POINTS_POPULAR] = 1},
@@ -278,7 +278,7 @@ static const u8 sBattleStyleMovePoints[MOVES_COUNT][NUM_MOVE_POINT_TYPES] =
     [MOVE_AMNESIA]       = {[MOVE_POINTS_STAT_RAISE] = 1, [MOVE_POINTS_DEF] = 1},
     [MOVE_KINESIS]       = {[MOVE_POINTS_STAT_LOWER] = 1},
     [MOVE_SOFT_BOILED]   = {[MOVE_POINTS_HEAL] = 1, [MOVE_POINTS_ACCURATE] = 1},
-    [MOVE_HI_JUMP_KICK]  = {[MOVE_POINTS_DMG] = 1},
+    [MOVE_HIGH_JUMP_KICK]  = {[MOVE_POINTS_DMG] = 1},
     [MOVE_GLARE]         = {[MOVE_POINTS_STAT_LOWER] = 1},
     [MOVE_DREAM_EATER]   = {[MOVE_POINTS_COMBO] = 1, [MOVE_POINTS_RARE] = 1, [MOVE_POINTS_HEAL] = 1, [MOVE_POINTS_ACCURATE] = 1, [MOVE_POINTS_STRONG] = 1},
     [MOVE_POISON_GAS]    = {[MOVE_POINTS_STATUS] = 1},
@@ -327,7 +327,7 @@ static const u8 sBattleStyleMovePoints[MOVES_COUNT][NUM_MOVE_POINT_TYPES] =
     [MOVE_PROTECT]       = {[MOVE_POINTS_DEF] = 1, [MOVE_POINTS_POPULAR] = 1},
     [MOVE_MACH_PUNCH]    = {[MOVE_POINTS_DMG] = 1, [MOVE_POINTS_ACCURATE] = 1},
     [MOVE_SCARY_FACE]    = {0},
-    [MOVE_FAINT_ATTACK]  = {[MOVE_POINTS_DMG] = 1},
+    [MOVE_FEINT_ATTACK]  = {[MOVE_POINTS_DMG] = 1},
     [MOVE_SWEET_KISS]    = {0},
     [MOVE_BELLY_DRUM]    = {[MOVE_POINTS_COMBO] = 1, [MOVE_POINTS_STAT_RAISE] = 1},
     [MOVE_SLUDGE_BOMB]   = {[MOVE_POINTS_DMG] = 1, [MOVE_POINTS_ACCURATE] = 1, [MOVE_POINTS_STRONG] = 1, [MOVE_POINTS_EFFECT] = 1},
@@ -407,7 +407,7 @@ static const u8 sBattleStyleMovePoints[MOVES_COUNT][NUM_MOVE_POINT_TYPES] =
     [MOVE_MEMENTO]       = {[MOVE_POINTS_RARE] = 1, [MOVE_POINTS_ACCURATE] = 1},
     [MOVE_FACADE]        = {[MOVE_POINTS_DMG] = 1, [MOVE_POINTS_ACCURATE] = 1},
     [MOVE_FOCUS_PUNCH]   = {[MOVE_POINTS_DMG] = 1, [MOVE_POINTS_ACCURATE] = 1, [MOVE_POINTS_STRONG] = 1},
-    [MOVE_SMELLING_SALT] = {[MOVE_POINTS_DMG] = 1, [MOVE_POINTS_ACCURATE] = 1},
+    [MOVE_SMELLING_SALTS] = {[MOVE_POINTS_DMG] = 1, [MOVE_POINTS_ACCURATE] = 1},
     [MOVE_FOLLOW_ME]     = {[MOVE_POINTS_RARE] = 1, [MOVE_POINTS_ACCURATE] = 1},
     [MOVE_NATURE_POWER]  = {[MOVE_POINTS_DMG] = 1},
     [MOVE_CHARGE]        = {[MOVE_POINTS_COMBO] = 1, [MOVE_POINTS_ACCURATE] = 1},
@@ -1089,7 +1089,7 @@ static const struct SpriteTemplate sHorizontalScrollArrowSpriteTemplate =
     .anims = sSpriteAnimTable_HorizontalScrollArrow,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCb_HorizontalScrollArrow
+    .callback = SpriteCB_HorizontalScrollArrow
 };
 
 static const struct SpriteTemplate sVerticalScrollArrowSpriteTemplate =
@@ -1100,7 +1100,7 @@ static const struct SpriteTemplate sVerticalScrollArrowSpriteTemplate =
     .anims = sSpriteAnimTable_VerticalScrollArrow,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCb_VerticalScrollArrow
+    .callback = SpriteCB_VerticalScrollArrow
 };
 
 // Organized by seed starting position, i.e. seed 0 battles seed 8 first
@@ -2747,7 +2747,7 @@ static int GetTypeEffectivenessPoints(int move, int targetSpecies, int mode)
     int i = 0;
     int typePower = TYPE_x1;
 
-    if (move == MOVE_NONE || move == MOVE_UNAVAILABLE || gBattleMoves[move].power == 0)
+    if (move == MOVE_NONE || move == MOVE_UNAVAILABLE || IS_MOVE_STATUS(move))
         return 0;
 
     defType1 = gBaseStats[targetSpecies].type1;
@@ -2763,38 +2763,21 @@ static int GetTypeEffectivenessPoints(int move, int targetSpecies, int mode)
         {
             typePower = 8;
         #ifdef BUGFIX
-            return;
+            return typePower;
         #endif
         }
     }
     else
     {
-        // Calculate a "type power" value to determine the benefit of using this type move against the target.
-        // This value will then be used to get the number of points to assign to the move.
-        while (TYPE_EFFECT_ATK_TYPE(i) != TYPE_ENDTABLE)
-        {
-            if (TYPE_EFFECT_ATK_TYPE(i) == TYPE_FORESIGHT)
-            {
-                i += 3;
-                continue;
-            }
-            if (TYPE_EFFECT_ATK_TYPE(i) == moveType)
-            {
-                // BUG: the value of TYPE_x2 does not exist in gTypeEffectiveness, so if defAbility is ABILITY_WONDER_GUARD, the conditional always fails
-                #ifndef BUGFIX
-                    #define WONDER_GUARD_EFFECTIVENESS TYPE_x2
-                #else
-                    #define WONDER_GUARD_EFFECTIVENESS TYPE_MUL_SUPER_EFFECTIVE
-                #endif
-                if (TYPE_EFFECT_DEF_TYPE(i) == defType1)
-                    if ((defAbility == ABILITY_WONDER_GUARD && TYPE_EFFECT_MULTIPLIER(i) == WONDER_GUARD_EFFECTIVENESS) || defAbility != ABILITY_WONDER_GUARD)
-                        typePower = (typePower * TYPE_EFFECT_MULTIPLIER(i)) / 10;
-                if (TYPE_EFFECT_DEF_TYPE(i) == defType2 && defType1 != defType2)
-                    if ((defAbility == ABILITY_WONDER_GUARD && TYPE_EFFECT_MULTIPLIER(i) == WONDER_GUARD_EFFECTIVENESS) || defAbility != ABILITY_WONDER_GUARD)
-                        typePower = (typePower * TYPE_EFFECT_MULTIPLIER(i)) / 10;
-            }
-            i += 3;
-        }
+        u32 typeEffectiveness1 = UQ_4_12_TO_INT(GetTypeModifier(moveType, defType1) * 2) * 5;
+        u32 typeEffectiveness2 = UQ_4_12_TO_INT(GetTypeModifier(moveType, defType2) * 2) * 5;
+
+        typePower = (typeEffectiveness1 * typePower) / 10;
+        if (defType2 != defType1)
+            typePower = (typeEffectiveness2 * typePower) / 10;
+
+        if (defAbility == ABILITY_WONDER_GUARD && typeEffectiveness1 != TYPE_x1 && typeEffectiveness2 != TYPE_x1)
+            typePower = 0;
     }
 
     switch (mode)
@@ -3115,7 +3098,7 @@ static void Task_ShowTourneyInfoCard(u8 taskId)
 // Note: Card scrolling up means the current card goes down and another one appears from top.
 // The same is true for scrolling left.
 // That means that the sprite needs to move with the moving card in the opposite scrolling direction.
-static void SpriteCb_TrainerIconCardScrollUp(struct Sprite *sprite)
+static void SpriteCB_TrainerIconCardScrollUp(struct Sprite *sprite)
 {
     sprite->y += 4;
     if (sprite->data[0] != 0)
@@ -3135,7 +3118,7 @@ static void SpriteCb_TrainerIconCardScrollUp(struct Sprite *sprite)
     }
 }
 
-static void SpriteCb_TrainerIconCardScrollDown(struct Sprite *sprite)
+static void SpriteCB_TrainerIconCardScrollDown(struct Sprite *sprite)
 {
     sprite->y -= 4;
     if (sprite->data[0] != 0)
@@ -3155,7 +3138,7 @@ static void SpriteCb_TrainerIconCardScrollDown(struct Sprite *sprite)
     }
 }
 
-static void SpriteCb_TrainerIconCardScrollLeft(struct Sprite *sprite)
+static void SpriteCB_TrainerIconCardScrollLeft(struct Sprite *sprite)
 {
     sprite->x += 4;
     if (sprite->data[0] != 0)
@@ -3175,7 +3158,7 @@ static void SpriteCb_TrainerIconCardScrollLeft(struct Sprite *sprite)
     }
 }
 
-static void SpriteCb_TrainerIconCardScrollRight(struct Sprite *sprite)
+static void SpriteCB_TrainerIconCardScrollRight(struct Sprite *sprite)
 {
     sprite->x -= 4;
     if (sprite->data[0] != 0)
@@ -3197,13 +3180,13 @@ static void SpriteCb_TrainerIconCardScrollRight(struct Sprite *sprite)
 
 #define sMonIconStill data[3]
 
-static void SpriteCb_MonIcon(struct Sprite *sprite)
+static void SpriteCB_MonIconDomeInfo(struct Sprite *sprite)
 {
     if (!sprite->sMonIconStill)
         UpdateMonIconFrame(sprite);
 }
 
-static void SpriteCb_MonIconCardScrollUp(struct Sprite *sprite)
+static void SpriteCB_MonIconCardScrollUp(struct Sprite *sprite)
 {
     if (!sprite->sMonIconStill)
         UpdateMonIconFrame(sprite);
@@ -3213,7 +3196,7 @@ static void SpriteCb_MonIconCardScrollUp(struct Sprite *sprite)
         if (sprite->y >= -16)
             sprite->invisible = FALSE;
         if (++sprite->data[1] == 40)
-            sprite->callback = SpriteCb_MonIcon;
+            sprite->callback = SpriteCB_MonIconDomeInfo;
     }
     else
     {
@@ -3225,7 +3208,7 @@ static void SpriteCb_MonIconCardScrollUp(struct Sprite *sprite)
     }
 }
 
-static void SpriteCb_MonIconCardScrollDown(struct Sprite *sprite)
+static void SpriteCB_MonIconCardScrollDown(struct Sprite *sprite)
 {
     if (!sprite->sMonIconStill)
         UpdateMonIconFrame(sprite);
@@ -3235,7 +3218,7 @@ static void SpriteCb_MonIconCardScrollDown(struct Sprite *sprite)
         if (sprite->y <= 176)
             sprite->invisible = FALSE;
         if (++sprite->data[1] == 40)
-            sprite->callback = SpriteCb_MonIcon;
+            sprite->callback = SpriteCB_MonIconDomeInfo;
     }
     else
     {
@@ -3247,7 +3230,7 @@ static void SpriteCb_MonIconCardScrollDown(struct Sprite *sprite)
     }
 }
 
-static void SpriteCb_MonIconCardScrollLeft(struct Sprite *sprite)
+static void SpriteCB_MonIconCardScrollLeft(struct Sprite *sprite)
 {
     if (!sprite->sMonIconStill)
         UpdateMonIconFrame(sprite);
@@ -3257,7 +3240,7 @@ static void SpriteCb_MonIconCardScrollLeft(struct Sprite *sprite)
         if (sprite->x >= -16)
             sprite->invisible = FALSE;
         if (++sprite->data[1] == 64)
-            sprite->callback = SpriteCb_MonIcon;
+            sprite->callback = SpriteCB_MonIconDomeInfo;
     }
     else
     {
@@ -3269,7 +3252,7 @@ static void SpriteCb_MonIconCardScrollLeft(struct Sprite *sprite)
     }
 }
 
-static void SpriteCb_MonIconCardScrollRight(struct Sprite *sprite)
+static void SpriteCB_MonIconCardScrollRight(struct Sprite *sprite)
 {
     if (!sprite->sMonIconStill)
         UpdateMonIconFrame(sprite);
@@ -3279,7 +3262,7 @@ static void SpriteCb_MonIconCardScrollRight(struct Sprite *sprite)
         if (sprite->x <= DISPLAY_WIDTH + 16)
             sprite->invisible = FALSE;
         if (++sprite->data[1] == 64)
-            sprite->callback = SpriteCb_MonIcon;
+            sprite->callback = SpriteCB_MonIconDomeInfo;
     }
     else
     {
@@ -3291,7 +3274,7 @@ static void SpriteCb_MonIconCardScrollRight(struct Sprite *sprite)
     }
 }
 
-static void SpriteCb_HorizontalScrollArrow(struct Sprite *sprite)
+static void SpriteCB_HorizontalScrollArrow(struct Sprite *sprite)
 {
     int taskId1 = sprite->data[0];
     int arrId = gTasks[gTasks[taskId1].data[4]].data[1];
@@ -3360,7 +3343,7 @@ static void SpriteCb_HorizontalScrollArrow(struct Sprite *sprite)
     }
 }
 
-static void SpriteCb_VerticalScrollArrow(struct Sprite *sprite)
+static void SpriteCB_VerticalScrollArrow(struct Sprite *sprite)
 {
     int taskId1 = sprite->data[0];
 
@@ -3526,7 +3509,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_TrainerIconCardScrollUp;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_TrainerIconCardScrollUp;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot ^ 1;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3537,7 +3520,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_MonIconCardScrollUp;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_MonIconCardScrollUp;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot ^ 1;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3550,7 +3533,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_TrainerIconCardScrollUp;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_TrainerIconCardScrollUp;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3561,7 +3544,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_MonIconCardScrollUp;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_MonIconCardScrollUp;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3642,7 +3625,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_TrainerIconCardScrollDown;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_TrainerIconCardScrollDown;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot ^ 1;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3653,7 +3636,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_MonIconCardScrollDown;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_MonIconCardScrollDown;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot ^ 1;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3666,7 +3649,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_TrainerIconCardScrollDown;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_TrainerIconCardScrollDown;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3677,7 +3660,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_MonIconCardScrollDown;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_MonIconCardScrollDown;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3725,7 +3708,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_TrainerIconCardScrollLeft;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_TrainerIconCardScrollLeft;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot ^ 1;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3736,7 +3719,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_MonIconCardScrollLeft;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_MonIconCardScrollLeft;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot ^ 1;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3749,7 +3732,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_TrainerIconCardScrollLeft;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_TrainerIconCardScrollLeft;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3760,7 +3743,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_MonIconCardScrollLeft;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_MonIconCardScrollLeft;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3808,7 +3791,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_TrainerIconCardScrollLeft;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_TrainerIconCardScrollLeft;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot ^ 1;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3819,7 +3802,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_MonIconCardScrollLeft;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_MonIconCardScrollLeft;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot ^ 1;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3832,7 +3815,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_TrainerIconCardScrollLeft;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_TrainerIconCardScrollLeft;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3843,7 +3826,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_MonIconCardScrollLeft;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_MonIconCardScrollLeft;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3889,7 +3872,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_TrainerIconCardScrollRight;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_TrainerIconCardScrollRight;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot ^ 1;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3900,7 +3883,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_MonIconCardScrollRight;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_MonIconCardScrollRight;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot ^ 1;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3913,7 +3896,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_TrainerIconCardScrollRight;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_TrainerIconCardScrollRight;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3924,7 +3907,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_MonIconCardScrollRight;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_MonIconCardScrollRight;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3972,7 +3955,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_TrainerIconCardScrollRight;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_TrainerIconCardScrollRight;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot ^ 1;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3983,7 +3966,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_MonIconCardScrollRight;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_MonIconCardScrollRight;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot ^ 1;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -3996,7 +3979,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_TrainerIconCardScrollRight;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_TrainerIconCardScrollRight;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -4007,7 +3990,7 @@ static void Task_HandleInfoCardInput(u8 taskId)
                 {
                     if (sInfoCard->spriteIds[i] != SPRITE_NONE)
                     {
-                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCb_MonIconCardScrollRight;
+                        gSprites[sInfoCard->spriteIds[i]].callback = SpriteCB_MonIconCardScrollRight;
                         gSprites[sInfoCard->spriteIds[i]].data[0] = gTasks[taskId].tUsingAlternateSlot;
                         gSprites[sInfoCard->spriteIds[i]].data[1] = 0;
                         gSprites[sInfoCard->spriteIds[i]].data[2] = i;
@@ -4297,28 +4280,28 @@ static void DisplayTrainerInfoOnCard(u8 flags, u8 trainerTourneyId)
         if (trainerId == TRAINER_PLAYER)
         {
             sInfoCard->spriteIds[2 + i + arrId] = CreateMonIcon(DOME_MONS[trainerTourneyId][i],
-                                                                  SpriteCb_MonIcon,
+                                                                  SpriteCB_MonIconDomeInfo,
                                                                   x | sInfoTrainerMonX[i],
                                                                   y + sInfoTrainerMonY[i],
-                                                                  0, 0, TRUE);
+                                                                  0, 0);
             gSprites[sInfoCard->spriteIds[2 + i + arrId]].oam.priority = 0;
         }
         else if (trainerId == TRAINER_FRONTIER_BRAIN)
         {
             sInfoCard->spriteIds[2 + i + arrId] = CreateMonIcon(DOME_MONS[trainerTourneyId][i],
-                                                                  SpriteCb_MonIcon,
+                                                                  SpriteCB_MonIconDomeInfo,
                                                                   x | sInfoTrainerMonX[i],
                                                                   y + sInfoTrainerMonY[i],
-                                                                  0, 0, TRUE);
+                                                                  0, 0);
             gSprites[sInfoCard->spriteIds[2 + i + arrId]].oam.priority = 0;
         }
         else
         {
             sInfoCard->spriteIds[2 + i + arrId] = CreateMonIcon(gFacilityTrainerMons[DOME_MONS[trainerTourneyId][i]].species,
-                                                                  SpriteCb_MonIcon,
+                                                                  SpriteCB_MonIconDomeInfo,
                                                                   x | sInfoTrainerMonX[i],
                                                                   y + sInfoTrainerMonY[i],
-                                                                  0, 0, TRUE);
+                                                                  0, 0);
             gSprites[sInfoCard->spriteIds[2 + i + arrId]].oam.priority = 0;
         }
 
@@ -4563,7 +4546,6 @@ static void DisplayTrainerInfoOnCard(u8 flags, u8 trainerTourneyId)
             // If 2 good stats have been found already, choose which to use
             if (i == 2)
             {
-
                 if (allocatedArray[6] < allocatedArray[k])
                 {
                     if (allocatedArray[7] < allocatedArray[k])
@@ -4786,28 +4768,28 @@ static void DisplayMatchInfoOnCard(u8 flags, u8 matchNo)
         if (trainerIds[0] == TRAINER_PLAYER)
         {
             sInfoCard->spriteIds[2 + i + arrId] = CreateMonIcon(DOME_MONS[tournamentIds[0]][i],
-                                                                  SpriteCb_MonIcon,
+                                                                  SpriteCB_MonIconDomeInfo,
                                                                   x | sLeftTrainerMonX[i],
                                                                   y + sLeftTrainerMonY[i],
-                                                                  0, 0, TRUE);
+                                                                  0, 0);
             gSprites[sInfoCard->spriteIds[2 + i + arrId]].oam.priority = 0;
         }
         else if (trainerIds[0] == TRAINER_FRONTIER_BRAIN)
         {
             sInfoCard->spriteIds[2 + i + arrId] = CreateMonIcon(DOME_MONS[tournamentIds[0]][i],
-                                                                  SpriteCb_MonIcon,
+                                                                  SpriteCB_MonIconDomeInfo,
                                                                   x | sLeftTrainerMonX[i],
                                                                   y + sLeftTrainerMonY[i],
-                                                                  0, 0, TRUE);
+                                                                  0, 0);
             gSprites[sInfoCard->spriteIds[2 + i + arrId]].oam.priority = 0;
         }
         else
         {
             sInfoCard->spriteIds[2 + i + arrId] = CreateMonIcon(gFacilityTrainerMons[DOME_MONS[tournamentIds[0]][i]].species,
-                                                                  SpriteCb_MonIcon,
+                                                                  SpriteCB_MonIconDomeInfo,
                                                                   x | sLeftTrainerMonX[i],
                                                                   y + sLeftTrainerMonY[i],
-                                                                  0, 0, TRUE);
+                                                                  0, 0);
             gSprites[sInfoCard->spriteIds[2 + i + arrId]].oam.priority = 0;
         }
 
@@ -4826,28 +4808,28 @@ static void DisplayMatchInfoOnCard(u8 flags, u8 matchNo)
         if (trainerIds[1] == TRAINER_PLAYER)
         {
             sInfoCard->spriteIds[5 + i + arrId] = CreateMonIcon(DOME_MONS[tournamentIds[1]][i],
-                                                                  SpriteCb_MonIcon,
+                                                                  SpriteCB_MonIconDomeInfo,
                                                                   x | sRightTrainerMonX[i],
                                                                   y + sRightTrainerMonY[i],
-                                                                  0, 0, TRUE);
+                                                                  0, 0);
             gSprites[sInfoCard->spriteIds[5 + i + arrId]].oam.priority = 0;
         }
         else if (trainerIds[1] == TRAINER_FRONTIER_BRAIN)
         {
             sInfoCard->spriteIds[5 + i + arrId] = CreateMonIcon(DOME_MONS[tournamentIds[1]][i],
-                                                                  SpriteCb_MonIcon,
+                                                                  SpriteCB_MonIconDomeInfo,
                                                                   x | sRightTrainerMonX[i],
                                                                   y + sRightTrainerMonY[i],
-                                                                  0, 0, TRUE);
+                                                                  0, 0);
             gSprites[sInfoCard->spriteIds[5 + i + arrId]].oam.priority = 0;
         }
         else
         {
             sInfoCard->spriteIds[5 + i + arrId] = CreateMonIcon(gFacilityTrainerMons[DOME_MONS[tournamentIds[1]][i]].species,
-                                                                  SpriteCb_MonIcon,
+                                                                  SpriteCB_MonIconDomeInfo,
                                                                   x | sRightTrainerMonX[i],
                                                                   y + sRightTrainerMonY[i],
-                                                                  0, 0, TRUE);
+                                                                  0, 0);
             gSprites[sInfoCard->spriteIds[5 + i + arrId]].oam.priority = 0;
         }
 
@@ -5194,28 +5176,28 @@ static u16 GetWinningMove(int winnerTournamentId, int loserTournamentId, u8 roun
 
             for (k = 0; k < FRONTIER_PARTY_SIZE; k++)
             {
-                u32 var = 0;
-                u16 targetSpecies = SPECIES_NONE;
-                u16 targetAbility = ABILITY_NONE;
+                u32 personality = 0;
+                u32 targetSpecies = 0;
+                u32 targetAbility = 0;
+                u32 typeMultiplier = 0;
                 do
                 {
-                    var = Random32();
-                } while (gFacilityTrainerMons[DOME_MONS[loserTournamentId][k]].nature != GetNatureFromPersonality(var));
+                    personality = Random32();
+                } while (gFacilityTrainerMons[DOME_MONS[loserTournamentId][k]].nature != GetNatureFromPersonality(personality));
 
                 targetSpecies = gFacilityTrainerMons[DOME_MONS[loserTournamentId][k]].species;
-                if (var & 1)
+
+                if (personality & 1)
                     targetAbility = gBaseStats[targetSpecies].abilities[1];
                 else
                     targetAbility = gBaseStats[targetSpecies].abilities[0];
 
-                var = AI_TypeCalc(moveIds[i * MAX_MON_MOVES + j], targetSpecies, targetAbility);
-                if (var & MOVE_RESULT_NOT_VERY_EFFECTIVE && var & MOVE_RESULT_SUPER_EFFECTIVE)
-                    moveScores[i * MAX_MON_MOVES + j] += movePower;
-                else if (var & MOVE_RESULT_NO_EFFECT)
+                typeMultiplier = CalcPartyMonTypeEffectivenessMultiplier(moveIds[i * 4 + j], targetSpecies, targetAbility);
+                if (typeMultiplier == UQ_4_12(0))
                     moveScores[i * MAX_MON_MOVES + j] += 0;
-                else if (var & MOVE_RESULT_SUPER_EFFECTIVE)
+                else if (typeMultiplier >= UQ_4_12(2))
                     moveScores[i * MAX_MON_MOVES + j] += movePower * 2;
-                else if (var & MOVE_RESULT_NOT_VERY_EFFECTIVE)
+                else if (typeMultiplier <= UQ_4_12(0.5))
                     moveScores[i * MAX_MON_MOVES + j] += movePower / 2;
                 else
                     moveScores[i * MAX_MON_MOVES + j] += movePower;

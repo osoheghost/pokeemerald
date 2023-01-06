@@ -9,6 +9,7 @@
 #include "menu.h"
 #include "international_string_util.h"
 #include "constants/songs.h"
+#include "constants/species.h"
 #include "gpu_regs.h"
 #include "m4a.h"
 #include "constants/rgb.h"
@@ -183,7 +184,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .bg = 0,
         .tilemapLeft = 0,
         .tilemapTop = 9,
-        .width = 30,
+        .width = DISPLAY_TILE_WIDTH,
         .height = 12,
         .paletteNum = 8,
         .baseBlock = 1

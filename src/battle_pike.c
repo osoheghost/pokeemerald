@@ -17,6 +17,7 @@
 #include "constants/battle_frontier.h"
 #include "constants/frontier_util.h"
 #include "constants/abilities.h"
+#include "constants/battle_config.h"
 #include "constants/layouts.h"
 #include "constants/rgb.h"
 #include "constants/trainers.h"
@@ -809,8 +810,11 @@ static void HealMon(struct Pokemon *mon)
 
 static bool8 DoesAbilityPreventStatus(struct Pokemon *mon, u32 status)
 {
-    u8 ability = GetMonAbility(mon);
+    u16 ability = GetMonAbility(mon);
     bool8 ret = FALSE;
+
+    if (ability == ABILITY_COMATOSE)
+        return TRUE;
 
     switch (status)
     {
@@ -819,7 +823,7 @@ static bool8 DoesAbilityPreventStatus(struct Pokemon *mon, u32 status)
             ret = TRUE;
         break;
     case STATUS1_BURN:
-        if (ability == ABILITY_WATER_VEIL)
+        if (ability == ABILITY_WATER_VEIL || ability == ABILITY_WATER_BUBBLE)
             ret = TRUE;
         break;
     case STATUS1_PARALYSIS:
@@ -854,8 +858,11 @@ static bool8 DoesTypePreventStatus(u16 species, u32 status)
             ret = TRUE;
         break;
     case STATUS1_PARALYSIS:
-        if (gBaseStats[species].type1 == TYPE_GROUND || gBaseStats[species].type1 == TYPE_ELECTRIC
-            || gBaseStats[species].type2 == TYPE_GROUND || gBaseStats[species].type2 == TYPE_ELECTRIC)
+        if (gBaseStats[species].type1 == TYPE_GROUND || gBaseStats[species].type2 == TYPE_GROUND
+        #if B_PARALYZE_ELECTRIC >= GEN_6
+            || gBaseStats[species].type1 == TYPE_ELECTRIC || gBaseStats[species].type2 == TYPE_ELECTRIC
+        #endif
+        )
             ret = TRUE;
         break;
     case STATUS1_BURN:
@@ -1084,7 +1091,7 @@ static u8 GetNextRoomType(void)
     }
 
     nextRoomType = roomCandidates[Random() % numRoomCandidates];
-    free(roomCandidates);
+    Free(roomCandidates);
     if (nextRoomType == PIKE_ROOM_STATUS)
         TryInflictRandomStatus();
 
@@ -1251,7 +1258,7 @@ static void Task_DoStatusInflictionScreenFlash(u8 taskId)
     {
         if (IsStatusInflictionScreenFlashTaskFinished())
         {
-            EnableBothScriptContexts();
+            ScriptContext_Enable();
             DestroyTask(taskId);
         }
     }
@@ -1363,7 +1370,7 @@ static void SetHintedRoom(void)
         }
 
         gSaveBlock2Ptr->frontier.pikeHintedRoomType = roomCandidates[Random() % count];
-        free(roomCandidates);
+        Free(roomCandidates);
         if (gSaveBlock2Ptr->frontier.pikeHintedRoomType == PIKE_ROOM_STATUS && !AtLeastOneHealthyMon())
             gSaveBlock2Ptr->frontier.pikeHintedRoomType = PIKE_ROOM_NPC;
         if (gSaveBlock2Ptr->frontier.pikeHintedRoomType == PIKE_ROOM_DOUBLE_BATTLE && !AtLeastTwoAliveMons())
@@ -1624,7 +1631,7 @@ static bool8 CanEncounterWildMon(u8 enemyMonLevel)
 {
     if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
     {
-        u8 monAbility = GetMonAbility(&gPlayerParty[0]);
+        u16 monAbility = GetMonAbility(&gPlayerParty[0]);
         if (monAbility == ABILITY_KEEN_EYE || monAbility == ABILITY_INTIMIDATE)
         {
             u8 playerMonLevel = GetMonData(&gPlayerParty[0], MON_DATA_LEVEL);

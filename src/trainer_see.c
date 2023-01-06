@@ -192,6 +192,9 @@ bool8 CheckForTrainersWantingBattle(void)
 {
     u8 i;
 
+    if (FlagGet(OW_FLAG_NO_TRAINER_SEE))
+        return FALSE;
+
     gNoOfApproachingTrainers = 0;
     gApproachingTrainerId = 0;
 
@@ -660,7 +663,7 @@ void DoTrainerApproach(void)
 static void Task_EndTrainerApproach(u8 taskId)
 {
     DestroyTask(taskId);
-    EnableBothScriptContexts();
+    ScriptContext_Enable();
 }
 
 void TryPrepareSecondApproachingTrainer(void)

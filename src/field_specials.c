@@ -65,6 +65,7 @@
 #include "constants/weather.h"
 #include "constants/metatile_labels.h"
 #include "palette.h"
+#include "battle_util.h"
 
 EWRAM_DATA bool8 gBikeCyclingChallenge = FALSE;
 EWRAM_DATA u8 gBikeCollisions = 0;
@@ -132,14 +133,14 @@ static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
 void Special_ShowDiploma(void)
 {
     SetMainCallback2(CB2_ShowDiploma);
-    ScriptContext2_Enable();
+    LockPlayerFieldControls();
 }
 
 void Special_ViewWallClock(void)
 {
     gMain.savedCallback = CB2_ReturnToField;
     SetMainCallback2(CB2_ViewWallClock);
-    ScriptContext2_Enable();
+    LockPlayerFieldControls();
 }
 
 void ResetCyclingRoadChallengeData(void)
@@ -182,7 +183,7 @@ static void DetermineCyclingRoadResults(u32 numFrames, u8 numBikeCollisions)
     if (numFrames < 3600)
     {
         ConvertIntToDecimalStringN(gStringVar2, numFrames / 60, STR_CONV_MODE_RIGHT_ALIGN, 2);
-        gStringVar2[2] = CHAR_PERIOD;
+        gStringVar2[2] = CHAR_DEC_SEPARATOR;
         ConvertIntToDecimalStringN(&gStringVar2[3], ((numFrames % 60) * 100) / 60, STR_CONV_MODE_LEADING_ZEROS, 2);
         StringAppend(gStringVar2, gText_SpaceSeconds);
     }
@@ -799,7 +800,7 @@ static void Task_PetalburgGymSlideOpenRoomDoors(u8 taskId)
         if ((++sSlidingDoorFrame) == ARRAY_COUNT(sPetalburgGymSlidingDoorMetatiles))
         {
             DestroyTask(taskId);
-            EnableBothScriptContexts();
+            ScriptContext_Enable();
         }
     }
     else
@@ -868,7 +869,7 @@ static void PetalburgGymSetDoorMetatiles(u8 roomNumber, u16 metatileId)
     for (i = 0; i < nDoors; i++)
     {
         MapGridSetMetatileIdAt(doorCoordsX[i] + MAP_OFFSET, doorCoordsY[i] + MAP_OFFSET, metatileId | MAPGRID_COLLISION_MASK);
-        MapGridSetMetatileIdAt(doorCoordsX[i] + MAP_OFFSET, doorCoordsY[i] + MAP_OFFSET + 1, (metatileId + 8) | MAPGRID_COLLISION_MASK);
+        MapGridSetMetatileIdAt(doorCoordsX[i] + MAP_OFFSET, doorCoordsY[i] + MAP_OFFSET + 1, (metatileId + METATILE_ROW_WIDTH) | MAPGRID_COLLISION_MASK);
     }
     DrawWholeMapView();
 }
@@ -939,21 +940,7 @@ u16 GetWeekCount(void)
 
 u8 GetLeadMonFriendshipScore(void)
 {
-    struct Pokemon *pokemon = &gPlayerParty[GetLeadMonIndex()];
-    if (GetMonData(pokemon, MON_DATA_FRIENDSHIP) == MAX_FRIENDSHIP)
-        return 6;
-    if (GetMonData(pokemon, MON_DATA_FRIENDSHIP) >= 200)
-        return 5;
-    if (GetMonData(pokemon, MON_DATA_FRIENDSHIP) >= 150)
-        return 4;
-    if (GetMonData(pokemon, MON_DATA_FRIENDSHIP) >= 100)
-        return 3;
-    if (GetMonData(pokemon, MON_DATA_FRIENDSHIP) >= 50)
-        return 2;
-    if (GetMonData(pokemon, MON_DATA_FRIENDSHIP) >= 1)
-        return 1;
-
-    return 0;
+    return GetMonFriendshipScore(&gPlayerParty[GetLeadMonIndex()]);
 }
 
 static void CB2_FieldShowRegionMap(void)
@@ -966,9 +953,25 @@ void FieldShowRegionMap(void)
     SetMainCallback2(CB2_FieldShowRegionMap);
 }
 
+static bool8 IsPlayerInFrontOfPC(void)
+{
+    u16 x, y;
+    u16 tileInFront;
+
+    GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
+    tileInFront = MapGridGetMetatileIdAt(x, y);
+
+    return (tileInFront == METATILE_BrendansMaysHouse_BrendanPC_On
+         || tileInFront == METATILE_BrendansMaysHouse_BrendanPC_Off
+         || tileInFront == METATILE_BrendansMaysHouse_MayPC_On
+         || tileInFront == METATILE_BrendansMaysHouse_MayPC_Off
+         || tileInFront == METATILE_Building_PC_On
+         || tileInFront == METATILE_Building_PC_Off);
+}
+
 void DoPCTurnOnEffect(void)
 {
-    if (FuncIsActiveTask(Task_PCTurnOnEffect) != TRUE)
+    if (FuncIsActiveTask(Task_PCTurnOnEffect) != TRUE && IsPlayerInFrontOfPC() == TRUE)
     {
         u8 taskId = CreateTask(Task_PCTurnOnEffect, 8);
         gTasks[taskId].data[0] = 0;
@@ -1054,6 +1057,9 @@ static void PCTurnOffEffect(void)
     s8 dy = 0;
     u16 tileId = 0;
     u8 playerDirection = GetPlayerFacingDirection();
+
+    if (IsPlayerInFrontOfPC() == FALSE)
+        return;
     switch (playerDirection)
     {
     case DIR_NORTH:
@@ -1412,7 +1418,7 @@ bool8 ScriptCheckFreePokemonStorageSpace(void)
 
 bool8 IsPokerusInParty(void)
 {
-    if (!CheckPartyPokerus(gPlayerParty, 0x3f))
+    if (!CheckPartyPokerus(gPlayerParty, (1 << PARTY_SIZE) - 1))
         return FALSE;
 
     return TRUE;
@@ -1459,7 +1465,7 @@ static void Task_ShakeCamera(u8 taskId)
 static void StopCameraShake(u8 taskId)
 {
     DestroyTask(taskId);
-    EnableBothScriptContexts();
+    ScriptContext_Enable();
 }
 
 #undef horizontalPan
@@ -1814,7 +1820,7 @@ static void Task_MoveElevator(u8 taskId)
         {
             PlaySE(SE_DING_DONG);
             DestroyTask(taskId);
-            EnableBothScriptContexts();
+            ScriptContext_Enable();
             InstallCameraPanAheadCallback();
         }
     }
@@ -2476,7 +2482,7 @@ static void Task_ShowScrollableMultichoice(u8 taskId)
     struct WindowTemplate template;
     struct Task *task = &gTasks[taskId];
 
-    ScriptContext2_Enable();
+    LockPlayerFieldControls();
     sScrollableMultichoice_ScrollOffset = 0;
     sScrollableMultichoice_ItemSpriteId = MAX_SPRITES;
     FillFrontierExchangeCornerWindowAndItemIcon(task->tScrollMultiId, 0);
@@ -2591,7 +2597,7 @@ static void ScrollableMultichoice_ProcessInput(u8 taskId)
             // Handle selection while keeping the menu open
             ScrollableMultichoice_RemoveScrollArrows(taskId);
             task->func = Task_ScrollableMultichoice_WaitReturnToList;
-            EnableBothScriptContexts();
+            ScriptContext_Enable();
         }
         break;
     }
@@ -2611,7 +2617,7 @@ static void CloseScrollableMultichoice(u8 taskId)
     CopyWindowToVram(task->tWindowId, COPYWIN_GFX);
     RemoveWindow(task->tWindowId);
     DestroyTask(taskId);
-    EnableBothScriptContexts();
+    ScriptContext_Enable();
 }
 
 // Never run, tKeepOpenAfterSelect is FALSE for all scrollable multichoices.
@@ -2634,14 +2640,14 @@ void ScrollableMultichoice_TryReturnToList(void)
 {
     u8 taskId = FindTaskIdByFunc(Task_ScrollableMultichoice_WaitReturnToList);
     if (taskId == TASK_NONE)
-        EnableBothScriptContexts();
+        ScriptContext_Enable();
     else
         gTasks[taskId].tKeepOpenAfterSelect++; // Return to list
 }
 
 static void Task_ScrollableMultichoice_ReturnToList(u8 taskId)
 {
-    ScriptContext2_Enable();
+    LockPlayerFieldControls();
     ScrollableMultichoice_UpdateScrollArrows(taskId);
     gTasks[taskId].func = ScrollableMultichoice_ProcessInput;
 }
@@ -2919,7 +2925,7 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(u16 menu, u16 selection)
         {
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1:
             AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_Decor1Descriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
-            if (sFrontierExchangeCorner_Decor1[selection] == 0xFFFF)
+            if (sFrontierExchangeCorner_Decor1[selection] == ITEM_LIST_END)
             {
                 ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_Decor1[selection]);
             }
@@ -2932,7 +2938,7 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(u16 menu, u16 selection)
             break;
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2:
             AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_Decor2Descriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
-            if (sFrontierExchangeCorner_Decor2[selection] == 0xFFFF)
+            if (sFrontierExchangeCorner_Decor2[selection] == ITEM_LIST_END)
             {
                 ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_Decor2[selection]);
             }
@@ -2986,40 +2992,9 @@ static void HideFrontierExchangeCornerItemIcon(u16 menu, u16 unused)
     }
 }
 
-static const u16 sBattleFrontier_TutorMoves1[] =
-{
-    MOVE_SOFT_BOILED,
-    MOVE_SEISMIC_TOSS,
-    MOVE_DREAM_EATER,
-    MOVE_MEGA_PUNCH,
-    MOVE_MEGA_KICK,
-    MOVE_BODY_SLAM,
-    MOVE_ROCK_SLIDE,
-    MOVE_COUNTER,
-    MOVE_THUNDER_WAVE,
-    MOVE_SWORDS_DANCE
-};
-
-static const u16 sBattleFrontier_TutorMoves2[] =
-{
-    MOVE_DEFENSE_CURL,
-    MOVE_SNORE,
-    MOVE_MUD_SLAP,
-    MOVE_SWIFT,
-    MOVE_ICY_WIND,
-    MOVE_ENDURE,
-    MOVE_PSYCH_UP,
-    MOVE_ICE_PUNCH,
-    MOVE_THUNDER_PUNCH,
-    MOVE_FIRE_PUNCH
-};
-
 void BufferBattleFrontierTutorMoveName(void)
 {
-    if (gSpecialVar_0x8005 != 0)
-        StringCopy(gStringVar1, gMoveNames[sBattleFrontier_TutorMoves2[gSpecialVar_0x8004]]);
-    else
-        StringCopy(gStringVar1, gMoveNames[sBattleFrontier_TutorMoves1[gSpecialVar_0x8004]]);
+    StringCopy(gStringVar1, gMoveNames[gSpecialVar_0x8005]);
 }
 
 static void ShowBattleFrontierTutorWindow(u8 menu, u16 selection)
@@ -3115,44 +3090,6 @@ void ScrollableMultichoice_RedrawPersistentMenu(void)
     }
 }
 
-void GetBattleFrontierTutorMoveIndex(void)
-{
-    u8 i;
-    u16 moveTutor = 0;
-    u16 moveIndex = 0;
-    gSpecialVar_0x8005 = 0;
-
-    moveTutor = VarGet(VAR_TEMP_E);
-    moveIndex = VarGet(VAR_TEMP_D);
-
-    if (moveTutor != 0)
-    {
-        i = 0;
-        do
-        {
-            if (gTutorMoves[i] == sBattleFrontier_TutorMoves2[moveIndex])
-            {
-                gSpecialVar_0x8005 = i;
-                break;
-            }
-            i++;
-        } while (i < TUTOR_MOVE_COUNT);
-    }
-    else
-    {
-        i = 0;
-        do
-        {
-            if (gTutorMoves[i] == sBattleFrontier_TutorMoves1[moveIndex])
-            {
-                gSpecialVar_0x8005 = i;
-                break;
-            }
-            i++;
-        } while (i < TUTOR_MOVE_COUNT);
-    }
-}
-
 // Never called
 // Close a scrollable multichoice that stays open after selection
 void ScrollableMultichoice_ClosePersistentMenu(void)
@@ -3228,7 +3165,7 @@ static void Task_DeoxysRockInteraction(u8 taskId)
     if (FlagGet(FLAG_DEOXYS_ROCK_COMPLETE) == TRUE)
     {
         gSpecialVar_Result = 3;
-        EnableBothScriptContexts();
+        ScriptContext_Enable();
         DestroyTask(taskId);
     }
     else
@@ -3249,7 +3186,7 @@ static void Task_DeoxysRockInteraction(u8 taskId)
         {
             FlagSet(FLAG_DEOXYS_ROCK_COMPLETE);
             gSpecialVar_Result = 2;
-            EnableBothScriptContexts();
+            ScriptContext_Enable();
             DestroyTask(taskId);
         }
         else
@@ -3294,7 +3231,7 @@ static void WaitForDeoxysRockMovement(u8 taskId)
 {
     if (FieldEffectActiveListContains(FLDEFF_MOVE_DEOXYS_ROCK) == FALSE)
     {
-        EnableBothScriptContexts();
+        ScriptContext_Enable();
         DestroyTask(taskId);
     }
 }
@@ -3700,7 +3637,7 @@ static void Task_LinkRetireStatusWithBattleTowerPartner(u8 taskId)
             SetCloseLinkCallback();
 
         gBattleTypeFlags = sBattleTowerMultiBattleTypeFlags;
-        EnableBothScriptContexts();
+        ScriptContext_Enable();
         DestroyTask(taskId);
         break;
     }
@@ -3786,7 +3723,7 @@ static void Task_CloseBattlePikeCurtain(u8 taskId)
         if (tCurrentFrame == 3)
         {
             DestroyTask(taskId);
-            EnableBothScriptContexts();
+            ScriptContext_Enable();
         }
     }
 }

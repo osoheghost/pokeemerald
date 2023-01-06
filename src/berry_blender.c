@@ -1008,7 +1008,7 @@ static bool8 LoadBerryBlenderGfx(void)
 
 static void DrawBlenderBg(void)
 {
-    FillBgTilemapBufferRect_Palette0(0, 0, 0, 0, 0x1E, 0x14);
+    FillBgTilemapBufferRect_Palette0(0, 0, 0, 0, DISPLAY_TILE_WIDTH, DISPLAY_TILE_HEIGHT);
     CopyBgTilemapBufferToVram(0);
     ShowBg(0);
     ShowBg(1);
@@ -1029,7 +1029,7 @@ static void InitBerryBlenderWindows(void)
         for (i = 0; i < 5; i++)
             FillWindowPixelBuffer(i, PIXEL_FILL(0));
 
-        FillBgTilemapBufferRect_Palette0(0, 0, 0, 0, 0x1E, 0x14);
+        FillBgTilemapBufferRect_Palette0(0, 0, 0, 0, DISPLAY_TILE_WIDTH, DISPLAY_TILE_HEIGHT);
         Menu_LoadStdPalAt(0xE0);
     }
 }
@@ -1538,7 +1538,7 @@ static void SetOpponentsBerryData(u16 playerBerryItemId, u8 playersNum, struct B
     u16 berryMasterDiff;
     u16 i;
 
-    if (playerBerryItemId == ITEM_ENIGMA_BERRY)
+    if (playerBerryItemId == ITEM_ENIGMA_BERRY_E_READER)
     {
         for (i = 0; i < FLAVOR_COUNT; i++)
         {
@@ -2286,7 +2286,7 @@ static u32 CalculatePokeblockColor(struct BlenderBerry* berries, s16 *_flavors, 
         for (j = 0; j < numPlayers; j++)
         {
             if (berries[i].itemId == berries[j].itemId && i != j
-                && (berries[i].itemId != ITEM_ENIGMA_BERRY || AreBlenderBerriesSame(berries, i, j)))
+                && (berries[i].itemId != ITEM_ENIGMA_BERRY_E_READER || AreBlenderBerriesSame(berries, i, j)))
                     return PBLOCK_CLR_BLACK;
         }
     }

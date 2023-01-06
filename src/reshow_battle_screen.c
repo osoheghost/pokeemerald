@@ -73,7 +73,7 @@ static void CB2_ReshowBattleScreenAfterMenu(void)
         break;
     case 4:
         FreeAllSpritePalettes();
-        gReservedSpritePaletteCount = 4;
+        gReservedSpritePaletteCount = MAX_BATTLERS_COUNT;
         break;
     case 5:
         ClearSpritesHealthboxAnimData();
@@ -149,7 +149,7 @@ static void CB2_ReshowBattleScreenAfterMenu(void)
 
             ActionSelectionCreateCursorAt(gActionSelectionCursor[gBattlerInMenuId], 0);
 
-            if (gWirelessCommType != 0 && gReceivedRemoteLinkPlayers != 0)
+            if (gWirelessCommType != 0 && gReceivedRemoteLinkPlayers)
             {
                 LoadWirelessStatusIndicatorSpriteGfx();
                 CreateWirelessStatusIndicatorSprite(0, 0);
@@ -219,6 +219,8 @@ static void CreateBattlerSprite(u8 battler)
         if (GetBattlerSide(battler) != B_SIDE_PLAYER)
         {
             if (GetMonData(&gEnemyParty[gBattlerPartyIndexes[battler]], MON_DATA_HP) == 0)
+                return;
+            if (gBattleScripting.monCaught) // Don't create opponent sprite if it has been caught.
                 return;
 
             SetMultiuseSpriteTemplateToPokemon(GetMonData(&gEnemyParty[gBattlerPartyIndexes[battler]], MON_DATA_SPECIES), GetBattlerPosition(battler));
