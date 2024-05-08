@@ -4410,6 +4410,76 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_CASIO_VILLAGE",
+      "name": "CasioVillage_Layout",
+      "width": 46,
+      "height": 34,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SpacePartition",
+      "border_filepath": "data/layouts/CasioVillage/border.bin",
+      "blockdata_filepath": "data/layouts/CasioVillage/map.bin"
+    },
+    {
+      "id": "LAYOUT_STARZONE_GATEWAY",
+      "name": "StarzoneGateway_Layout",
+      "width": 46,
+      "height": 34,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SpacePartition",
+      "border_filepath": "data/layouts/StarzoneGateway/border.bin",
+      "blockdata_filepath": "data/layouts/StarzoneGateway/map.bin"
+    },
+    {
+      "id": "LAYOUT_CELANTO_PATH",
+      "name": "CelantoPath_Layout",
+      "width": 44,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/CelantoPath/border.bin",
+      "blockdata_filepath": "data/layouts/CelantoPath/map.bin"
+    },
+    {
+      "id": "LAYOUT_CELANTO_TOWN",
+      "name": "CelantoTown_Layout",
+      "width": 52,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/CelantoTown/border.bin",
+      "blockdata_filepath": "data/layouts/CelantoTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_CASIO_VILLAGE_HOUSE1",
+      "name": "CasioVillageHouse1_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Indoors",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/CasioVillageHouse1/border.bin",
+      "blockdata_filepath": "data/layouts/CasioVillageHouse1/map.bin"
+    },
+    {
+      "id": "LAYOUT_CASIO_VILLAGE_HOUSE2",
+      "name": "CasioVillageHouse2_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Indoors",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/CasioVillageHouse2/border.bin",
+      "blockdata_filepath": "data/layouts/CasioVillageHouse2/map.bin"
+    },
+    {
+      "id": "LAYOUT_CASIO_VILLAGE_TRANSPORT_HOUSE",
+      "name": "CasioVillageTransportHouse_Layout",
+      "width": 15,
+      "height": 11,
+      "primary_tileset": "gTileset_Indoors",
+      "secondary_tileset": "gTileset_TransportIndoors",
+      "border_filepath": "data/layouts/CasioVillageTransportHouse/border.bin",
+      "blockdata_filepath": "data/layouts/CasioVillageTransportHouse/map.bin"
     }
   ]
 }
