@@ -15,8 +15,8 @@
   "connections": [
     {
       "map": "MAP_STARZONE_GATEWAY",
-      "offset": 0,
-      "direction": "right"
+      "offset": -3,
+      "direction": "up"
     }
   ],
   "object_events": [

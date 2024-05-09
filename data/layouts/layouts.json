@@ -4424,8 +4424,8 @@
     {
       "id": "LAYOUT_STARZONE_GATEWAY",
       "name": "StarzoneGateway_Layout",
-      "width": 46,
-      "height": 34,
+      "width": 52,
+      "height": 70,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_SpacePartition",
       "border_filepath": "data/layouts/StarzoneGateway/border.bin",
